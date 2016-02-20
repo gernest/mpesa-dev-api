@@ -48,9 +48,9 @@
     1.  Scope
         -----
 
-> The present document specifies the real time B2C Web Service aspects
-> of the interface. All aspects of B2C Web Service are defined here,
-> these being:
+ The present document specifies the real time B2C Web Service aspects
+ of the interface. All aspects of B2C Web Service are defined here,
+ these being:
 
 -   Message Flow Description
 
@@ -71,7 +71,7 @@
     1.  IdentityType enumeration
         ------------------------
 
-> List of IdentityType values.
+ List of IdentityType values.
 
   > Enumeration   > Description
   --------------- ------------------------
@@ -85,7 +85,7 @@
 IdentifierType enumeration
 --------------------------
 
-> List of IdentityType values.
+ List of IdentityType values.
 
   > Enumeration   > Description
   --------------- --------------------------------
@@ -505,13 +505,13 @@ message.
 
 5.  **WouldExceedDailyTransferLimit**
 
-> This is a limit on daily activity. For the business organisation, this
-> is very high: 100000000 KE shillings. It is much more likely that this
-> rule will apply to the customer, where the limit is 140000 KE
-> shillings.
->
-> This is returned by the *ApiResult* and represented internally as a
-> transaction reason.
+ This is a limit on daily activity. For the business organisation, this
+ is very high: 100000000 KE shillings. It is much more likely that this
+ rule will apply to the customer, where the limit is 140000 KE
+ shillings.
+
+ This is returned by the *ApiResult* and represented internally as a
+ transaction reason.
 
 1.  **WouldExceedMinimumBalance**
 
@@ -548,7 +548,7 @@ message.
 
 6.  **MoreThanMaxAirtimeValue**
 
-> Neither of these apply to B2C API operations.
+ Neither of these apply to B2C API operations.
 
 1.  **DebitAccountInvalid**
 
@@ -558,47 +558,47 @@ message.
 
 4.  **UnresolvedCreditAccount**
 
-> These are all existing failure transaction reasons for B2C financial
-> transactions – they would be issued to the caller in the *ApiResult*
-> message. The latter 2 in particular are unlikely to occur, as the
-> request would be rejected by Core API specific checks before the
-> request reached the accounting engine.
+ These are all existing failure transaction reasons for B2C financial
+ transactions – they would be issued to the caller in the *ApiResult*
+ message. The latter 2 in particular are unlikely to occur, as the
+ request would be rejected by Core API specific checks before the
+ request reached the accounting engine.
 
 1.  **DuplicateDetected**
 
-> Currently, any requests which presents an originator conversation id
-> which has been seen before will be rejected. This rule will need to be
-> reconsidered in contexts which require multi-stage conversations or
-> multiple Callers. This check (along with the message expiry check) is
-> the first thing done by the transaction processor when handling an API
-> request. The outcome is reported in the *ApiResult* message.
+ Currently, any requests which presents an originator conversation id
+ which has been seen before will be rejected. This rule will need to be
+ reconsidered in contexts which require multi-stage conversations or
+ multiple Callers. This check (along with the message expiry check) is
+ the first thing done by the transaction processor when handling an API
+ request. The outcome is reported in the *ApiResult* message.
 
 1.  **PayUtilityInvalidAccountNumberFormat**
 
-> Does not apply to the B2C API operations.
+ Does not apply to the B2C API operations.
 
 1.  **InternalFailure**
 
-> A catch all for failures which are not identified more specifically –
-> this can occur in either the *ApiResponse* or *ApiResult* – although
-> the intent is to replace any such error with a more precise message.
+ A catch all for failures which are not identified more specifically –
+ this can occur in either the *ApiResponse* or *ApiResult* – although
+ the intent is to replace any such error with a more precise message.
 
 1.  **InitiatorCredentialCheckFailure**
 
-> The password check for the initiator failed, either because the
-> presented password is wrong, or something has gone wrong in the
-> encryption or decryption steps. This is issued in the *ApiResult*
-> before the creation of a financial transaction.
+ The password check for the initiator failed, either because the
+ presented password is wrong, or something has gone wrong in the
+ encryption or decryption steps. This is issued in the *ApiResult*
+ before the creation of a financial transaction.
 
 1.  **ApiRequestMessageExpiryFailure**
 
-> Initiators have the option to specify a request timestamp. If the gap
-> between this value and the time at which the message is received by
-> the transaction processor is too great, then the request is rejected.
-> The specific interval is configured separately for each API operation
-> (and indeed, for each API operation stage). This is the first check
-> performed on an API request arriving at the transaction processor, and
-> as such is included in the *ApiResult* message.
+ Initiators have the option to specify a request timestamp. If the gap
+ between this value and the time at which the message is received by
+ the transaction processor is too great, then the request is rejected.
+ The specific interval is configured separately for each API operation
+ (and indeed, for each API operation stage). This is the first check
+ performed on an API request arriving at the transaction processor, and
+ as such is included in the *ApiResult* message.
 
 1.  **UnresolvedInitiator**
 
@@ -607,49 +607,49 @@ message.
 
 2.  **InitiatorToPrimaryPartyPermissionFailure**
 
-> The initiator presented does not have the right to issue requests for
-> the specified primary party (as established during creation of the
-> initiator on the admin web site). The is part of the *ApiResult*, and
-> computed prior to issuing a financial transaction.
+ The initiator presented does not have the right to issue requests for
+ the specified primary party (as established during creation of the
+ initiator on the admin web site). The is part of the *ApiResult*, and
+ computed prior to issuing a financial transaction.
 
 1.  **InitiatorStatusCheckFailure**
 
-> The presented initiator username can be received, but the initiator is
-> not currently active. This fact is returned in the *ApiResult*.
+ The presented initiator username can be received, but the initiator is
+ not currently active. This fact is returned in the *ApiResult*.
 
 1.  **RequestSchemaValidationError**
 
-> Incoming API requests are validated against the schema defined in
-> *CPSInterface\_Request.xsd*. This is part of the *ApiResponse* message
-> – the details of the validation error are included in the response.
+ Incoming API requests are validated against the schema defined in
+ *CPSInterface\_Request.xsd*. This is part of the *ApiResponse* message
+ – the details of the validation error are included in the response.
 
 1.  **MissingRequestParameters**
 
-> Required input parameters are defined for each type of API operation.
-> If these are missing, then this is issued in the *ApiResult* message.
-> The names of the missing parameters are included in the result
-> parameters field.
+ Required input parameters are defined for each type of API operation.
+ If these are missing, then this is issued in the *ApiResult* message.
+ The names of the missing parameters are included in the result
+ parameters field.
 
 1.  **InvalidRequestParameters**
 
-> If all required parameters are presented, then validation checks are
-> performed. Specifically, the parameter is checked to see if it can be
-> converted to the intended type, and then checked against (optional)
-> configuration regular expression based validation rules. For the B2C
-> API, only the type check (i.e the amount specified is a valid decimal)
-> is performed. Failures are indicated in the *ApiResult* message, with
-> the details included in the result parameters.
+ If all required parameters are presented, then validation checks are
+ performed. Specifically, the parameter is checked to see if it can be
+ converted to the intended type, and then checked against (optional)
+ configuration regular expression based validation rules. For the B2C
+ API, only the type check (i.e the amount specified is a valid decimal)
+ is performed. Failures are indicated in the *ApiResult* message, with
+ the details included in the result parameters.
 
 1.  **SystemTooBusy**
 
-> Included in the *ApiResponse* message if a traffic blocking condition
-> is in place. See section 5.1 for more detail.
+ Included in the *ApiResponse* message if a traffic blocking condition
+ is in place. See section 5.1 for more detail.
 
 28. **InitiatorAllowedOperationCheckFailure**
 
-> Upon creation, initiators are assigned permissions for specific API
-> operations – if the operation specified in the request message is not
-> included in this list, then this *ApiResult* message is received.
+ Upon creation, initiators are assigned permissions for specific API
+ operations – if the operation specified in the request message is not
+ included in this list, then this *ApiResult* message is received.
 
 28. **InvalidCommand**
 
@@ -665,12 +665,12 @@ message.
 
 30. **InitiatorNotSpecified**
 
-> The initiator username is not specified, or not specified in a way
-> that can be parsed.
+ The initiator username is not specified, or not specified in a way
+ that can be parsed.
 
 28. **ErrorSerializingRequest**
 
-> The presented identifier for the initiator is not a username.
+ The presented identifier for the initiator is not a username.
 
 28. **PrimaryPartyNotSpecified**
 
@@ -680,22 +680,22 @@ message.
 
 31. **ReceiverPartyIdentifierInvalid**
 
-> In all these case, one of the API parties is either missing from the
-> request, or has been presented with the wrong identifier type., This
-> kind of failure is indicated in the *ApiResult* message.,
+ In all these case, one of the API parties is either missing from the
+ request, or has been presented with the wrong identifier type., This
+ kind of failure is indicated in the *ApiResult* message.,
 
 28. **MissingApiCommand**
 
-> No command is included in the request – in general this problem should
-> be captured by the XML schema validation, but if it is not this
-> *ApiResult* message is issued.
+ No command is included in the request – in general this problem should
+ be captured by the XML schema validation, but if it is not this
+ *ApiResult* message is issued.
 
 28. **InvalidConversationId**
 
 29. **UnknownConversationId**
 
-> Not currently checked for – this will take place for multi-stage
-> conversations.
+ Not currently checked for – this will take place for multi-stage
+ conversations.
 
 28. **InvalidParameterDefinition**
 
@@ -781,7 +781,7 @@ message.
 
         1.  ### Operation: GenericAPIRequest
 
-> The 3^rd^ party invokes this operation to send a B2C request
+ The 3^rd^ party invokes this operation to send a B2C request
 
 #### 4.1.1.1 Message Header: RequestSOAPHeader {#message-header-requestsoapheader .ListParagraph}
 
@@ -845,17 +845,17 @@ message.
   -------------- -------------- ---------- -----------------------------------------------------------------------------------------------
   RequestMsg     xsd: string    No         Request Message from 3^rd^ party. Its value should be an instance of Request Type and a CDATA
 
-> **Note:**
->
-> 1\. If there is no configuration for notification URL on Broker side,
-> which indicates the callback url for accepting notification of
-> GenericAPIResult, the **ResultURL** parameter inside Identity tag must
-> present.
->
-> 2\. If there is no configuration for notification URL on Broker side,
-> which indicates the callback url for accepting notification of cached
-> requests expired, the 3^rd^ party must add a key-pair parameter into
-> **ReferenceData** and the key is **QueueTimeoutURL**.
+ **Note:**
+
+ 1\. If there is no configuration for notification URL on Broker side,
+ which indicates the callback url for accepting notification of
+ GenericAPIResult, the **ResultURL** parameter inside Identity tag must
+ present.
+
+ 2\. If there is no configuration for notification URL on Broker side,
+ which indicates the callback url for accepting notification of cached
+ requests expired, the 3^rd^ party must add a key-pair parameter into
+ **ReferenceData** and the key is **QueueTimeoutURL**.
 
 #### 4.1.1.3 Output Message: ResponseMsg {#output-message-responsemsg .ListParagraph}
 
@@ -871,10 +871,10 @@ message.
 
     1.  ### Operation: GenericAPIResult
 
-> This operation must be implemented by a Web Service at the 3rd party
-> side if it requires notification of the final result for B2C request.
-> It will be invoked by Broker to notify the 3^rd^ party once Broker
-> received the notification from CoreAPI.
+ This operation must be implemented by a Web Service at the 3rd party
+ side if it requires notification of the final result for B2C request.
+ It will be invoked by Broker to notify the 3^rd^ party once Broker
+ received the notification from CoreAPI.
 
 #### 4.2.1.1 Input Message: ResultMsg {#input-message-resultmsg .ListParagraph}
 
@@ -945,10 +945,10 @@ The **ResultParameters** will change to this on April 2015.
 
     1.  ### Operation: notifyQueueTimeout
 
-> This operation must be implemented by a Web Service at the 3rd party
-> side if it requires notification of cached B2C requests are expired.
-> It will be invoked by Broker to notify the 3^rd^ party once cached B2C
-> requests are expired.
+ This operation must be implemented by a Web Service at the 3rd party
+ side if it requires notification of cached B2C requests are expired.
+ It will be invoked by Broker to notify the 3^rd^ party once cached B2C
+ requests are expired.
 
 #### 4.3.1.1 Input Message: notifyQueueTimeout {#input-message-notifyqueuetimeout .ListParagraph}
 
@@ -977,8 +977,8 @@ The **ResultParameters** will change to this on April 2015.
 
     1.  ### Operation: queryTransaction
 
-> The 3^rd^ party invokes this operation to query transaction
-> information..
+ The 3^rd^ party invokes this operation to query transaction
+ information..
 
 #### 4.3.1.1 Message Header: RequestSOAPHeader {#message-header-requestsoapheader-1 .ListParagraph}
 
@@ -1222,655 +1222,666 @@ The 3^rd^ party invokes this operation to change his password.
 
         1.  ### The 3rd party send B2C request to the Broker
 
-> Example1: Request with ResultURL and QueueTimeoutURL
->
-> <soapenv:Envelope
-> xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
-> xmlns:req="http://api-v1.gen.mm.vodafone.com/mminterface/request">
->
-> <soapenv:Header>
->
-> <tns:RequestSOAPHeader
-> xmlns:tns="http://www.huawei.com.cn/schema/common/v2\_1">
->
-> <tns:spId>35000011</tns:spId>
->
-> <tns:spPassword>c5216e519a071d601bedd150f3fcd026</tns:spPassword>
->
-> <tns:serviceId>35000001000009</tns:serviceId>
->
-> <tns:timeStamp>20120101010101</tns:timeStamp>
->
-> </tns:RequestSOAPHeader>
->
-> </soapenv:Header>
->
-> <soapenv:Body>
->
-> <req:RequestMsg><!\[CDATA\[<?xml version="1.0"
-> encoding="UTF-8"?>
->
-> <request
-> xmlns="http://api-v1.gen.mm.vodafone.com/mminterface/request">
->
-> <Transaction>
->
-> <CommandID>PromotionPayment</CommandID>
->
-> <LanguageCode></LanguageCode>
->
-> <OriginatorConversationID>4596</OriginatorConversationID>
->
-> <ConversationID> </ConversationID>
->
-> <Remark> </Remark>
->
-> <Parameters>
->
-> <Parameter>
->
-> <Key>Amount</Key>
->
-> <Value>1</Value>
->
-> </Parameter>
->
-> <Parameter>
->
-> <Key>Key1</Key>
->
-> <Value>Value1</Value>
->
-> </Parameter>
->
-> </Parameters>
->
-> <ReferenceData>
->
-> <ReferenceItem>
->
-> <Key>QueueTimeoutURL</Key>
->
-> <Value>http://10.66.49.789:7888/new</Value>
->
-> </ReferenceItem>
->
-> <ReferenceItem>
->
-> <Key>Occasion</Key>
->
-> <Value>Jamuhuri</Value>
->
-> </ReferenceItem>
->
-> </ReferenceData>
->
-> <Timestamp>2013-07-29T18:50:41.2109675Z</Timestamp>
->
-> </Transaction>
->
-> <Identity>
->
-> <Caller>
->
-> <CallerType>2</CallerType>
->
-> <ThirdPartyID> </ThirdPartyID>
->
-> <Password>Password0</Password>
->
-> <CheckSum>CheckSum0</CheckSum>
->
-> <ResultURL>ResultURL0</ResultURL>
->
-> </Caller>
->
-> <Initiator>
->
-> <IdentifierType>11</IdentifierType>
->
-> <Identifier>username</Identifier>
->
-> <SecurityCredential>SecurityCredential0</SecurityCredential>
->
-> <ShortCode>859636</ShortCode>
->
-> </Initiator>
->
-> <PrimaryParty>
->
-> <IdentifierType>4</IdentifierType>
->
-> <Identifier>859636</Identifier>
->
-> <ShortCode>859636</ShortCode>
->
-> </PrimaryParty>
->
-> <ReceiverParty>
->
-> <IdentifierType>1</IdentifierType>
->
-> <Identifier>2547204789659</Identifier>
->
-> <ShortCode>ShortCode1</ShortCode>
->
-> </ReceiverParty>
->
-> <AccessDevice>
->
-> <IdentifierType>1</IdentifierType>
->
-> <Identifier>Identifier3</Identifier>
->
-> </AccessDevice>
->
-> </Identity>
->
-> <KeyOwner>1</KeyOwner>
->
-> </request>\]\]></req:RequestMsg>
->
-> </soapenv:Body>
->
-> </soapenv:Envelope>
->
-> Example2: Request without ResultURL and QueueTimeoutURL
->
-> <soapenv:Envelope
-> xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
-> xmlns:req="http://api-v1.gen.mm.vodafone.com/mminterface/request">
->
-> <soapenv:Header>
->
-> <tns:RequestSOAPHeader
-> xmlns:tns="http://www.huawei.com/schema/osg/common/v2\_1">
->
-> <tns:spId>35000001</tns:spId>
->
-> <tns:spPassword>c5216e519a071d601bedd150f3fcd026</tns:spPassword>
->
-> <tns:timeStamp>20080101010101</tns:timeStamp>
->
-> <tns:serviceId>35000001000009</tns:serviceId>
->
-> <tns:OA>861234567890</tns:OA>
->
-> <tns:FA>861234567890</tns:FA>
->
-> </tns:RequestSOAPHeader>
->
-> </soapenv:Header>
->
-> <soapenv:Body>
->
-> <req:RequestMsg><!\[CDATA\[<?xml version="1.0"
-> encoding="UTF-8"?>
->
-> <request
-> xmlns="http://api-v1.gen.mm.vodafone.com/mminterface/request">
->
-> <Transaction>
->
-> <CommandID>CommandID0</CommandID>
->
-> <LanguageCode>LanguageCode0</LanguageCode>
->
-> <OriginatorConversationID>OriginatorConversationID0</OriginatorConversationID>
->
-> <ConversationID>ConversationID0</ConversationID>
->
-> <Remark>Remark0</Remark>
->
-> <EncryptedParameters>EncryptedParameters0</EncryptedParameters>
->
-> <Parameters>
->
-> <Parameter>
->
-> <Key>Key0</Key>
->
-> <Value>Value0</Value>
->
-> </Parameter>
->
-> <Parameter>
->
-> <Key>Key1</Key>
->
-> <Value>Value1</Value>
->
-> </Parameter>
->
-> </Parameters>
->
-> <ReferenceData>
->
-> <ReferenceItem>
->
-> <Key>Key2</Key>
->
-> <Value>Value2</Value>
->
-> </ReferenceItem>
->
-> </ReferenceData>
->
-> <Timestamp>
->
-> </Timestamp>
->
-> </Transaction>
->
-> <Identity>
->
-> <Caller>
->
-> <CallerType>0</CallerType>
->
-> <ThirdPartyID>ThirdPartyID0</ThirdPartyID>
->
-> <Password>Password0</Password>
->
-> <CheckSum>CheckSum0</CheckSum>
->
-> </Caller>
->
-> <Initiator>
->
-> <IdentifierType>1</IdentifierType>
->
-> <Identifier>Identifier0</Identifier>
->
-> <SecurityCredential>SecurityCredential0</SecurityCredential>
->
-> <ShortCode>
->
-> </ShortCode>
->
-> </Initiator>
->
-> <PrimartyParty>
->
-> <IdentifierType>1</IdentifierType>
->
-> <Identifier>Identifier1</Identifier>
->
-> <ShortCode>ShortCode0</ShortCode>
->
-> </PrimartyParty>
->
-> <ReceiverParty>
->
-> <IdentifierType>1</IdentifierType>
->
-> <Identifier>Identifier2</Identifier>
->
-> <ShortCode>ShortCode1</ShortCode>
->
-> </ReceiverParty>
->
-> <AccessDevice>
->
-> <IdentifierType>1</IdentifierType>
->
-> <Identifier>Identifier3</Identifier>
->
-> </AccessDevice>
->
-> </Identity>
->
-> <KeyOwner>0</KeyOwner>
->
-> </request>\]\]></req:RequestMsg>
->
-> </soapenv:Body>
->
-> </soapenv:Envelope>
+ Example1: Request with ResultURL and QueueTimeoutURL
+
+```xml
+ <soapenv:Envelope
+ xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+ xmlns:req="http://api-v1.gen.mm.vodafone.com/mminterface/request">
+
+ <soapenv:Header>
+
+ <tns:RequestSOAPHeader
+ xmlns:tns="http://www.huawei.com.cn/schema/common/v2\_1">
+
+ <tns:spId>35000011</tns:spId>
+
+ <tns:spPassword>c5216e519a071d601bedd150f3fcd026</tns:spPassword>
+
+ <tns:serviceId>35000001000009</tns:serviceId>
+
+ <tns:timeStamp>20120101010101</tns:timeStamp>
+
+ </tns:RequestSOAPHeader>
+
+ </soapenv:Header>
+
+ <soapenv:Body>
+
+ <req:RequestMsg><!\[CDATA\[<?xml version="1.0"
+ encoding="UTF-8"?>
+
+ <request
+ xmlns="http://api-v1.gen.mm.vodafone.com/mminterface/request">
+
+ <Transaction>
+
+ <CommandID>PromotionPayment</CommandID>
+
+ <LanguageCode></LanguageCode>
+
+ <OriginatorConversationID>4596</OriginatorConversationID>
+
+ <ConversationID> </ConversationID>
+
+ <Remark> </Remark>
+
+ <Parameters>
+
+ <Parameter>
+
+ <Key>Amount</Key>
+
+ <Value>1</Value>
+
+ </Parameter>
+
+ <Parameter>
+
+ <Key>Key1</Key>
+
+ <Value>Value1</Value>
+
+ </Parameter>
+
+ </Parameters>
+
+ <ReferenceData>
+
+ <ReferenceItem>
+
+ <Key>QueueTimeoutURL</Key>
+
+ <Value>http://10.66.49.789:7888/new</Value>
+
+ </ReferenceItem>
+
+ <ReferenceItem>
+
+ <Key>Occasion</Key>
+
+ <Value>Jamuhuri</Value>
+
+ </ReferenceItem>
+
+ </ReferenceData>
+
+ <Timestamp>2013-07-29T18:50:41.2109675Z</Timestamp>
+
+ </Transaction>
+
+ <Identity>
+
+ <Caller>
+
+ <CallerType>2</CallerType>
+
+ <ThirdPartyID> </ThirdPartyID>
+
+ <Password>Password0</Password>
+
+ <CheckSum>CheckSum0</CheckSum>
+
+ <ResultURL>ResultURL0</ResultURL>
+
+ </Caller>
+
+ <Initiator>
+
+ <IdentifierType>11</IdentifierType>
+
+ <Identifier>username</Identifier>
+
+ <SecurityCredential>SecurityCredential0</SecurityCredential>
+
+ <ShortCode>859636</ShortCode>
+
+ </Initiator>
+
+ <PrimaryParty>
+
+ <IdentifierType>4</IdentifierType>
+
+ <Identifier>859636</Identifier>
+
+ <ShortCode>859636</ShortCode>
+
+ </PrimaryParty>
+
+ <ReceiverParty>
+
+ <IdentifierType>1</IdentifierType>
+
+ <Identifier>2547204789659</Identifier>
+
+ <ShortCode>ShortCode1</ShortCode>
+
+ </ReceiverParty>
+
+ <AccessDevice>
+
+ <IdentifierType>1</IdentifierType>
+
+ <Identifier>Identifier3</Identifier>
+
+ </AccessDevice>
+
+ </Identity>
+
+ <KeyOwner>1</KeyOwner>
+
+ </request>\]\]></req:RequestMsg>
+
+ </soapenv:Body>
+
+ </soapenv:Envelope>
+
+ Example2: Request without ResultURL and QueueTimeoutURL
+
+ <soapenv:Envelope
+ xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+ xmlns:req="http://api-v1.gen.mm.vodafone.com/mminterface/request">
+
+ <soapenv:Header>
+
+ <tns:RequestSOAPHeader
+ xmlns:tns="http://www.huawei.com/schema/osg/common/v2\_1">
+
+ <tns:spId>35000001</tns:spId>
+
+ <tns:spPassword>c5216e519a071d601bedd150f3fcd026</tns:spPassword>
+
+ <tns:timeStamp>20080101010101</tns:timeStamp>
+
+ <tns:serviceId>35000001000009</tns:serviceId>
+
+ <tns:OA>861234567890</tns:OA>
+
+ <tns:FA>861234567890</tns:FA>
+
+ </tns:RequestSOAPHeader>
+
+ </soapenv:Header>
+
+ <soapenv:Body>
+
+ <req:RequestMsg><!\[CDATA\[<?xml version="1.0"
+ encoding="UTF-8"?>
+
+ <request
+ xmlns="http://api-v1.gen.mm.vodafone.com/mminterface/request">
+
+ <Transaction>
+
+ <CommandID>CommandID0</CommandID>
+
+ <LanguageCode>LanguageCode0</LanguageCode>
+
+ <OriginatorConversationID>OriginatorConversationID0</OriginatorConversationID>
+
+ <ConversationID>ConversationID0</ConversationID>
+
+ <Remark>Remark0</Remark>
+
+ <EncryptedParameters>EncryptedParameters0</EncryptedParameters>
+
+ <Parameters>
+
+ <Parameter>
+
+ <Key>Key0</Key>
+
+ <Value>Value0</Value>
+
+ </Parameter>
+
+ <Parameter>
+
+ <Key>Key1</Key>
+
+ <Value>Value1</Value>
+
+ </Parameter>
+
+ </Parameters>
+
+ <ReferenceData>
+
+ <ReferenceItem>
+
+ <Key>Key2</Key>
+
+ <Value>Value2</Value>
+
+ </ReferenceItem>
+
+ </ReferenceData>
+
+ <Timestamp>
+
+ </Timestamp>
+
+ </Transaction>
+
+ <Identity>
+
+ <Caller>
+
+ <CallerType>0</CallerType>
+
+ <ThirdPartyID>ThirdPartyID0</ThirdPartyID>
+
+ <Password>Password0</Password>
+
+ <CheckSum>CheckSum0</CheckSum>
+
+ </Caller>
+
+ <Initiator>
+
+ <IdentifierType>1</IdentifierType>
+
+ <Identifier>Identifier0</Identifier>
+
+ <SecurityCredential>SecurityCredential0</SecurityCredential>
+
+ <ShortCode>
+
+ </ShortCode>
+
+ </Initiator>
+
+ <PrimartyParty>
+
+ <IdentifierType>1</IdentifierType>
+
+ <Identifier>Identifier1</Identifier>
+
+ <ShortCode>ShortCode0</ShortCode>
+
+ </PrimartyParty>
+
+ <ReceiverParty>
+
+ <IdentifierType>1</IdentifierType>
+
+ <Identifier>Identifier2</Identifier>
+
+ <ShortCode>ShortCode1</ShortCode>
+
+ </ReceiverParty>
+
+ <AccessDevice>
+
+ <IdentifierType>1</IdentifierType>
+
+ <Identifier>Identifier3</Identifier>
+
+ </AccessDevice>
+
+ </Identity>
+
+ <KeyOwner>0</KeyOwner>
+
+ </request>\]\]></req:RequestMsg>
+
+ </soapenv:Body>
+
+ </soapenv:Envelope>
+ ```
 
 ### The Broker return response to the 3rd party
+#### Example1: Forward CoreAPI response to the 3^rd^ party
 
-> Example1: Forward CoreAPI response to the 3^rd^ party
->
-> <soapenv:Envelope
-> xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
-> xmlns:req="http://api-v1.gen.mm.vodafone.com/mminterface/request">
->
-> <soapenv:Header/>
->
-> <soapenv:Body>
->
-> <req:ResponseMsg><!\[CDATA\[<?xml version="1.0"
-> encoding="UTF-8"?>
->
-> <response
-> xmlns="http://api-v1.gen.mm.vodafone.com/mminterface/response">
->
-> <ResponseCode>ResponseCode0</ResponseCode>
->
-> <ResponseDesc>ResponseDesc0</ResponseDesc>
->
-> <ConversationID>
->
-> </ConversationID>
->
-> <OriginatorConversationID>
->
-> </OriginatorConversationID>
->
-> <ServiceStatus>0</ServiceStatus>
->
-> </response>\]\]></req:ResponseMsg>
->
-> </soapenv:Body>
->
-> </soapenv:Envelope>
+```xml
+<soapenv:Envelope
+xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+xmlns:req="http://api-v1.gen.mm.vodafone.com/mminterface/request">
 
-Or
+<soapenv:Header/>
 
-> <soapenv:Envelope
-> xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
->
-> <soapenv:Body>
->
-> <req:ResponseMsg
-> xmlns:req="http://api-v1.gen.mm.vodafone.com/mminterface/request"><!\[CDATA\[<?xml
-> version="1.0"
-> encoding="UTF-8"?><Response><ResponseCode>0</ResponseCode><ConversationID>AG\_20140825\_000056ac18ccfd6a13a2</ConversationID><ResponseDesc>Accept
-> the service request
-> successfully.</ResponseDesc><OriginatorConversationID>B2C-SIT-000005
->
-> </OriginatorConversationID><ServiceStatus>0</ServiceStatus></Response>\]\]></req:ResponseMsg>
->
-> </soapenv:Body>
->
-> </soapenv:Envelope>
->
-> Example2: Error response caused by authentication failed.
->
-> <soapenv:Envelope
-> xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
-> xmlns:req="http://api-v1.gen.mm.vodafone.com/mminterface/request">
->
-> <soapenv:Header/>
->
-> <soapenv:Body>
->
-> <req:ResponseMsg><!\[CDATA\[<?xml version="1.0"
-> encoding="UTF-8"?>
->
-> <response
-> xmlns="http://api-v1.gen.mm.vodafone.com/mminterface/response">
->
-> <ResponseCode>100000007</ResponseCode>
->
-> <ResponseDesc>Authentication failed</ResponseDesc>
->
-> </response>\]\]></req:ResponseMsg>
->
-> </soapenv:Body>
->
-> </soapenv:Envelope>
->
-> Example3: Error response caused by waiting for resending.
->
-> <soapenv:Envelope
-> xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
-> xmlns:req="http://api-v1.gen.mm.vodafone.com/mminterface/request">
->
-> <soapenv:Header/>
->
-> <soapenv:Body>
->
-> <req:ResponseMsg><!\[CDATA\[<?xml version="1.0"
-> encoding="UTF-8"?>
->
-> <response
-> xmlns="http://api-v1.gen.mm.vodafone.com/mminterface/response">
->
-> <ResponseCode>100000000</ResponseCode>
->
-> <ResponseDesc>Request was cached, waiting for
-> resending</ResponseDesc>
->
-> </response>\]\]></req:ResponseMsg>
->
-> </soapenv:Body>
->
-> </soapenv:Envelope>
+<soapenv:Body>
 
-1.  GenericAPIResult
-    ----------------
+<req:ResponseMsg><!\[CDATA\[<?xml version="1.0"
+encoding="UTF-8"?>
 
-    1.  ### The Broker send notification to the 3rd party
+<response
+xmlns="http://api-v1.gen.mm.vodafone.com/mminterface/response">
 
-> <s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
->
-> <s:Body xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-> xmlns:xsd="http://www.w3.org/2001/XMLSchema">
->
-> <ResultMsg
-> xmlns="http://api-v1.gen.mm.vodafone.com/mminterface/result">
->
-> <!\[CDATA\[<Result
-> xmlns:i="http://www.w3.org/2001/XMLSchema-instance"
-> xmlns="http://api-v1.gen.mm.vodafone.com/mminterface/result">
->
-> <ResultType>Completed</ResultType>
->
-> <ResultCode>0</ResultCode>
->
-> <ResultDesc>Success</ResultDesc>
->
-> <OriginatorConversationID>R9-2-eq-a7cb-q277</OriginatorConversationID>
->
-> <ConversationID>61da40ad-7e96-4889-83c4-1ea77091f8ec</ConversationID>
->
-> <TransactionID>X-IO213</TransactionID><ResultParameters>
->
-> <Parameter>
->
-> <Key
-> xmlns="http://api-v1.gen.mm.vodafone.com/mminterface/request">Amount</Key>
->
-> <Value
-> xmlns="http://api-v1.gen.mm.vodafone.com/mminterface/request">Ksh200.00</Value>
->
-> </Parameter><Parameter><Key
-> xmlns="http://api-v1.gen.mm.vodafone.com/mminterface/request">Transaction
-> Datetime</Key>
->
-> <Value
-> xmlns="http://api-v1.gen.mm.vodafone.com/mminterface/request">22/10/2014
-> 20:55:24</Value>
->
-> </Parameter><Parameter>
->
-> <Key
-> xmlns="http://api-v1.gen.mm.vodafone.com/mminterface/request">Working
-> Account Available Funds</Key>
->
-> <Value
-> xmlns="http://api-v1.gen.mm.vodafone.com/mminterface/request">2338002.5100</Value>
->
-> </Parameter><Parameter>
->
-> <Key
-> xmlns="http://api-v1.gen.mm.vodafone.com/mminterface/request">Charges
-> Paid Account Available Funds</Key>
->
-> <Value
-> xmlns="http://api-v1.gen.mm.vodafone.com/mminterface/request">0.0000</Value>
->
-> </Parameter><Parameter>
->
-> <Key
-> xmlns="http://api-v1.gen.mm.vodafone.com/mminterface/request">Utility
-> Account Available Funds</Key>
->
-> <Value
-> xmlns="http://api-v1.gen.mm.vodafone.com/mminterface/request">461898.0000</Value>
->
-> </Parameter></ResultParameters>
->
-> <ReferenceData><ReferenceItem><Key
-> xmlns="http://api-v1.gen.mm.vodafone.com/mminterface/request">QueueTimeoutURL</Key><Value
-> xmlns="http://api-v1.gen.mm.vodafone.com/mminterface/request">http://10.66.49.201:8097/</Value></ReferenceItem></ReferenceData></Result>\]\]></ResultMsg>
->
-> </s:Body>
->
-> </s:Envelope>
+<ResponseCode>ResponseCode0</ResponseCode>
 
-Or
+<ResponseDesc>ResponseDesc0</ResponseDesc>
 
-> <soapenv:Envelope
-> xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
->
-> <soapenv:Header/>
->
-> <soapenv:Body>
->
-> <req:ResultMsg
-> xmlns:req="http://cps.huawei.com/cpsinterface/result"><!\[CDATA\[<?xml
-> version="1.0" encoding="UTF-8"?>
->
-> <Result>
->
-> <ResultType>0</ResultType>
->
-> <ResultCode>0</ResultCode>
->
-> <ResultDesc>The service request is processed
-> successfully.</ResultDesc>
->
-> <OriginatorConversationID>D7866050-CE7C-46B9-BE97-D9FBACC69041</OriginatorConversationID>
->
-> <ConversationId>B72AC018-86E4-477A-B4B0-9EC65AE8A2FE</ConversationId>
->
-> <TransactionId>2782728972</TransactionId>
->
-> <ResultParameters>
->
-> <ResultParameter>
->
-> <Key>TransactionReceipt</Key>
->
-> <Value>2782728972</Value>
->
-> </ResultParameter>
->
-> <ResultParameter>
->
-> <Key>TransactionAmount</Key>
->
-> <Value>100.00</Value>
->
-> </ResultParameter>
->
-> <ResultParameter>
->
-> <Key>TransactionCompletedDateTime</Key>
->
-> <Value>22.03.2012 12:20:20</Value>
->
-> </ResultParameter>
->
-> <ResultParameter>
->
-> <Key>ReceiverPartyPublicName</Key>
->
-> <Value>254778866553868-Kip Keino</Value>
->
-> </ResultParameter>
->
-> <ResultParameter>
->
-> <Key>B2CWorkingAccountAvailableFunds</Key>
->
-> <Value>10000.00</Value>
->
-> </ResultParameter>
->
-> <ResultParameter>
->
-> <Key>B2CUtilityAccountAvailableFunds</Key>
->
-> <Value>100000.00</Value>
->
-> </ResultParameter>
->
-> <ResultParameter>
->
-> <Key>B2CChargesPaidAccountAvailableFunds</Key>
->
-> <Value>1000.00</Value>
->
-> </ResultParameter>
->
-> <ResultParameter>
->
-> <Key>B2CRecipientIsRegisteredCustomer</Key>
->
-> <Value>Y</Value>
->
-> </ResultParameter>
->
-> <ResultParameter>
->
-> <Key>B2CWithdrawalChargeAmount</Key>
->
-> <Value>12.00</Value>
->
-> </ResultParameter>
->
-> </ResultParameters>
->
-> <ReferenceData>
->
-> <ReferenceItem>
->
-> <Key>Occasion</Key>
->
-> <Value>Christmas</Value>
->
-> </ReferenceItem>
->
-> </ReferenceData>
->
-> </Result>\]\]></req:ResultMsg>
->
-> </soapenv:Body>
->
-> </soapenv:Envelope>
+<ConversationID>
+
+</ConversationID>
+
+<OriginatorConversationID>
+
+</OriginatorConversationID>
+
+<ServiceStatus>0</ServiceStatus>
+
+</response>\]\]></req:ResponseMsg>
+
+</soapenv:Body>
+
+</soapenv:Envelope>
+```
+
+#### Or
+
+```xml
+<soapenv:Envelope
+xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+
+<soapenv:Body>
+
+<req:ResponseMsg
+xmlns:req="http://api-v1.gen.mm.vodafone.com/mminterface/request"><!\[CDATA\[<?xml
+version="1.0"
+encoding="UTF-8"?><Response><ResponseCode>0</ResponseCode><ConversationID>AG\_20140825\_000056ac18ccfd6a13a2</ConversationID><ResponseDesc>Accept
+the service request
+successfully.</ResponseDesc><OriginatorConversationID>B2C-SIT-000005
+
+</OriginatorConversationID><ServiceStatus>0</ServiceStatus></Response>\]\]></req:ResponseMsg>
+
+</soapenv:Body>
+
+</soapenv:Envelope>
+```
+
+#### Example2: Error response caused by authentication failed.
+
+```xml
+<soapenv:Envelope
+xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+xmlns:req="http://api-v1.gen.mm.vodafone.com/mminterface/request">
+
+<soapenv:Header/>
+
+<soapenv:Body>
+
+<req:ResponseMsg><!\[CDATA\[<?xml version="1.0"
+encoding="UTF-8"?>
+
+<response
+xmlns="http://api-v1.gen.mm.vodafone.com/mminterface/response">
+
+<ResponseCode>100000007</ResponseCode>
+
+<ResponseDesc>Authentication failed</ResponseDesc>
+
+</response>\]\]></req:ResponseMsg>
+
+</soapenv:Body>
+
+</soapenv:Envelope>
+```
+
+#### Example3: Error response caused by waiting for resending.
+
+```xml
+<soapenv:Envelope
+xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+xmlns:req="http://api-v1.gen.mm.vodafone.com/mminterface/request">
+
+<soapenv:Header/>
+
+<soapenv:Body>
+
+<req:ResponseMsg><!\[CDATA\[<?xml version="1.0"
+encoding="UTF-8"?>
+
+<response
+xmlns="http://api-v1.gen.mm.vodafone.com/mminterface/response">
+
+<ResponseCode>100000000</ResponseCode>
+
+<ResponseDesc>Request was cached, waiting for
+resending</ResponseDesc>
+
+</response>\]\]></req:ResponseMsg>
+
+</soapenv:Body>
+
+</soapenv:Envelope>
+```
+
+### GenericAPIResult
+#### The Broker send notification to the 3rd party
+
+```xml
+<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
+
+<s:Body xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+<ResultMsg
+xmlns="http://api-v1.gen.mm.vodafone.com/mminterface/result">
+
+<!\[CDATA\[<Result
+xmlns:i="http://www.w3.org/2001/XMLSchema-instance"
+xmlns="http://api-v1.gen.mm.vodafone.com/mminterface/result">
+
+<ResultType>Completed</ResultType>
+
+<ResultCode>0</ResultCode>
+
+<ResultDesc>Success</ResultDesc>
+
+<OriginatorConversationID>R9-2-eq-a7cb-q277</OriginatorConversationID>
+
+<ConversationID>61da40ad-7e96-4889-83c4-1ea77091f8ec</ConversationID>
+
+<TransactionID>X-IO213</TransactionID><ResultParameters>
+
+<Parameter>
+
+<Key
+xmlns="http://api-v1.gen.mm.vodafone.com/mminterface/request">Amount</Key>
+
+<Value
+xmlns="http://api-v1.gen.mm.vodafone.com/mminterface/request">Ksh200.00</Value>
+
+</Parameter><Parameter><Key
+xmlns="http://api-v1.gen.mm.vodafone.com/mminterface/request">Transaction
+Datetime</Key>
+
+<Value
+xmlns="http://api-v1.gen.mm.vodafone.com/mminterface/request">22/10/2014
+20:55:24</Value>
+
+</Parameter><Parameter>
+
+<Key
+xmlns="http://api-v1.gen.mm.vodafone.com/mminterface/request">Working
+Account Available Funds</Key>
+
+<Value
+xmlns="http://api-v1.gen.mm.vodafone.com/mminterface/request">2338002.5100</Value>
+
+</Parameter><Parameter>
+
+<Key
+xmlns="http://api-v1.gen.mm.vodafone.com/mminterface/request">Charges
+Paid Account Available Funds</Key>
+
+<Value
+xmlns="http://api-v1.gen.mm.vodafone.com/mminterface/request">0.0000</Value>
+
+</Parameter><Parameter>
+
+<Key
+xmlns="http://api-v1.gen.mm.vodafone.com/mminterface/request">Utility
+Account Available Funds</Key>
+
+<Value
+xmlns="http://api-v1.gen.mm.vodafone.com/mminterface/request">461898.0000</Value>
+
+</Parameter></ResultParameters>
+
+<ReferenceData><ReferenceItem><Key
+xmlns="http://api-v1.gen.mm.vodafone.com/mminterface/request">QueueTimeoutURL</Key><Value
+xmlns="http://api-v1.gen.mm.vodafone.com/mminterface/request">http://10.66.49.201:8097/</Value></ReferenceItem></ReferenceData></Result>\]\]></ResultMsg>
+
+</s:Body>
+
+</s:Envelope>
+```
+
+#### Or
+```xml
+<soapenv:Envelope
+xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+
+<soapenv:Header/>
+
+<soapenv:Body>
+
+<req:ResultMsg
+xmlns:req="http://cps.huawei.com/cpsinterface/result"><!\[CDATA\[<?xml
+version="1.0" encoding="UTF-8"?>
+
+<Result>
+
+<ResultType>0</ResultType>
+
+<ResultCode>0</ResultCode>
+
+<ResultDesc>The service request is processed
+successfully.</ResultDesc>
+
+<OriginatorConversationID>D7866050-CE7C-46B9-BE97-D9FBACC69041</OriginatorConversationID>
+
+<ConversationId>B72AC018-86E4-477A-B4B0-9EC65AE8A2FE</ConversationId>
+
+<TransactionId>2782728972</TransactionId>
+
+<ResultParameters>
+
+<ResultParameter>
+
+<Key>TransactionReceipt</Key>
+
+<Value>2782728972</Value>
+
+</ResultParameter>
+
+<ResultParameter>
+
+<Key>TransactionAmount</Key>
+
+<Value>100.00</Value>
+
+</ResultParameter>
+
+<ResultParameter>
+
+<Key>TransactionCompletedDateTime</Key>
+
+<Value>22.03.2012 12:20:20</Value>
+
+</ResultParameter>
+
+<ResultParameter>
+
+<Key>ReceiverPartyPublicName</Key>
+
+<Value>254778866553868-Kip Keino</Value>
+
+</ResultParameter>
+
+<ResultParameter>
+
+<Key>B2CWorkingAccountAvailableFunds</Key>
+
+<Value>10000.00</Value>
+
+</ResultParameter>
+
+<ResultParameter>
+
+<Key>B2CUtilityAccountAvailableFunds</Key>
+
+<Value>100000.00</Value>
+
+</ResultParameter>
+
+<ResultParameter>
+
+<Key>B2CChargesPaidAccountAvailableFunds</Key>
+
+<Value>1000.00</Value>
+
+</ResultParameter>
+
+<ResultParameter>
+
+<Key>B2CRecipientIsRegisteredCustomer</Key>
+
+<Value>Y</Value>
+
+</ResultParameter>
+
+<ResultParameter>
+
+<Key>B2CWithdrawalChargeAmount</Key>
+
+<Value>12.00</Value>
+
+</ResultParameter>
+
+</ResultParameters>
+
+<ReferenceData>
+
+<ReferenceItem>
+
+<Key>Occasion</Key>
+
+<Value>Christmas</Value>
+
+</ReferenceItem>
+
+</ReferenceData>
+
+</Result>\]\]></req:ResultMsg>
+
+</soapenv:Body>
+
+</soapenv:Envelope>
+```
 
 ### The 3rd party return response to the Broker
+#### Example1: Success response
 
-> Example1: Success response
->
-> <soapenv:Envelope
-> xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
-> xmlns:req="http://api-v1.gen.mm.vodafone.com/mminterface/request">
->
-> <soapenv:Header/>
->
-> <soapenv:Body>
->
-> <req:ResponseMsg><!\[CDATA\[<?xml version="1.0"
-> encoding="UTF-8"?>
->
-> <response
-> xmlns="http://api-v1.gen.mm.vodafone.com/mminterface/response">
->
-> <ResponseCode>00000000</ResponseCode>
->
-> <ResponseDesc>success</ResponseDesc>
->
-> </response>\]\]></req:ResponseMsg>
->
-> </soapenv:Body>
->
-> </soapenv:Envelope>
->
+```xml
+<soapenv:Envelope
+xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+xmlns:req="http://api-v1.gen.mm.vodafone.com/mminterface/request">
+
+<soapenv:Header/>
+
+<soapenv:Body>
+
+<req:ResponseMsg><!\[CDATA\[<?xml version="1.0"
+encoding="UTF-8"?>
+
+<response
+xmlns="http://api-v1.gen.mm.vodafone.com/mminterface/response">
+
+<ResponseCode>00000000</ResponseCode>
+
+<ResponseDesc>success</ResponseDesc>
+
+</response>\]\]></req:ResponseMsg>
+
+</soapenv:Body>
+
+</soapenv:Envelope>
+```
+
 Example2: Error response
 
 ```xml
