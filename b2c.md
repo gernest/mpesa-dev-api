@@ -1174,53 +1174,35 @@ The 3^rd^ party invokes this operation to change his password.
   extensionInfo   Parameters     Yes        Extended parameters.
   ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-1.  <span id="_Toc375904373" class="anchor"></span>Output Message:
-    changePasswordResponse
+### Output Message:
+##### changePasswordResponse
 
-  Element name    Element type   Optional   Description
-  --------------- -------------- ---------- ----------------------
-  result          Result         No         Result.
-  extensionInfo   Parameters     Yes        Extended parameters.
-
-item              | details
-------------------|--------------------------------
-Name              | Geofrey Ernest
-Job               | Programmeer
-Github            | https://github.com/gernest
-Twitter           | [@gernesti](https://twitter.com/gernesti)
+  Element name      | Element type    | Optional  | Description 
+  ------------------|-------------------------------------------
+  result            | Result          | No        | Result. 
+  extensionInfo     | Parameters      | Yes       | Extended parameters.
 
 
-1.  <span id="_Toc375904374" class="anchor"></span>Response Code
+#### Response Code
 
-  | ResponseCode | ResponseDesc
-  ---            | ---
-  000000000 |      Success
+  | ResponseCode    | ResponseDesc
+  ------------------|-------------------------------------------
+  000000000         | Success
+  100000001         | The system is overload
+  100000002         | Throttling error
+  100000003         | Exceed the limitation of the LICENSE
+  100000004         | Internal Server Error
+  100000005         | Invalid input value:%1
+  %1                | indicates the parameter’s name.
+  100000006         | SP’s status is abnormal
+  100000007         | Authentication failed
+  100000014         | Missing mandatory parameter:%1
+  %1                | indicates the parameter’s name.
+  ----------------------------------------------------------------
 
-  100000001      The system is overload
-
-  100000002      Throttling error
-
-  100000003      Exceed the limitation of the LICENSE
-
-  100000004      Internal Server Error
-
-  100000005      Invalid input value:%1
-                 
-                 %1 indicates the parameter’s name.
-
-  100000006      SP’s status is abnormal
-
-  100000007      Authentication failed
-
-  100000014      Missing mandatory parameter:%1
-                 
-                 %1 indicates the parameter’s name.
-  -----------------------------------------------------
-
-1.  Example
-    1.  GenericAPIRequest
-        1.  ### The 3rd party send B2C request to the Broker
-
+### Example
+##### GenericAPIRequest
+##### The 3rd party send B2C request to the Broker
 #### Example1: Request with ResultURL and QueueTimeoutURL
 
 ```xml
