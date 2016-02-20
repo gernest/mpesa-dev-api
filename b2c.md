@@ -1,51 +1,49 @@
-> *B2C API Specification*
->
-> <span id="_Toc329241212" class="anchor"></span>
+# B2C API Specification
 
-<span id="_Toc353918648" class="anchor"><span id="_Toc402255545" class="anchor"></span></span>Approvals {#approvals .ListParagraph}
-=======================================================================================================
 
-> This document needs below approvals for implementation.
+# Approvals    
 
-  -------------------------------------- ----------------- ----------------- ------------
-  > **Author(s)**                        > **Name**        > **Signature**   > **Date**
-  > Service Development Engineer         > Eneth Kubai                       
-  > **Reviewers**                        > **Name**        > **Signature**   > **Date**
-  > Senior Manager Service Development   > Reginald Tole                     
-  -------------------------------------- ----------------- ----------------- ------------
+##  This document needs below approvals for implementation   
 
-<span id="_Toc325099365" class="anchor"><span id="_Toc329241213" class="anchor"><span id="_Toc353918649" class="anchor"><span id="_Toc402255546" class="anchor"></span></span></span></span>Revision Log {#revision-log .ListParagraph}
-========================================================================================================================================================================================================
 
-  > **Revision Number**   > **Revision Date**   > **Revision**                                                                                                                                                                                                                                  > **Revision made by**
-  ----------------------- --------------------- ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- ------------------------
-  > 1.0                   > 18th June, 2013     > Initial Draft                                                                                                                                                                                                                                 > Eneth Kubai
-  > 1.1                   > 9^th^ July, 2013    > Added section 3.8.1: Password Encryption                                                                                                                                                                                                      > Eric Mokaya
-  > 1.2                   > 29^th^ July 2013    > Added Result codes                                                                                                                                                                                                                            > Eneth Kubai
-  > 1.3                   > 13^th^ Jan 2014     > Added Result code explanations                                                                                                                                                                                                                > Eneth Kubai
-  > 1.4                   > 7^th^ Sept 2014     > Added changePassword interface, edited queryTransaction Interface, edited OriginatorConversationId field restrictions. Removed encrypted parameter tag. Edited the genericAPI request, response and result, added result and response codes   > Eneth Kubai
-  > 1.5                   > 11^th^ Nov 2014     > Attached SSL Guide                                                                                                                                                                                                                            > Eneth Kubai
+  **Author(s)**                         | **Name**         |**Signature**    |  **Date**
+----------------------------------------|-----------------|------------------|-------------
+ Service Development Engineer           | Eneth Kubai      |                 |
+ 
+ 
+  **Reviewers**                          |  **Name**        |   **Signature**|    **Date**
+  ---------------------------------------|------------------|----------------|---------------
+ Senior Manager Service Development      | Reginald Tole    |                |
 
-<span id="_Toc400741765" class="anchor"><span id="_Toc329241214" class="anchor"><span id="_Toc353918650" class="anchor"></span></span></span>References {#references .ListParagraph}
-=======================================================================================================================================================
+## Revision Log
 
-  **Document**   **Author**    **Name**
-  -------------- ------------- --------------------------------
-                 Eneth Kubai   Response and Result Codes V1.0
-                 John Barii    SSL Guide
+   **Revision Number**|  **Revision Date**   | **Revision**  |**Revision made by**
+-----------------------|-----------------------|--------------|--------------------
+   1.0                 | 18th June, 2013      | Initial Draft  |Eneth Kubai
+   1.1                 | 9^th^ July, 2013      |Added section 3.8.1: Password Encryption | Eric Mokaya
+   1.2                 |   29^th^ July 2013   |  Added Result codes  | Eneth Kubai
+   1.3                 | 13^th^ Jan 2014    | Added Result code explanations  | Eneth Kubai
+   1.4                 |  ^th^ Sept 2014     |Added changePassword interface, edited queryTransaction Interface, edited OriginatorConversationId field restrictions. Removed encrypted parameter tag. Edited the genericAPI request, response and result, added result and response codes   | Eneth Kubai
+   1.5                 |   11^th^ Nov 2014     | Attached SSL Guide       | Eneth Kubai
 
-Abbreviations {#abbreviations .ListParagraph}
-=============
 
-  > **Term**   > **Definition**
-  ------------ -------------------------------------
-  > API        > Application Programming Interface
-  > B2C        > Business to Customer
-  > Broker     > Service Access Gateway
-  > SP         > Service Provider
+### References 
 
-1.  <span id="_Toc402255548" class="anchor"><span id="_Toc301438882" class="anchor"><span id="_Toc115243710" class="anchor"><span id="_Toc239846605" class="anchor"></span></span></span></span>Introduction
-    ========================================================================================================================================================================================================
+  **Document**  | **Author** |    **Name**
+  --------------|-----------|--------------------
+                |Eneth Kubai |   Response and Result Codes V1.0
+                | John Barii |    SSL Guide
+
+## Abbreviations
+
+   **Term**    | **Definition**
+-------------|------------------------------------
+ API        | Application Programming Interface
+ B2C        | Business to Customer
+ Broker     | Service Access Gateway
+ SP         | Service Provider
+
+# Introduction
 
     1.  Scope
         -----
