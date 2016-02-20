@@ -1182,12 +1182,19 @@ The 3^rd^ party invokes this operation to change his password.
   result          Result         No         Result.
   extensionInfo   Parameters     Yes        Extended parameters.
 
+item              | details
+------------------|--------------------------------
+Name              | Geofrey Ernest
+Job               | Programmeer
+Github            | https://github.com/gernest
+Twitter           | [@gernesti](https://twitter.com/gernesti)
+
+
 1.  <span id="_Toc375904374" class="anchor"></span>Response Code
 
-  -----------------------------------------------------
-  ResponseCode   ResponseDesc
-  -------------- --------------------------------------
-  000000000      Success
+  | ResponseCode | ResponseDesc
+  ---            | ---
+  000000000 |      Success
 
   100000001      The system is overload
 
@@ -1211,14 +1218,10 @@ The 3^rd^ party invokes this operation to change his password.
   -----------------------------------------------------
 
 1.  Example
-    =======
-
     1.  GenericAPIRequest
-        -----------------
-
         1.  ### The 3rd party send B2C request to the Broker
 
- Example1: Request with ResultURL and QueueTimeoutURL
+#### Example1: Request with ResultURL and QueueTimeoutURL
 
 ```xml
  <soapenv:Envelope
@@ -1878,7 +1881,7 @@ xmlns="http://api-v1.gen.mm.vodafone.com/mminterface/response">
 </soapenv:Envelope>
 ```
 
-Example2: Error response
+#### Example2: Error response
 
 ```xml
 <soapenv:Envelope
