@@ -81,48 +81,46 @@ these being:
 
  List of IdentityType values.
 
-  > Enumeration   > Description
-  ---------------|--------------------------------
-  > 1            | > MSISDN
-  > 2            | > TillNumber
-  > 3            | > SPShortCode
-  > 4            | > OrganizationShortCode
-  > 5            | > IdentityID
-  > 6            |> O2CLink
-  > 9            |> SPOperatorCode
-  > 10           }> POSNumber
-  > 11           }> OrganizationOperatorUserName
-  > 12           }> OrganizationOperatorCode
-  > 13           }> VoucherCode
+   Enumeration  |  Description
+  --------------|--------------------------------
+   1            |  MSISDN
+   2            |  TillNumber
+   3            |  SPShortCode
+   4            |  OrganizationShortCode
+   5            |  IdentityID
+   6            | O2CLink
+   9            | SPOperatorCode
+   10           | POSNumber
+   11           | OrganizationOperatorUserName
+   12           | OrganizationOperatorCode
+   13           | VoucherCode
 
 ### ParameterType structure
 
-  Element name   Element type   Optional   > Description
-  -------------- -------------- ---------- -----------------------------------
-  Key            xsd:string     No         > It indicates a parameter name.
-  Value          xsd:string     No         > It indicates a parameter value.
+  Element name  | Element type   |Optional    | Description
+  --------------|----------------|------------|----------------------------------
+  Key           |xsd:string      | No         | It indicates a parameter name.
+  Value         | xsd:string     | No         |> It indicates a parameter value.
 
-Parameters structure
---------------------
+### Parameters structure
 
-  Element name   > Element type                    Optional   > Description
-  -------------- --------------------------------- ---------- -------------------------------------------------------------------------------------------
-  Parameter      > ParameterType\[1..unbounded\]   No         > It is used to carry specific parameters for specific transaction or business operation.
+  Element name   | Element type   |      Optional   | Description
+  ---------------|----------------|-----------------|---------------
+  Parameter      | ParameterType[1..unbounded]||   No | It is used to carry specific parameters for specific transaction or business operation.
 
-ReferenceData structure
------------------------
+### ReferenceData structure
 
-  Element name    Element type                    Optional   Description
-  --------------- ------------------------------- ---------- ------------------------------------------------------------------------------------------------------------
-  ReferenceItem   ParameterType\[1..unbounded\]   No         It is used carry some reference data that MM need not analyze but need to record it into transaction log..
+  Element name  |  Element type    |                Optional|   Description
+-----------------|------------------|-----------------------|-----------------------
+  ReferenceItem  | ParameterType[1..unbounded] |  No    |     It is used carry some reference data that MM need not analyze but need to record it into transaction log..
 
-Transaction structure
----------------------
+### Transaction structure
 
-  -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-  Element name               Element type    Optional   Description
-  -------------------------- --------------- ---------- -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-  CommandID                  xsd:string      No         The unique identifier of transaction/business operation. Max length is 64.eg
+
+
+  Element name     |          Element type  |  Optional |  Description
+--------------------|-----------------------|-----------|----------------
+  CommandID  |        xsd:string |     No   |      The unique identifier of transaction/business operation. Max length is 64.eg
                                                         
                                                         -   *SalaryPayment *
                                                         
@@ -135,12 +133,9 @@ Transaction structure
                                                         -   *PromotionPayment*
                                                         
                                                         -   *TransferFromBankToCustomer*
-                                                        
-                                                        
 
-  LanguageCode               xsd:string      Yes        It indicates language. It’s reserved.
-
-  OriginatorConversationID   xsd:string      No         The unique identifier of the request message generated by third party. It is used to identify a request between the third party and MM. Max length is 128.
+  LanguageCode |              xsd:string |     Yes    |    It indicates language. It’s reserved.
+  OriginatorConversationID|   xsd:string  |    No    |     The unique identifier of the request message generated by third party. It is used to identify a request between the third party and MM. Max length is 128.
                                                         
                                                         Field must start with the B2C organisation short and name of organisation. Eg.
                                                         
@@ -148,20 +143,20 @@ Transaction structure
                                                         
                                                         XXXXX must be unique for every transaction.
 
-  ConversationID             xsd:string      Yes        The unique identifier generated by MM for a previous request message. It is used to support communication multi-times between the third party and MM for one operation/transaction.
+  ConversationID       |      xsd:string   |   Yes    |    The unique identifier generated by MM for a previous request message. It is used to support communication multi-times between the third party and MM for one operation/transaction.
 
-  Remark                     xsd:string      Yes        The remark information about this operation. Max length is 255
+  Remark          |           xsd:string |     Yes   |     The remark information about this operation. Max length is 255
 
-  EncryptedParameters        xsd:string      Yes        It is used to carry the value for the element Parameters which are encrypted.\
+  EncryptedParameters   |     xsd:string  |    Yes   |     It is used to carry the value for the element Parameters which are encrypted.\
                                                         The value for this parameter should be a CDATA and encode with base64
 
-  Parameters                 Parameters      Yes        It is used to carry specific parameters for specific transaction or business operation.\
+  Parameters       |          Parameters |     Yes   |     It is used to carry specific parameters for specific transaction or business operation.\
                                                         If the element EncryptedParameters presents, this parameter should not present.
 
-  ReferenceData              ReferenceData   Yes        It is used carry some reference data that MM need not analyze but need to record it into transaction log.
+  ReferenceData  |            ReferenceData |  Yes  |      It is used carry some reference data that MM need not analyze but need to record it into transaction log.
 
-  Timestamp                  xsd:string      No         The timestamp generated by the third party.
-  -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  Timestamp         |         xsd:string  |    No    |     The timestamp generated by the third party.
+
 
 Caller structure
 ----------------
