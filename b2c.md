@@ -45,64 +45,57 @@
 
 # Introduction
 
-    1.  Scope
-        -----
+## Scope
 
-> The present document specifies the real time B2C Web Service aspects
-> of the interface. All aspects of B2C Web Service are defined here,
-> these being:
+The present document specifies the real time B2C Web Service aspects of the interface. All aspects of B2C Web Service are defined here,
+these being:
 
--   Message Flow Description
+- Message Flow Description
 
--   Data Type Definition
+- Data Type Definition
 
--   Web Service Interface Definition
+- Web Service Interface Definition
 
--   WSDL for this specification
+- WSDL for this specification
 
--   Example
+- Example
 
-1.  Message Flow Description
-    ========================
+## Message Flow Description
 
-2.  Data Type Definition
-    ====================
+##  Data Type Definition
 
-    1.  IdentityType enumeration
-        ------------------------
+###   IdentityType enumeration
 
-> List of IdentityType values.
+  List of IdentityType values.
 
-  > Enumeration   > Description
-  --------------- ------------------------
-  > 1000          > Customer
-  > 2000          > SPOperator
-  > 3000          > OrganizationOperator
-  > 5000          > Organization
-  > 6000          > Till
-  > 8000          > SP
+   Enumeration   | Description
+   --------------|---------------
+   1000          | Customer
+   2000          | SPOperator
+   3000          | OrganizationOperator
+   5000          | Organization
+   6000          | Till
+   8000          | SP
 
-IdentifierType enumeration
---------------------------
+### IdentifierType enumeration
 
-> List of IdentityType values.
+ List of IdentityType values.
 
   > Enumeration   > Description
-  --------------- --------------------------------
-  > 1             > MSISDN
-  > 2             > TillNumber
-  > 3             > SPShortCode
-  > 4             > OrganizationShortCode
-  > 5             > IdentityID
-  > 6             > O2CLink
-  > 9             > SPOperatorCode
-  > 10            > POSNumber
-  > 11            > OrganizationOperatorUserName
-  > 12            > OrganizationOperatorCode
-  > 13            > VoucherCode
+  ---------------|--------------------------------
+  > 1            | > MSISDN
+  > 2            | > TillNumber
+  > 3            | > SPShortCode
+  > 4            | > OrganizationShortCode
+  > 5            | > IdentityID
+  > 6            |> O2CLink
+  > 9            |> SPOperatorCode
+  > 10           }> POSNumber
+  > 11           }> OrganizationOperatorUserName
+  > 12           }> OrganizationOperatorCode
+  > 13           }> VoucherCode
 
-ParameterType structure
------------------------
+### ParameterType structure
 
   Element name   Element type   Optional   > Description
   -------------- -------------- ---------- -----------------------------------
