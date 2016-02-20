@@ -61,6 +61,7 @@ these being:
 - Example
 
 ## Message Flow Description
+![message flow](src/imgs/b2c/message_flow_.png)
 
 ##  Data Type Definition
 
