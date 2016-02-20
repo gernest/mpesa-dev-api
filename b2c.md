@@ -919,9 +919,9 @@ The **ResultParameters** will change to this on April 2015.
 
   > ReceiverPartyPublicName               xs:string   Mandatory               > Public name of the customer who has been issued the money.                                                                                              254778866553868-Kip Keino
                                                                               >                                                                                                                                                         
-                                                                              > Format: *&lt;MSISDN&gt;-&lt;First Name&gt; &lt;Last Name&gt;*                                                                                           
+                                                                              > Format: *<MSISDN>-<First Name> <Last Name>*                                                                                           
                                                                               >                                                                                                                                                         
-                                                                              > For unregister customer, the *&lt;First Name&gt; &lt;Last Name&gt;* will be blank.                                                                      
+                                                                              > For unregister customer, the *<First Name> <Last Name>* will be blank.                                                                      
 
   > B2CWorkingAccountAvailableFunds       xs:string   Mandatory               > 2 fixed point decimal amount of the Available Balance of the organization’s Working Account.                                                            9999.88
                                                                               >                                                                                                                                                         
@@ -1226,1057 +1226,1070 @@ The 3^rd^ party invokes this operation to change his password.
 
 > Example1: Request with ResultURL and QueueTimeoutURL
 >
-> &lt;soapenv:Envelope
+> <soapenv:Envelope
 > xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
-> xmlns:req="http://api-v1.gen.mm.vodafone.com/mminterface/request"&gt;
+> xmlns:req="http://api-v1.gen.mm.vodafone.com/mminterface/request">
 >
-> &lt;soapenv:Header&gt;
+> <soapenv:Header>
 >
-> &lt;tns:RequestSOAPHeader
-> xmlns:tns="http://www.huawei.com.cn/schema/common/v2\_1"&gt;
+> <tns:RequestSOAPHeader
+> xmlns:tns="http://www.huawei.com.cn/schema/common/v2\_1">
 >
-> &lt;tns:spId&gt;35000011&lt;/tns:spId&gt;
+> <tns:spId>35000011</tns:spId>
 >
-> &lt;tns:spPassword&gt;c5216e519a071d601bedd150f3fcd026&lt;/tns:spPassword&gt;
+> <tns:spPassword>c5216e519a071d601bedd150f3fcd026</tns:spPassword>
 >
-> &lt;tns:serviceId&gt;35000001000009&lt;/tns:serviceId&gt;
+> <tns:serviceId>35000001000009</tns:serviceId>
 >
-> &lt;tns:timeStamp&gt;20120101010101&lt;/tns:timeStamp&gt;
+> <tns:timeStamp>20120101010101</tns:timeStamp>
 >
-> &lt;/tns:RequestSOAPHeader&gt;
+> </tns:RequestSOAPHeader>
 >
-> &lt;/soapenv:Header&gt;
+> </soapenv:Header>
 >
-> &lt;soapenv:Body&gt;
+> <soapenv:Body>
 >
-> &lt;req:RequestMsg&gt;&lt;!\[CDATA\[&lt;?xml version="1.0"
-> encoding="UTF-8"?&gt;
+> <req:RequestMsg><!\[CDATA\[<?xml version="1.0"
+> encoding="UTF-8"?>
 >
-> &lt;request
-> xmlns="http://api-v1.gen.mm.vodafone.com/mminterface/request"&gt;
+> <request
+> xmlns="http://api-v1.gen.mm.vodafone.com/mminterface/request">
 >
-> &lt;Transaction&gt;
+> <Transaction>
 >
-> &lt;CommandID&gt;PromotionPayment&lt;/CommandID&gt;
+> <CommandID>PromotionPayment</CommandID>
 >
-> &lt;LanguageCode&gt;&lt;/LanguageCode&gt;
+> <LanguageCode></LanguageCode>
 >
-> &lt;OriginatorConversationID&gt;4596&lt;/OriginatorConversationID&gt;
+> <OriginatorConversationID>4596</OriginatorConversationID>
 >
-> &lt;ConversationID&gt; &lt;/ConversationID&gt;
+> <ConversationID> </ConversationID>
 >
-> &lt;Remark&gt; &lt;/Remark&gt;
+> <Remark> </Remark>
 >
-> &lt;Parameters&gt;
+> <Parameters>
 >
-> &lt;Parameter&gt;
+> <Parameter>
 >
-> &lt;Key&gt;Amount&lt;/Key&gt;
+> <Key>Amount</Key>
 >
-> &lt;Value&gt;1&lt;/Value&gt;
+> <Value>1</Value>
 >
-> &lt;/Parameter&gt;
+> </Parameter>
 >
-> &lt;Parameter&gt;
+> <Parameter>
 >
-> &lt;Key&gt;Key1&lt;/Key&gt;
+> <Key>Key1</Key>
 >
-> &lt;Value&gt;Value1&lt;/Value&gt;
+> <Value>Value1</Value>
 >
-> &lt;/Parameter&gt;
+> </Parameter>
 >
-> &lt;/Parameters&gt;
+> </Parameters>
 >
-> &lt;ReferenceData&gt;
+> <ReferenceData>
 >
-> &lt;ReferenceItem&gt;
+> <ReferenceItem>
 >
-> &lt;Key&gt;QueueTimeoutURL&lt;/Key&gt;
+> <Key>QueueTimeoutURL</Key>
 >
-> &lt;Value&gt;http://10.66.49.789:7888/new&lt;/Value&gt;
+> <Value>http://10.66.49.789:7888/new</Value>
 >
-> &lt;/ReferenceItem&gt;
+> </ReferenceItem>
 >
-> &lt;ReferenceItem&gt;
+> <ReferenceItem>
 >
-> &lt;Key&gt;Occasion&lt;/Key&gt;
+> <Key>Occasion</Key>
 >
-> &lt;Value&gt;Jamuhuri&lt;/Value&gt;
+> <Value>Jamuhuri</Value>
 >
-> &lt;/ReferenceItem&gt;
+> </ReferenceItem>
 >
-> &lt;/ReferenceData&gt;
+> </ReferenceData>
 >
-> &lt;Timestamp&gt;2013-07-29T18:50:41.2109675Z&lt;/Timestamp&gt;
+> <Timestamp>2013-07-29T18:50:41.2109675Z</Timestamp>
 >
-> &lt;/Transaction&gt;
+> </Transaction>
 >
-> &lt;Identity&gt;
+> <Identity>
 >
-> &lt;Caller&gt;
+> <Caller>
 >
-> &lt;CallerType&gt;2&lt;/CallerType&gt;
+> <CallerType>2</CallerType>
 >
-> &lt;ThirdPartyID&gt; &lt;/ThirdPartyID&gt;
+> <ThirdPartyID> </ThirdPartyID>
 >
-> &lt;Password&gt;Password0&lt;/Password&gt;
+> <Password>Password0</Password>
 >
-> &lt;CheckSum&gt;CheckSum0&lt;/CheckSum&gt;
+> <CheckSum>CheckSum0</CheckSum>
 >
-> &lt;ResultURL&gt;ResultURL0&lt;/ResultURL&gt;
+> <ResultURL>ResultURL0</ResultURL>
 >
-> &lt;/Caller&gt;
+> </Caller>
 >
-> &lt;Initiator&gt;
+> <Initiator>
 >
-> &lt;IdentifierType&gt;11&lt;/IdentifierType&gt;
+> <IdentifierType>11</IdentifierType>
 >
-> &lt;Identifier&gt;username&lt;/Identifier&gt;
+> <Identifier>username</Identifier>
 >
-> &lt;SecurityCredential&gt;SecurityCredential0&lt;/SecurityCredential&gt;
+> <SecurityCredential>SecurityCredential0</SecurityCredential>
 >
-> &lt;ShortCode&gt;859636&lt;/ShortCode&gt;
+> <ShortCode>859636</ShortCode>
 >
-> &lt;/Initiator&gt;
+> </Initiator>
 >
-> &lt;PrimaryParty&gt;
+> <PrimaryParty>
 >
-> &lt;IdentifierType&gt;4&lt;/IdentifierType&gt;
+> <IdentifierType>4</IdentifierType>
 >
-> &lt;Identifier&gt;859636&lt;/Identifier&gt;
+> <Identifier>859636</Identifier>
 >
-> &lt;ShortCode&gt;859636&lt;/ShortCode&gt;
+> <ShortCode>859636</ShortCode>
 >
-> &lt;/PrimaryParty&gt;
+> </PrimaryParty>
 >
-> &lt;ReceiverParty&gt;
+> <ReceiverParty>
 >
-> &lt;IdentifierType&gt;1&lt;/IdentifierType&gt;
+> <IdentifierType>1</IdentifierType>
 >
-> &lt;Identifier&gt;2547204789659&lt;/Identifier&gt;
+> <Identifier>2547204789659</Identifier>
 >
-> &lt;ShortCode&gt;ShortCode1&lt;/ShortCode&gt;
+> <ShortCode>ShortCode1</ShortCode>
 >
-> &lt;/ReceiverParty&gt;
+> </ReceiverParty>
 >
-> &lt;AccessDevice&gt;
+> <AccessDevice>
 >
-> &lt;IdentifierType&gt;1&lt;/IdentifierType&gt;
+> <IdentifierType>1</IdentifierType>
 >
-> &lt;Identifier&gt;Identifier3&lt;/Identifier&gt;
+> <Identifier>Identifier3</Identifier>
 >
-> &lt;/AccessDevice&gt;
+> </AccessDevice>
 >
-> &lt;/Identity&gt;
+> </Identity>
 >
-> &lt;KeyOwner&gt;1&lt;/KeyOwner&gt;
+> <KeyOwner>1</KeyOwner>
 >
-> &lt;/request&gt;\]\]&gt;&lt;/req:RequestMsg&gt;
+> </request>\]\]></req:RequestMsg>
 >
-> &lt;/soapenv:Body&gt;
+> </soapenv:Body>
 >
-> &lt;/soapenv:Envelope&gt;
+> </soapenv:Envelope>
 >
 > Example2: Request without ResultURL and QueueTimeoutURL
 >
-> &lt;soapenv:Envelope
+> <soapenv:Envelope
 > xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
-> xmlns:req="http://api-v1.gen.mm.vodafone.com/mminterface/request"&gt;
+> xmlns:req="http://api-v1.gen.mm.vodafone.com/mminterface/request">
 >
-> &lt;soapenv:Header&gt;
+> <soapenv:Header>
 >
-> &lt;tns:RequestSOAPHeader
-> xmlns:tns="http://www.huawei.com/schema/osg/common/v2\_1"&gt;
+> <tns:RequestSOAPHeader
+> xmlns:tns="http://www.huawei.com/schema/osg/common/v2\_1">
 >
-> &lt;tns:spId&gt;35000001&lt;/tns:spId&gt;
+> <tns:spId>35000001</tns:spId>
 >
-> &lt;tns:spPassword&gt;c5216e519a071d601bedd150f3fcd026&lt;/tns:spPassword&gt;
+> <tns:spPassword>c5216e519a071d601bedd150f3fcd026</tns:spPassword>
 >
-> &lt;tns:timeStamp&gt;20080101010101&lt;/tns:timeStamp&gt;
+> <tns:timeStamp>20080101010101</tns:timeStamp>
 >
-> &lt;tns:serviceId&gt;35000001000009&lt;/tns:serviceId&gt;
+> <tns:serviceId>35000001000009</tns:serviceId>
 >
-> &lt;tns:OA&gt;861234567890&lt;/tns:OA&gt;
+> <tns:OA>861234567890</tns:OA>
 >
-> &lt;tns:FA&gt;861234567890&lt;/tns:FA&gt;
+> <tns:FA>861234567890</tns:FA>
 >
-> &lt;/tns:RequestSOAPHeader&gt;
+> </tns:RequestSOAPHeader>
 >
-> &lt;/soapenv:Header&gt;
+> </soapenv:Header>
 >
-> &lt;soapenv:Body&gt;
+> <soapenv:Body>
 >
-> &lt;req:RequestMsg&gt;&lt;!\[CDATA\[&lt;?xml version="1.0"
-> encoding="UTF-8"?&gt;
+> <req:RequestMsg><!\[CDATA\[<?xml version="1.0"
+> encoding="UTF-8"?>
 >
-> &lt;request
-> xmlns="http://api-v1.gen.mm.vodafone.com/mminterface/request"&gt;
+> <request
+> xmlns="http://api-v1.gen.mm.vodafone.com/mminterface/request">
 >
-> &lt;Transaction&gt;
+> <Transaction>
 >
-> &lt;CommandID&gt;CommandID0&lt;/CommandID&gt;
+> <CommandID>CommandID0</CommandID>
 >
-> &lt;LanguageCode&gt;LanguageCode0&lt;/LanguageCode&gt;
+> <LanguageCode>LanguageCode0</LanguageCode>
 >
-> &lt;OriginatorConversationID&gt;OriginatorConversationID0&lt;/OriginatorConversationID&gt;
+> <OriginatorConversationID>OriginatorConversationID0</OriginatorConversationID>
 >
-> &lt;ConversationID&gt;ConversationID0&lt;/ConversationID&gt;
+> <ConversationID>ConversationID0</ConversationID>
 >
-> &lt;Remark&gt;Remark0&lt;/Remark&gt;
+> <Remark>Remark0</Remark>
 >
-> &lt;EncryptedParameters&gt;EncryptedParameters0&lt;/EncryptedParameters&gt;
+> <EncryptedParameters>EncryptedParameters0</EncryptedParameters>
 >
-> &lt;Parameters&gt;
+> <Parameters>
 >
-> &lt;Parameter&gt;
+> <Parameter>
 >
-> &lt;Key&gt;Key0&lt;/Key&gt;
+> <Key>Key0</Key>
 >
-> &lt;Value&gt;Value0&lt;/Value&gt;
+> <Value>Value0</Value>
 >
-> &lt;/Parameter&gt;
+> </Parameter>
 >
-> &lt;Parameter&gt;
+> <Parameter>
 >
-> &lt;Key&gt;Key1&lt;/Key&gt;
+> <Key>Key1</Key>
 >
-> &lt;Value&gt;Value1&lt;/Value&gt;
+> <Value>Value1</Value>
 >
-> &lt;/Parameter&gt;
+> </Parameter>
 >
-> &lt;/Parameters&gt;
+> </Parameters>
 >
-> &lt;ReferenceData&gt;
+> <ReferenceData>
 >
-> &lt;ReferenceItem&gt;
+> <ReferenceItem>
 >
-> &lt;Key&gt;Key2&lt;/Key&gt;
+> <Key>Key2</Key>
 >
-> &lt;Value&gt;Value2&lt;/Value&gt;
+> <Value>Value2</Value>
 >
-> &lt;/ReferenceItem&gt;
+> </ReferenceItem>
 >
-> &lt;/ReferenceData&gt;
+> </ReferenceData>
 >
-> &lt;Timestamp&gt;
+> <Timestamp>
 >
-> &lt;/Timestamp&gt;
+> </Timestamp>
 >
-> &lt;/Transaction&gt;
+> </Transaction>
 >
-> &lt;Identity&gt;
+> <Identity>
 >
-> &lt;Caller&gt;
+> <Caller>
 >
-> &lt;CallerType&gt;0&lt;/CallerType&gt;
+> <CallerType>0</CallerType>
 >
-> &lt;ThirdPartyID&gt;ThirdPartyID0&lt;/ThirdPartyID&gt;
+> <ThirdPartyID>ThirdPartyID0</ThirdPartyID>
 >
-> &lt;Password&gt;Password0&lt;/Password&gt;
+> <Password>Password0</Password>
 >
-> &lt;CheckSum&gt;CheckSum0&lt;/CheckSum&gt;
+> <CheckSum>CheckSum0</CheckSum>
 >
-> &lt;/Caller&gt;
+> </Caller>
 >
-> &lt;Initiator&gt;
+> <Initiator>
 >
-> &lt;IdentifierType&gt;1&lt;/IdentifierType&gt;
+> <IdentifierType>1</IdentifierType>
 >
-> &lt;Identifier&gt;Identifier0&lt;/Identifier&gt;
+> <Identifier>Identifier0</Identifier>
 >
-> &lt;SecurityCredential&gt;SecurityCredential0&lt;/SecurityCredential&gt;
+> <SecurityCredential>SecurityCredential0</SecurityCredential>
 >
-> &lt;ShortCode&gt;
+> <ShortCode>
 >
-> &lt;/ShortCode&gt;
+> </ShortCode>
 >
-> &lt;/Initiator&gt;
+> </Initiator>
 >
-> &lt;PrimartyParty&gt;
+> <PrimartyParty>
 >
-> &lt;IdentifierType&gt;1&lt;/IdentifierType&gt;
+> <IdentifierType>1</IdentifierType>
 >
-> &lt;Identifier&gt;Identifier1&lt;/Identifier&gt;
+> <Identifier>Identifier1</Identifier>
 >
-> &lt;ShortCode&gt;ShortCode0&lt;/ShortCode&gt;
+> <ShortCode>ShortCode0</ShortCode>
 >
-> &lt;/PrimartyParty&gt;
+> </PrimartyParty>
 >
-> &lt;ReceiverParty&gt;
+> <ReceiverParty>
 >
-> &lt;IdentifierType&gt;1&lt;/IdentifierType&gt;
+> <IdentifierType>1</IdentifierType>
 >
-> &lt;Identifier&gt;Identifier2&lt;/Identifier&gt;
+> <Identifier>Identifier2</Identifier>
 >
-> &lt;ShortCode&gt;ShortCode1&lt;/ShortCode&gt;
+> <ShortCode>ShortCode1</ShortCode>
 >
-> &lt;/ReceiverParty&gt;
+> </ReceiverParty>
 >
-> &lt;AccessDevice&gt;
+> <AccessDevice>
 >
-> &lt;IdentifierType&gt;1&lt;/IdentifierType&gt;
+> <IdentifierType>1</IdentifierType>
 >
-> &lt;Identifier&gt;Identifier3&lt;/Identifier&gt;
+> <Identifier>Identifier3</Identifier>
 >
-> &lt;/AccessDevice&gt;
+> </AccessDevice>
 >
-> &lt;/Identity&gt;
+> </Identity>
 >
-> &lt;KeyOwner&gt;0&lt;/KeyOwner&gt;
+> <KeyOwner>0</KeyOwner>
 >
-> &lt;/request&gt;\]\]&gt;&lt;/req:RequestMsg&gt;
+> </request>\]\]></req:RequestMsg>
 >
-> &lt;/soapenv:Body&gt;
+> </soapenv:Body>
 >
-> &lt;/soapenv:Envelope&gt;
+> </soapenv:Envelope>
 
 ### The Broker return response to the 3rd party
 
 > Example1: Forward CoreAPI response to the 3^rd^ party
 >
-> &lt;soapenv:Envelope
+> <soapenv:Envelope
 > xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
-> xmlns:req="http://api-v1.gen.mm.vodafone.com/mminterface/request"&gt;
+> xmlns:req="http://api-v1.gen.mm.vodafone.com/mminterface/request">
 >
-> &lt;soapenv:Header/&gt;
+> <soapenv:Header/>
 >
-> &lt;soapenv:Body&gt;
+> <soapenv:Body>
 >
-> &lt;req:ResponseMsg&gt;&lt;!\[CDATA\[&lt;?xml version="1.0"
-> encoding="UTF-8"?&gt;
+> <req:ResponseMsg><!\[CDATA\[<?xml version="1.0"
+> encoding="UTF-8"?>
 >
-> &lt;response
-> xmlns="http://api-v1.gen.mm.vodafone.com/mminterface/response"&gt;
+> <response
+> xmlns="http://api-v1.gen.mm.vodafone.com/mminterface/response">
 >
-> &lt;ResponseCode&gt;ResponseCode0&lt;/ResponseCode&gt;
+> <ResponseCode>ResponseCode0</ResponseCode>
 >
-> &lt;ResponseDesc&gt;ResponseDesc0&lt;/ResponseDesc&gt;
+> <ResponseDesc>ResponseDesc0</ResponseDesc>
 >
-> &lt;ConversationID&gt;
+> <ConversationID>
 >
-> &lt;/ConversationID&gt;
+> </ConversationID>
 >
-> &lt;OriginatorConversationID&gt;
+> <OriginatorConversationID>
 >
-> &lt;/OriginatorConversationID&gt;
+> </OriginatorConversationID>
 >
-> &lt;ServiceStatus&gt;0&lt;/ServiceStatus&gt;
+> <ServiceStatus>0</ServiceStatus>
 >
-> &lt;/response&gt;\]\]&gt;&lt;/req:ResponseMsg&gt;
+> </response>\]\]></req:ResponseMsg>
 >
-> &lt;/soapenv:Body&gt;
+> </soapenv:Body>
 >
-> &lt;/soapenv:Envelope&gt;
+> </soapenv:Envelope>
 
 Or
 
-> &lt;soapenv:Envelope
-> xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"&gt;
+> <soapenv:Envelope
+> xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
 >
-> &lt;soapenv:Body&gt;
+> <soapenv:Body>
 >
-> &lt;req:ResponseMsg
-> xmlns:req="http://api-v1.gen.mm.vodafone.com/mminterface/request"&gt;&lt;!\[CDATA\[&lt;?xml
+> <req:ResponseMsg
+> xmlns:req="http://api-v1.gen.mm.vodafone.com/mminterface/request"><!\[CDATA\[<?xml
 > version="1.0"
-> encoding="UTF-8"?&gt;&lt;Response&gt;&lt;ResponseCode&gt;0&lt;/ResponseCode&gt;&lt;ConversationID&gt;AG\_20140825\_000056ac18ccfd6a13a2&lt;/ConversationID&gt;&lt;ResponseDesc&gt;Accept
+> encoding="UTF-8"?><Response><ResponseCode>0</ResponseCode><ConversationID>AG\_20140825\_000056ac18ccfd6a13a2</ConversationID><ResponseDesc>Accept
 > the service request
-> successfully.&lt;/ResponseDesc&gt;&lt;OriginatorConversationID&gt;B2C-SIT-000005
+> successfully.</ResponseDesc><OriginatorConversationID>B2C-SIT-000005
 >
-> &lt;/OriginatorConversationID&gt;&lt;ServiceStatus&gt;0&lt;/ServiceStatus&gt;&lt;/Response&gt;\]\]&gt;&lt;/req:ResponseMsg&gt;
+> </OriginatorConversationID><ServiceStatus>0</ServiceStatus></Response>\]\]></req:ResponseMsg>
 >
-> &lt;/soapenv:Body&gt;
+> </soapenv:Body>
 >
-> &lt;/soapenv:Envelope&gt;
+> </soapenv:Envelope>
 >
 > Example2: Error response caused by authentication failed.
 >
-> &lt;soapenv:Envelope
+> <soapenv:Envelope
 > xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
-> xmlns:req="http://api-v1.gen.mm.vodafone.com/mminterface/request"&gt;
+> xmlns:req="http://api-v1.gen.mm.vodafone.com/mminterface/request">
 >
-> &lt;soapenv:Header/&gt;
+> <soapenv:Header/>
 >
-> &lt;soapenv:Body&gt;
+> <soapenv:Body>
 >
-> &lt;req:ResponseMsg&gt;&lt;!\[CDATA\[&lt;?xml version="1.0"
-> encoding="UTF-8"?&gt;
+> <req:ResponseMsg><!\[CDATA\[<?xml version="1.0"
+> encoding="UTF-8"?>
 >
-> &lt;response
-> xmlns="http://api-v1.gen.mm.vodafone.com/mminterface/response"&gt;
+> <response
+> xmlns="http://api-v1.gen.mm.vodafone.com/mminterface/response">
 >
-> &lt;ResponseCode&gt;100000007&lt;/ResponseCode&gt;
+> <ResponseCode>100000007</ResponseCode>
 >
-> &lt;ResponseDesc&gt;Authentication failed&lt;/ResponseDesc&gt;
+> <ResponseDesc>Authentication failed</ResponseDesc>
 >
-> &lt;/response&gt;\]\]&gt;&lt;/req:ResponseMsg&gt;
+> </response>\]\]></req:ResponseMsg>
 >
-> &lt;/soapenv:Body&gt;
+> </soapenv:Body>
 >
-> &lt;/soapenv:Envelope&gt;
+> </soapenv:Envelope>
 >
 > Example3: Error response caused by waiting for resending.
 >
-> &lt;soapenv:Envelope
+> <soapenv:Envelope
 > xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
-> xmlns:req="http://api-v1.gen.mm.vodafone.com/mminterface/request"&gt;
+> xmlns:req="http://api-v1.gen.mm.vodafone.com/mminterface/request">
 >
-> &lt;soapenv:Header/&gt;
+> <soapenv:Header/>
 >
-> &lt;soapenv:Body&gt;
+> <soapenv:Body>
 >
-> &lt;req:ResponseMsg&gt;&lt;!\[CDATA\[&lt;?xml version="1.0"
-> encoding="UTF-8"?&gt;
+> <req:ResponseMsg><!\[CDATA\[<?xml version="1.0"
+> encoding="UTF-8"?>
 >
-> &lt;response
-> xmlns="http://api-v1.gen.mm.vodafone.com/mminterface/response"&gt;
+> <response
+> xmlns="http://api-v1.gen.mm.vodafone.com/mminterface/response">
 >
-> &lt;ResponseCode&gt;100000000&lt;/ResponseCode&gt;
+> <ResponseCode>100000000</ResponseCode>
 >
-> &lt;ResponseDesc&gt;Request was cached, waiting for
-> resending&lt;/ResponseDesc&gt;
+> <ResponseDesc>Request was cached, waiting for
+> resending</ResponseDesc>
 >
-> &lt;/response&gt;\]\]&gt;&lt;/req:ResponseMsg&gt;
+> </response>\]\]></req:ResponseMsg>
 >
-> &lt;/soapenv:Body&gt;
+> </soapenv:Body>
 >
-> &lt;/soapenv:Envelope&gt;
+> </soapenv:Envelope>
 
 1.  GenericAPIResult
     ----------------
 
     1.  ### The Broker send notification to the 3rd party
 
-> &lt;s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/"&gt;
+> <s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
 >
-> &lt;s:Body xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-> xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+> <s:Body xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+> xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 >
-> &lt;ResultMsg
-> xmlns="http://api-v1.gen.mm.vodafone.com/mminterface/result"&gt;
+> <ResultMsg
+> xmlns="http://api-v1.gen.mm.vodafone.com/mminterface/result">
 >
-> &lt;!\[CDATA\[&lt;Result
+> <!\[CDATA\[<Result
 > xmlns:i="http://www.w3.org/2001/XMLSchema-instance"
-> xmlns="http://api-v1.gen.mm.vodafone.com/mminterface/result"&gt;
+> xmlns="http://api-v1.gen.mm.vodafone.com/mminterface/result">
 >
-> &lt;ResultType&gt;Completed&lt;/ResultType&gt;
+> <ResultType>Completed</ResultType>
 >
-> &lt;ResultCode&gt;0&lt;/ResultCode&gt;
+> <ResultCode>0</ResultCode>
 >
-> &lt;ResultDesc&gt;Success&lt;/ResultDesc&gt;
+> <ResultDesc>Success</ResultDesc>
 >
-> &lt;OriginatorConversationID&gt;R9-2-eq-a7cb-q277&lt;/OriginatorConversationID&gt;
+> <OriginatorConversationID>R9-2-eq-a7cb-q277</OriginatorConversationID>
 >
-> &lt;ConversationID&gt;61da40ad-7e96-4889-83c4-1ea77091f8ec&lt;/ConversationID&gt;
+> <ConversationID>61da40ad-7e96-4889-83c4-1ea77091f8ec</ConversationID>
 >
-> &lt;TransactionID&gt;X-IO213&lt;/TransactionID&gt;&lt;ResultParameters&gt;
+> <TransactionID>X-IO213</TransactionID><ResultParameters>
 >
-> &lt;Parameter&gt;
+> <Parameter>
 >
-> &lt;Key
-> xmlns="http://api-v1.gen.mm.vodafone.com/mminterface/request"&gt;Amount&lt;/Key&gt;
+> <Key
+> xmlns="http://api-v1.gen.mm.vodafone.com/mminterface/request">Amount</Key>
 >
-> &lt;Value
-> xmlns="http://api-v1.gen.mm.vodafone.com/mminterface/request"&gt;Ksh200.00&lt;/Value&gt;
+> <Value
+> xmlns="http://api-v1.gen.mm.vodafone.com/mminterface/request">Ksh200.00</Value>
 >
-> &lt;/Parameter&gt;&lt;Parameter&gt;&lt;Key
-> xmlns="http://api-v1.gen.mm.vodafone.com/mminterface/request"&gt;Transaction
-> Datetime&lt;/Key&gt;
+> </Parameter><Parameter><Key
+> xmlns="http://api-v1.gen.mm.vodafone.com/mminterface/request">Transaction
+> Datetime</Key>
 >
-> &lt;Value
-> xmlns="http://api-v1.gen.mm.vodafone.com/mminterface/request"&gt;22/10/2014
-> 20:55:24&lt;/Value&gt;
+> <Value
+> xmlns="http://api-v1.gen.mm.vodafone.com/mminterface/request">22/10/2014
+> 20:55:24</Value>
 >
-> &lt;/Parameter&gt;&lt;Parameter&gt;
+> </Parameter><Parameter>
 >
-> &lt;Key
-> xmlns="http://api-v1.gen.mm.vodafone.com/mminterface/request"&gt;Working
-> Account Available Funds&lt;/Key&gt;
+> <Key
+> xmlns="http://api-v1.gen.mm.vodafone.com/mminterface/request">Working
+> Account Available Funds</Key>
 >
-> &lt;Value
-> xmlns="http://api-v1.gen.mm.vodafone.com/mminterface/request"&gt;2338002.5100&lt;/Value&gt;
+> <Value
+> xmlns="http://api-v1.gen.mm.vodafone.com/mminterface/request">2338002.5100</Value>
 >
-> &lt;/Parameter&gt;&lt;Parameter&gt;
+> </Parameter><Parameter>
 >
-> &lt;Key
-> xmlns="http://api-v1.gen.mm.vodafone.com/mminterface/request"&gt;Charges
-> Paid Account Available Funds&lt;/Key&gt;
+> <Key
+> xmlns="http://api-v1.gen.mm.vodafone.com/mminterface/request">Charges
+> Paid Account Available Funds</Key>
 >
-> &lt;Value
-> xmlns="http://api-v1.gen.mm.vodafone.com/mminterface/request"&gt;0.0000&lt;/Value&gt;
+> <Value
+> xmlns="http://api-v1.gen.mm.vodafone.com/mminterface/request">0.0000</Value>
 >
-> &lt;/Parameter&gt;&lt;Parameter&gt;
+> </Parameter><Parameter>
 >
-> &lt;Key
-> xmlns="http://api-v1.gen.mm.vodafone.com/mminterface/request"&gt;Utility
-> Account Available Funds&lt;/Key&gt;
+> <Key
+> xmlns="http://api-v1.gen.mm.vodafone.com/mminterface/request">Utility
+> Account Available Funds</Key>
 >
-> &lt;Value
-> xmlns="http://api-v1.gen.mm.vodafone.com/mminterface/request"&gt;461898.0000&lt;/Value&gt;
+> <Value
+> xmlns="http://api-v1.gen.mm.vodafone.com/mminterface/request">461898.0000</Value>
 >
-> &lt;/Parameter&gt;&lt;/ResultParameters&gt;
+> </Parameter></ResultParameters>
 >
-> &lt;ReferenceData&gt;&lt;ReferenceItem&gt;&lt;Key
-> xmlns="http://api-v1.gen.mm.vodafone.com/mminterface/request"&gt;QueueTimeoutURL&lt;/Key&gt;&lt;Value
-> xmlns="http://api-v1.gen.mm.vodafone.com/mminterface/request"&gt;http://10.66.49.201:8097/&lt;/Value&gt;&lt;/ReferenceItem&gt;&lt;/ReferenceData&gt;&lt;/Result&gt;\]\]&gt;&lt;/ResultMsg&gt;
+> <ReferenceData><ReferenceItem><Key
+> xmlns="http://api-v1.gen.mm.vodafone.com/mminterface/request">QueueTimeoutURL</Key><Value
+> xmlns="http://api-v1.gen.mm.vodafone.com/mminterface/request">http://10.66.49.201:8097/</Value></ReferenceItem></ReferenceData></Result>\]\]></ResultMsg>
 >
-> &lt;/s:Body&gt;
+> </s:Body>
 >
-> &lt;/s:Envelope&gt;
+> </s:Envelope>
 
 Or
 
-> &lt;soapenv:Envelope
-> xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"&gt;
+> <soapenv:Envelope
+> xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
 >
-> &lt;soapenv:Header/&gt;
+> <soapenv:Header/>
 >
-> &lt;soapenv:Body&gt;
+> <soapenv:Body>
 >
-> &lt;req:ResultMsg
-> xmlns:req="http://cps.huawei.com/cpsinterface/result"&gt;&lt;!\[CDATA\[&lt;?xml
-> version="1.0" encoding="UTF-8"?&gt;
+> <req:ResultMsg
+> xmlns:req="http://cps.huawei.com/cpsinterface/result"><!\[CDATA\[<?xml
+> version="1.0" encoding="UTF-8"?>
 >
-> &lt;Result&gt;
+> <Result>
 >
-> &lt;ResultType&gt;0&lt;/ResultType&gt;
+> <ResultType>0</ResultType>
 >
-> &lt;ResultCode&gt;0&lt;/ResultCode&gt;
+> <ResultCode>0</ResultCode>
 >
-> &lt;ResultDesc&gt;The service request is processed
-> successfully.&lt;/ResultDesc&gt;
+> <ResultDesc>The service request is processed
+> successfully.</ResultDesc>
 >
-> &lt;OriginatorConversationID&gt;D7866050-CE7C-46B9-BE97-D9FBACC69041&lt;/OriginatorConversationID&gt;
+> <OriginatorConversationID>D7866050-CE7C-46B9-BE97-D9FBACC69041</OriginatorConversationID>
 >
-> &lt;ConversationId&gt;B72AC018-86E4-477A-B4B0-9EC65AE8A2FE&lt;/ConversationId&gt;
+> <ConversationId>B72AC018-86E4-477A-B4B0-9EC65AE8A2FE</ConversationId>
 >
-> &lt;TransactionId&gt;2782728972&lt;/TransactionId&gt;
+> <TransactionId>2782728972</TransactionId>
 >
-> &lt;ResultParameters&gt;
+> <ResultParameters>
 >
-> &lt;ResultParameter&gt;
+> <ResultParameter>
 >
-> &lt;Key&gt;TransactionReceipt&lt;/Key&gt;
+> <Key>TransactionReceipt</Key>
 >
-> &lt;Value&gt;2782728972&lt;/Value&gt;
+> <Value>2782728972</Value>
 >
-> &lt;/ResultParameter&gt;
+> </ResultParameter>
 >
-> &lt;ResultParameter&gt;
+> <ResultParameter>
 >
-> &lt;Key&gt;TransactionAmount&lt;/Key&gt;
+> <Key>TransactionAmount</Key>
 >
-> &lt;Value&gt;100.00&lt;/Value&gt;
+> <Value>100.00</Value>
 >
-> &lt;/ResultParameter&gt;
+> </ResultParameter>
 >
-> &lt;ResultParameter&gt;
+> <ResultParameter>
 >
-> &lt;Key&gt;TransactionCompletedDateTime&lt;/Key&gt;
+> <Key>TransactionCompletedDateTime</Key>
 >
-> &lt;Value&gt;22.03.2012 12:20:20&lt;/Value&gt;
+> <Value>22.03.2012 12:20:20</Value>
 >
-> &lt;/ResultParameter&gt;
+> </ResultParameter>
 >
-> &lt;ResultParameter&gt;
+> <ResultParameter>
 >
-> &lt;Key&gt;ReceiverPartyPublicName&lt;/Key&gt;
+> <Key>ReceiverPartyPublicName</Key>
 >
-> &lt;Value&gt;254778866553868-Kip Keino&lt;/Value&gt;
+> <Value>254778866553868-Kip Keino</Value>
 >
-> &lt;/ResultParameter&gt;
+> </ResultParameter>
 >
-> &lt;ResultParameter&gt;
+> <ResultParameter>
 >
-> &lt;Key&gt;B2CWorkingAccountAvailableFunds&lt;/Key&gt;
+> <Key>B2CWorkingAccountAvailableFunds</Key>
 >
-> &lt;Value&gt;10000.00&lt;/Value&gt;
+> <Value>10000.00</Value>
 >
-> &lt;/ResultParameter&gt;
+> </ResultParameter>
 >
-> &lt;ResultParameter&gt;
+> <ResultParameter>
 >
-> &lt;Key&gt;B2CUtilityAccountAvailableFunds&lt;/Key&gt;
+> <Key>B2CUtilityAccountAvailableFunds</Key>
 >
-> &lt;Value&gt;100000.00&lt;/Value&gt;
+> <Value>100000.00</Value>
 >
-> &lt;/ResultParameter&gt;
+> </ResultParameter>
 >
-> &lt;ResultParameter&gt;
+> <ResultParameter>
 >
-> &lt;Key&gt;B2CChargesPaidAccountAvailableFunds&lt;/Key&gt;
+> <Key>B2CChargesPaidAccountAvailableFunds</Key>
 >
-> &lt;Value&gt;1000.00&lt;/Value&gt;
+> <Value>1000.00</Value>
 >
-> &lt;/ResultParameter&gt;
+> </ResultParameter>
 >
-> &lt;ResultParameter&gt;
+> <ResultParameter>
 >
-> &lt;Key&gt;B2CRecipientIsRegisteredCustomer&lt;/Key&gt;
+> <Key>B2CRecipientIsRegisteredCustomer</Key>
 >
-> &lt;Value&gt;Y&lt;/Value&gt;
+> <Value>Y</Value>
 >
-> &lt;/ResultParameter&gt;
+> </ResultParameter>
 >
-> &lt;ResultParameter&gt;
+> <ResultParameter>
 >
-> &lt;Key&gt;B2CWithdrawalChargeAmount&lt;/Key&gt;
+> <Key>B2CWithdrawalChargeAmount</Key>
 >
-> &lt;Value&gt;12.00&lt;/Value&gt;
+> <Value>12.00</Value>
 >
-> &lt;/ResultParameter&gt;
+> </ResultParameter>
 >
-> &lt;/ResultParameters&gt;
+> </ResultParameters>
 >
-> &lt;ReferenceData&gt;
+> <ReferenceData>
 >
-> &lt;ReferenceItem&gt;
+> <ReferenceItem>
 >
-> &lt;Key&gt;Occasion&lt;/Key&gt;
+> <Key>Occasion</Key>
 >
-> &lt;Value&gt;Christmas&lt;/Value&gt;
+> <Value>Christmas</Value>
 >
-> &lt;/ReferenceItem&gt;
+> </ReferenceItem>
 >
-> &lt;/ReferenceData&gt;
+> </ReferenceData>
 >
-> &lt;/Result&gt;\]\]&gt;&lt;/req:ResultMsg&gt;
+> </Result>\]\]></req:ResultMsg>
 >
-> &lt;/soapenv:Body&gt;
+> </soapenv:Body>
 >
-> &lt;/soapenv:Envelope&gt;
+> </soapenv:Envelope>
 
 ### The 3rd party return response to the Broker
 
 > Example1: Success response
 >
-> &lt;soapenv:Envelope
+> <soapenv:Envelope
 > xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
-> xmlns:req="http://api-v1.gen.mm.vodafone.com/mminterface/request"&gt;
+> xmlns:req="http://api-v1.gen.mm.vodafone.com/mminterface/request">
 >
-> &lt;soapenv:Header/&gt;
+> <soapenv:Header/>
 >
-> &lt;soapenv:Body&gt;
+> <soapenv:Body>
 >
-> &lt;req:ResponseMsg&gt;&lt;!\[CDATA\[&lt;?xml version="1.0"
-> encoding="UTF-8"?&gt;
+> <req:ResponseMsg><!\[CDATA\[<?xml version="1.0"
+> encoding="UTF-8"?>
 >
-> &lt;response
-> xmlns="http://api-v1.gen.mm.vodafone.com/mminterface/response"&gt;
+> <response
+> xmlns="http://api-v1.gen.mm.vodafone.com/mminterface/response">
 >
-> &lt;ResponseCode&gt;00000000&lt;/ResponseCode&gt;
+> <ResponseCode>00000000</ResponseCode>
 >
-> &lt;ResponseDesc&gt;success&lt;/ResponseDesc&gt;
+> <ResponseDesc>success</ResponseDesc>
 >
-> &lt;/response&gt;\]\]&gt;&lt;/req:ResponseMsg&gt;
+> </response>\]\]></req:ResponseMsg>
 >
-> &lt;/soapenv:Body&gt;
+> </soapenv:Body>
 >
-> &lt;/soapenv:Envelope&gt;
+> </soapenv:Envelope>
 >
-> Example2: Error response
->
-> &lt;soapenv:Envelope
-> xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
-> xmlns:req="http://api-v1.gen.mm.vodafone.com/mminterface/request"&gt;
->
-> &lt;soapenv:Header/&gt;
->
-> &lt;soapenv:Body&gt;
->
-> &lt;req:ResponseMsg&gt;&lt;!\[CDATA\[&lt;?xml version="1.0"
-> encoding="UTF-8"?&gt;
->
-> &lt;response
-> xmlns="http://api-v1.gen.mm.vodafone.com/mminterface/response"&gt;
->
-> &lt;ResponseCode&gt;20000003&lt;/ResponseCode&gt;
->
-> &lt;ResponseDesc&gt;Internal Server Error&lt;/ResponseDesc&gt;
->
-> &lt;/response&gt;\]\]&gt;&lt;/req:ResponseMsg&gt;
->
-> &lt;/soapenv:Body&gt;
->
-> &lt;/soapenv:Envelope&gt;
+Example2: Error response
 
-1.  notifyQueueTimeout
-    ------------------
+```xml
+<soapenv:Envelope
+xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+xmlns:req="http://api-v1.gen.mm.vodafone.com/mminterface/request">
 
-    1.  ### The Broker send notification to the 3rd party
+<soapenv:Header/>
 
-> &lt;soapenv:Envelope
-> xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
-> xmlns:loc="http://www.csapi.org/schema/timeoutnotification/data/v1\_0/local"
-> xmlns:res="http://api-v1.gen.mm.vodafone.com/mminterface/result"&gt;
->
-> &lt;soapenv:Header/&gt;
->
-> &lt;soapenv:Body&gt;
->
-> &lt;loc:notifyQueueTimeout&gt;
->
-> &lt;loc:originatorConversationID&gt;OriginatorConversationID0&lt;/loc:originatorConversationID&gt;
->
-> &lt;loc:originRequest&gt;PHNvYXBlbnY6RW52ZWxvcGUgeG1sbnM6c29hcGVudj0iaHR0cDovL3NjaGVtYXMueG1sc29hcC5v
->
-> cmcvc29hcC9lbnZlbG9wZS8iIHhtbG5zOnJlcT0iaHR0cDovL2FwaS12MS5nZW4ubW0udm9kYWZv
->
-> bmUuY29tL21taW50ZXJmYWNlL3JlcXVlc3QiPgogICA8c29hcGVudjpCb2R5PgogICAgICA8cmVx
->
-> OlJlcXVlc3RNc2c+PCFbQ0RBVEFbPD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgi
->
-> Pz4KPHJlcXVlc3QgeG1sbnM9Imh0dHA6Ly9hcGktdjEuZ2VuLm1tLnZvZGFmb25lLmNvbS9tbWlu
->
-> dGVyZmFjZS9yZXF1ZXN0Ij4KICAgIDxUcmFuc2FjdGlvbj4KICAgICAgICA8Q29tbWFuZElEPkNv
->
-> bW1hbmRJRDA8L0NvbW1hbmRJRD4KICAgICAgICA8TGFuZ3VhZ2VDb2RlPkxhbmd1YWdlQ29kZTA8
->
-> L0xhbmd1YWdlQ29kZT4KICAgICAgICA8T3JpZ2luYXRvckNvbnZlcnNhdGlvbklEPk9yaWdpbmF0
->
-> b3JDb252ZXJzYXRpb25JRDA8L09yaWdpbmF0b3JDb252ZXJzYXRpb25JRD4KICAgICAgICA8Q29u
->
-> dmVyc2F0aW9uSUQ+Q29udmVyc2F0aW9uSUQwPC9Db252ZXJzYXRpb25JRD4KICAgICAgICA8UmVt
->
-> YXJrPlJlbWFyazA8L1JlbWFyaz4KICAgICAgICA8RW5jcnlwdGVkUGFyYW1ldGVycz5FbmNyeXB0
->
-> ZWRQYXJhbWV0ZXJzMDwvRW5jcnlwdGVkUGFyYW1ldGVycz4KICAgICAgICA8UGFyYW1ldGVycz4K
->
-> ICAgICAgICAgICAgPFBhcmFtZXRlcj4KICAgICAgICAgICAgICAgIDxLZXk+S2V5MDwvS2V5Pgog
->
-> ICAgICAgICAgICAgICAgPFZhbHVlPlZhbHVlMDwvVmFsdWU+CiAgICAgICAgICAgIDwvUGFyYW1l
->
-> dGVyPgogICAgICAgICAgICA8UGFyYW1ldGVyPgogICAgICAgICAgICAgICAgPEtleT5LZXkxPC9L
->
-> ZXk+CiAgICAgICAgICAgICAgICA8VmFsdWU+VmFsdWUxPC9WYWx1ZT4KICAgICAgICAgICAgPC9Q
->
-> YXJhbWV0ZXI+CiAgICAgICAgPC9QYXJhbWV0ZXJzPgogICAgICAgIDxSZWZlcmVuY2VEYXRhPgog
->
-> ICAgICAgICAgICA8UmVmZXJlbmNlSXRlbT4KICAgICAgICAgICAgICAgIDxLZXk+UXVldWVUaW1l
->
-> b3V0VVJMPC9LZXk+CiAgICAgICAgICAgICAgICA8VmFsdWU+VmFsdWUyPC9WYWx1ZT4KICAgICAg
->
-> ICAgICAgPC9SZWZlcmVuY2VJdGVtPgogICAgICAgICAgICA8UmVmZXJlbmNlSXRlbT4KICAgICAg
->
-> ICAgICAgICAgIDxLZXk+S2V5MzwvS2V5PgogICAgICAgICAgICAgICAgPFZhbHVlPlZhbHVlMzwv
->
-> VmFsdWU+CiAgICAgICAgICAgIDwvUmVmZXJlbmNlSXRlbT4KICAgICAgICA8L1JlZmVyZW5jZURh
->
-> dGE+CiAgICAgICAgPFRpbWVzdGFtcD4KICAgICAgICA8L1RpbWVzdGFtcD4KICAgIDwvVHJhbnNh
->
-> Y3Rpb24+CiAgICA8SWRlbnRpdHk+CiAgICAgICAgPENhbGxlcj4KICAgICAgICAgICAgPENhbGxl
->
-> clR5cGU+MDwvQ2FsbGVyVHlwZT4KICAgICAgICAgICAgPFRoaXJkUGFydHlJRD5UaGlyZFBhcnR5
->
-> SUQwPC9UaGlyZFBhcnR5SUQ+CiAgICAgICAgICAgIDxQYXNzd29yZD5QYXNzd29yZDA8L1Bhc3N3
->
-> b3JkPgogICAgICAgICAgICA8Q2hlY2tTdW0+Q2hlY2tTdW0wPC9DaGVja1N1bT4KICAgICAgICAg
->
-> ICAgPFJlc3VsdFVSTD5SZXN1bHRVUkwwPC9SZXN1bHRVUkw+CiAgICAgICAgPC9DYWxsZXI+CiAg
->
-> ICAgICAgPEluaXRpYXRvcj4KICAgICAgICAgICAgPElkZW50aWZpZXJUeXBlPjE8L0lkZW50aWZp
->
-> ZXJUeXBlPgogICAgICAgICAgICA8SWRlbnRpZmllcj5JZGVudGlmaWVyMDwvSWRlbnRpZmllcj4K
->
-> ICAgICAgICAgICAgPFNlY3VyaXR5Q3JlZGVudGlhbD5TZWN1cml0eUNyZWRlbnRpYWwwPC9TZWN1
->
-> cml0eUNyZWRlbnRpYWw+CiAgICAgICAgICAgIDxTaG9ydENvZGU+CiAgICAgICAgICAgIDwvU2hv
->
-> cnRDb2RlPgogICAgICAgIDwvSW5pdGlhdG9yPgogICAgICAgIDxQcmltYXJ0eVBhcnR5PgogICAg
->
-> ICAgICAgICA8SWRlbnRpZmllclR5cGU+MTwvSWRlbnRpZmllclR5cGU+CiAgICAgICAgICAgIDxJ
->
-> ZGVudGlmaWVyPklkZW50aWZpZXIxPC9JZGVudGlmaWVyPgogICAgICAgICAgICA8U2hvcnRDb2Rl
->
-> PlNob3J0Q29kZTA8L1Nob3J0Q29kZT4KICAgICAgICA8L1ByaW1hcnR5UGFydHk+CiAgICAgICAg
->
-> PFJlY2VpdmVyUGFydHk+CiAgICAgICAgICAgIDxJZGVudGlmaWVyVHlwZT4xPC9JZGVudGlmaWVy
->
-> VHlwZT4KICAgICAgICAgICAgPElkZW50aWZpZXI+SWRlbnRpZmllcjI8L0lkZW50aWZpZXI+CiAg
->
-> ICAgICAgICAgIDxTaG9ydENvZGU+U2hvcnRDb2RlMTwvU2hvcnRDb2RlPgogICAgICAgIDwvUmVj
->
-> ZWl2ZXJQYXJ0eT4KICAgICAgICA8QWNjZXNzRGV2aWNlPgogICAgICAgICAgICA8SWRlbnRpZmll
->
-> clR5cGU+MTwvSWRlbnRpZmllclR5cGU+CiAgICAgICAgICAgIDxJZGVudGlmaWVyPklkZW50aWZp
->
-> ZXIzPC9JZGVudGlmaWVyPgogICAgICAgIDwvQWNjZXNzRGV2aWNlPgogICAgPC9JZGVudGl0eT4K
->
-> ICAgIDxLZXlPd25lcj4wPC9LZXlPd25lcj4KPC9yZXF1ZXN0Pl1dPjwvcmVxOlJlcXVlc3RNc2c+
->
-> CiAgIDwvc29hcGVudjpCb2R5Pgo8L3NvYXBlbnY6RW52ZWxvcGU+Cg==&lt;/loc:originRequest&gt;
->
-> &lt;/loc:notifyQueueTimeout&gt;
->
-> &lt;/soapenv:Body&gt;
->
-> &lt;/soapenv:Envelope&gt;
+<soapenv:Body>
+
+<req:ResponseMsg><!\[CDATA\[<?xml version="1.0"
+encoding="UTF-8"?>
+
+<response
+xmlns="http://api-v1.gen.mm.vodafone.com/mminterface/response">
+
+<ResponseCode>20000003</ResponseCode>
+
+<ResponseDesc>Internal Server Error</ResponseDesc>
+
+</response>\]\]></req:ResponseMsg>
+
+</soapenv:Body>
+
+</soapenv:Envelope>
+```
+
+#### notifyQueueTimeout
+#### The Broker send notification to the 3rd party
+
+```xml
+<soapenv:Envelope
+xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+xmlns:loc="http://www.csapi.org/schema/timeoutnotification/data/v1\_0/local"
+xmlns:res="http://api-v1.gen.mm.vodafone.com/mminterface/result">
+
+<soapenv:Header/>
+
+<soapenv:Body>
+
+<loc:notifyQueueTimeout>
+
+<loc:originatorConversationID>OriginatorConversationID0</loc:originatorConversationID>
+
+<loc:originRequest>PHNvYXBlbnY6RW52ZWxvcGUgeG1sbnM6c29hcGVudj0iaHR0cDovL3NjaGVtYXMueG1sc29hcC5v
+
+cmcvc29hcC9lbnZlbG9wZS8iIHhtbG5zOnJlcT0iaHR0cDovL2FwaS12MS5nZW4ubW0udm9kYWZv
+
+bmUuY29tL21taW50ZXJmYWNlL3JlcXVlc3QiPgogICA8c29hcGVudjpCb2R5PgogICAgICA8cmVx
+
+OlJlcXVlc3RNc2c+PCFbQ0RBVEFbPD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgi
+
+Pz4KPHJlcXVlc3QgeG1sbnM9Imh0dHA6Ly9hcGktdjEuZ2VuLm1tLnZvZGFmb25lLmNvbS9tbWlu
+
+dGVyZmFjZS9yZXF1ZXN0Ij4KICAgIDxUcmFuc2FjdGlvbj4KICAgICAgICA8Q29tbWFuZElEPkNv
+
+bW1hbmRJRDA8L0NvbW1hbmRJRD4KICAgICAgICA8TGFuZ3VhZ2VDb2RlPkxhbmd1YWdlQ29kZTA8
+
+L0xhbmd1YWdlQ29kZT4KICAgICAgICA8T3JpZ2luYXRvckNvbnZlcnNhdGlvbklEPk9yaWdpbmF0
+
+b3JDb252ZXJzYXRpb25JRDA8L09yaWdpbmF0b3JDb252ZXJzYXRpb25JRD4KICAgICAgICA8Q29u
+
+dmVyc2F0aW9uSUQ+Q29udmVyc2F0aW9uSUQwPC9Db252ZXJzYXRpb25JRD4KICAgICAgICA8UmVt
+
+YXJrPlJlbWFyazA8L1JlbWFyaz4KICAgICAgICA8RW5jcnlwdGVkUGFyYW1ldGVycz5FbmNyeXB0
+
+ZWRQYXJhbWV0ZXJzMDwvRW5jcnlwdGVkUGFyYW1ldGVycz4KICAgICAgICA8UGFyYW1ldGVycz4K
+
+ICAgICAgICAgICAgPFBhcmFtZXRlcj4KICAgICAgICAgICAgICAgIDxLZXk+S2V5MDwvS2V5Pgog
+
+ICAgICAgICAgICAgICAgPFZhbHVlPlZhbHVlMDwvVmFsdWU+CiAgICAgICAgICAgIDwvUGFyYW1l
+
+dGVyPgogICAgICAgICAgICA8UGFyYW1ldGVyPgogICAgICAgICAgICAgICAgPEtleT5LZXkxPC9L
+
+ZXk+CiAgICAgICAgICAgICAgICA8VmFsdWU+VmFsdWUxPC9WYWx1ZT4KICAgICAgICAgICAgPC9Q
+
+YXJhbWV0ZXI+CiAgICAgICAgPC9QYXJhbWV0ZXJzPgogICAgICAgIDxSZWZlcmVuY2VEYXRhPgog
+
+ICAgICAgICAgICA8UmVmZXJlbmNlSXRlbT4KICAgICAgICAgICAgICAgIDxLZXk+UXVldWVUaW1l
+
+b3V0VVJMPC9LZXk+CiAgICAgICAgICAgICAgICA8VmFsdWU+VmFsdWUyPC9WYWx1ZT4KICAgICAg
+
+ICAgICAgPC9SZWZlcmVuY2VJdGVtPgogICAgICAgICAgICA8UmVmZXJlbmNlSXRlbT4KICAgICAg
+
+ICAgICAgICAgIDxLZXk+S2V5MzwvS2V5PgogICAgICAgICAgICAgICAgPFZhbHVlPlZhbHVlMzwv
+
+VmFsdWU+CiAgICAgICAgICAgIDwvUmVmZXJlbmNlSXRlbT4KICAgICAgICA8L1JlZmVyZW5jZURh
+
+dGE+CiAgICAgICAgPFRpbWVzdGFtcD4KICAgICAgICA8L1RpbWVzdGFtcD4KICAgIDwvVHJhbnNh
+
+Y3Rpb24+CiAgICA8SWRlbnRpdHk+CiAgICAgICAgPENhbGxlcj4KICAgICAgICAgICAgPENhbGxl
+
+clR5cGU+MDwvQ2FsbGVyVHlwZT4KICAgICAgICAgICAgPFRoaXJkUGFydHlJRD5UaGlyZFBhcnR5
+
+SUQwPC9UaGlyZFBhcnR5SUQ+CiAgICAgICAgICAgIDxQYXNzd29yZD5QYXNzd29yZDA8L1Bhc3N3
+
+b3JkPgogICAgICAgICAgICA8Q2hlY2tTdW0+Q2hlY2tTdW0wPC9DaGVja1N1bT4KICAgICAgICAg
+
+ICAgPFJlc3VsdFVSTD5SZXN1bHRVUkwwPC9SZXN1bHRVUkw+CiAgICAgICAgPC9DYWxsZXI+CiAg
+
+ICAgICAgPEluaXRpYXRvcj4KICAgICAgICAgICAgPElkZW50aWZpZXJUeXBlPjE8L0lkZW50aWZp
+
+ZXJUeXBlPgogICAgICAgICAgICA8SWRlbnRpZmllcj5JZGVudGlmaWVyMDwvSWRlbnRpZmllcj4K
+
+ICAgICAgICAgICAgPFNlY3VyaXR5Q3JlZGVudGlhbD5TZWN1cml0eUNyZWRlbnRpYWwwPC9TZWN1
+
+cml0eUNyZWRlbnRpYWw+CiAgICAgICAgICAgIDxTaG9ydENvZGU+CiAgICAgICAgICAgIDwvU2hv
+
+cnRDb2RlPgogICAgICAgIDwvSW5pdGlhdG9yPgogICAgICAgIDxQcmltYXJ0eVBhcnR5PgogICAg
+
+ICAgICAgICA8SWRlbnRpZmllclR5cGU+MTwvSWRlbnRpZmllclR5cGU+CiAgICAgICAgICAgIDxJ
+
+ZGVudGlmaWVyPklkZW50aWZpZXIxPC9JZGVudGlmaWVyPgogICAgICAgICAgICA8U2hvcnRDb2Rl
+
+PlNob3J0Q29kZTA8L1Nob3J0Q29kZT4KICAgICAgICA8L1ByaW1hcnR5UGFydHk+CiAgICAgICAg
+
+PFJlY2VpdmVyUGFydHk+CiAgICAgICAgICAgIDxJZGVudGlmaWVyVHlwZT4xPC9JZGVudGlmaWVy
+
+VHlwZT4KICAgICAgICAgICAgPElkZW50aWZpZXI+SWRlbnRpZmllcjI8L0lkZW50aWZpZXI+CiAg
+
+ICAgICAgICAgIDxTaG9ydENvZGU+U2hvcnRDb2RlMTwvU2hvcnRDb2RlPgogICAgICAgIDwvUmVj
+
+ZWl2ZXJQYXJ0eT4KICAgICAgICA8QWNjZXNzRGV2aWNlPgogICAgICAgICAgICA8SWRlbnRpZmll
+
+clR5cGU+MTwvSWRlbnRpZmllclR5cGU+CiAgICAgICAgICAgIDxJZGVudGlmaWVyPklkZW50aWZp
+
+ZXIzPC9JZGVudGlmaWVyPgogICAgICAgIDwvQWNjZXNzRGV2aWNlPgogICAgPC9JZGVudGl0eT4K
+
+ICAgIDxLZXlPd25lcj4wPC9LZXlPd25lcj4KPC9yZXF1ZXN0Pl1dPjwvcmVxOlJlcXVlc3RNc2c+
+
+CiAgIDwvc29hcGVudjpCb2R5Pgo8L3NvYXBlbnY6RW52ZWxvcGU+Cg==</loc:originRequest>
+
+</loc:notifyQueueTimeout>
+
+</soapenv:Body>
+
+</soapenv:Envelope>
+```
 
 ### The 3rd party return response to the Broker
+#### Example1: Success response
 
-> Example1: Success response
->
-> &lt;soapenv:Envelope
-> xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
-> xmlns:loc="http://www.csapi.org/schema/timeoutnotification/data/v1\_0/local"
-> xmlns:res="http://api-v1.gen.mm.vodafone.com/mminterface/result"&gt;
->
-> &lt;soapenv:Header/&gt;
->
-> &lt;soapenv:Body&gt;
->
-> &lt;loc:notifyQueueTimeoutResponse&gt;
->
-> &lt;loc:result&gt;
->
-> &lt;res:ResultCode&gt;00000000&lt;/res:ResultCode&gt;
->
-> &lt;res:ResultDesc&gt; success&lt;/res:ResultDesc&gt;
->
-> &lt;/loc:result&gt;
->
-> &lt;/loc:notifyQueueTimeoutResponse&gt;
->
-> &lt;/soapenv:Body&gt;
->
-> &lt;/soapenv:Envelope&gt;
->
-> Example2: Error response
->
-> &lt;soapenv:Envelope
-> xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
-> xmlns:loc="http://www.csapi.org/schema/timeoutnotification/data/v1\_0/local"
-> xmlns:res="http://api-v1.gen.mm.vodafone.com/mminterface/result"&gt;
->
-> &lt;soapenv:Header/&gt;
->
-> &lt;soapenv:Body&gt;
->
-> &lt;loc:notifyQueueTimeoutResponse&gt;
->
-> &lt;loc:result&gt;
->
-> &lt;res:ResultCode&gt;000000001&lt;/res:ResultCode&gt;
->
-> &lt;res:ResultDesc&gt; failed &lt;/res:ResultDesc&gt;
->
-> &lt;/loc:result&gt;
->
-> &lt;/loc:notifyQueueTimeoutResponse&gt;
->
-> &lt;/soapenv:Body&gt;
->
-> &lt;/soapenv:Envelope&gt;
+```xml
+<soapenv:Envelope
+xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+xmlns:loc="http://www.csapi.org/schema/timeoutnotification/data/v1\_0/local"
+xmlns:res="http://api-v1.gen.mm.vodafone.com/mminterface/result">
 
-1.  queryTransaction
-    ----------------
+<soapenv:Header/>
 
-    1.  ### The 3rd party sends query request to the Broker
+<soapenv:Body>
 
-> &lt;soapenv:Envelope
-> xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
-> xmlns:v2="http://www.huawei.com.cn/schema/common/v2\_1"
-> xmlns:loc="http://www.csapi.org/schema/transaction/data/v1\_0/local"
-> xmlns:res="http://api-v1.gen.mm.vodafone.com/mminterface/result"&gt;
->
-> &lt;soapenv:Header&gt;
->
-> &lt;v2:RequestSOAPHeader&gt;
->
-> &lt;v2:spId&gt;151515&lt;/v2:spId&gt;
->
-> &lt;v2:spPassword&gt;ODExNERCMDlCNjVDRkYxQUFCNzE5MkE1OEQyMjJDMzk1RUFCNzgwMjk2ODE4Rjk1OTE2MEFGNDU1QkRCMDkyMg==&lt;/v2:spPassword&gt;
->
-> &lt;v2:serviceId&gt;151515000&lt;/v2:serviceId&gt;
->
-> &lt;v2:timeStamp&gt;20140730093620&lt;/v2:timeStamp&gt;
->
-> &lt;/v2:RequestSOAPHeader&gt;
->
-> &lt;/soapenv:Header&gt;
->
-> &lt;soapenv:Body&gt;
->
-> &lt;loc:queryTransaction&gt;
->
-> &lt;loc:originatorConversationID&gt;R9I1-0000-4225-g64153&lt;/loc:originatorConversationID&gt;
->
-> &lt;loc:extensionInfo&gt;
->
-> &lt;loc:item&gt;
->
-> &lt;res:Key&gt;queryDate&lt;/res:Key&gt;
->
-> &lt;res:Value&gt;20140930102022&lt;/res:Value&gt;
->
-> &lt;/loc:item&gt;
->
-> &lt;/loc:extensionInfo&gt;
->
-> &lt;/loc:queryTransaction&gt;
->
-> &lt;/soapenv:Body&gt;
+<loc:notifyQueueTimeoutResponse>
+
+<loc:result>
+
+<res:ResultCode>00000000</res:ResultCode>
+
+<res:ResultDesc> success</res:ResultDesc>
+
+</loc:result>
+
+</loc:notifyQueueTimeoutResponse>
+
+</soapenv:Body>
+
+</soapenv:Envelope>
+```
+
+#### Example2: Error response
+
+```xml
+<soapenv:Envelope
+xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+xmlns:loc="http://www.csapi.org/schema/timeoutnotification/data/v1\_0/local"
+xmlns:res="http://api-v1.gen.mm.vodafone.com/mminterface/result">
+
+<soapenv:Header/>
+
+<soapenv:Body>
+
+<loc:notifyQueueTimeoutResponse>
+
+<loc:result>
+
+<res:ResultCode>000000001</res:ResultCode>
+
+<res:ResultDesc> failed </res:ResultDesc>
+
+</loc:result>
+
+</loc:notifyQueueTimeoutResponse>
+
+</soapenv:Body>
+
+</soapenv:Envelope>
+```
+
+### QueryTransaction
+#### The 3rd party sends query request to the Broker
+
+```xml
+<soapenv:Envelope
+xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+xmlns:v2="http://www.huawei.com.cn/schema/common/v2\_1"
+xmlns:loc="http://www.csapi.org/schema/transaction/data/v1\_0/local"
+xmlns:res="http://api-v1.gen.mm.vodafone.com/mminterface/result">
+
+<soapenv:Header>
+
+<v2:RequestSOAPHeader>
+
+<v2:spId>151515</v2:spId>
+
+<v2:spPassword>ODExNERCMDlCNjVDRkYxQUFCNzE5MkE1OEQyMjJDMzk1RUFCNzgwMjk2ODE4Rjk1OTE2MEFGNDU1QkRCMDkyMg==</v2:spPassword>
+
+<v2:serviceId>151515000</v2:serviceId>
+
+<v2:timeStamp>20140730093620</v2:timeStamp>
+
+</v2:RequestSOAPHeader>
+
+</soapenv:Header>
+
+<soapenv:Body>
+
+<loc:queryTransaction>
+
+<loc:originatorConversationID>R9I1-0000-4225-g64153</loc:originatorConversationID>
+
+<loc:extensionInfo>
+
+<loc:item>
+
+<res:Key>queryDate</res:Key>
+
+<res:Value>20140930102022</res:Value>
+
+</loc:item>
+
+</loc:extensionInfo>
+
+</loc:queryTransaction>
+
+</soapenv:Body>
+```
 
 ### The Broker return response to the 3rd party
+#### Example1: Success response
 
-> Example1: Success response
->
-> &lt;soapenv:Envelope
-> xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
-> xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
->
-> &lt;soapenv:Body&gt;
->
-> &lt;ns1:queryTransactionResponse
-> xmlns:ns1="http://www.csapi.org/schema/transaction/data/v1\_0/local"&gt;
->
-> &lt;ns1:result&gt;
->
-> &lt;ns2:ResponseCode
-> xmlns:ns2="http://api-v1.gen.mm.vodafone.com/mminterface/response"&gt;00000000&lt;/ns2:ResponseCode&gt;
->
-> &lt;ns3:ResponseDesc
-> xmlns:ns3="http://api-v1.gen.mm.vodafone.com/mminterface/response"&gt;Success&lt;/ns3:ResponseDesc&gt;
->
-> &lt;/ns1:result&gt;
->
-> &lt;ns1:submitApiRequestList&gt;
->
-> &lt;ns1:submitApiRequest&gt;UE9TVCAvbW1pbnRlcmZhY2UvcmVxdWVzdCBIVFRQLzEuMQ0KQWNjZXB0LUVuY29kaW5nOiBnemlwLGRlZmxhdGUNCkNvbnRlbnQtVHlwZTogdGV4dC94bWw7Y2hhcnNldD1VVEYtOA0KU09BUEFjdGlvbjogIiINClVzZXItQWdlbnQ6IEpha2FydGEgQ29tbW9ucy1IdHRwQ2xpZW50LzMuMQ0KSG9zdDogMTAuNS4zOC41MTo4MzEwDQpDb250ZW50LUxlbmd0aDogMjU1MQ0KDQo8c29hcGVudjpFbnZlbG9wZSB4bWxuczpzb2FwZW52PSJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy9zb2FwL2VudmVsb3BlLyIgeG1sbnM6cmVxPSJodHRwOi8vYXBpLXYxLmdlbi5tbS52b2RhZm9uZS5jb20vbW1pbnRlcmZhY2UvcmVxdWVzdCI+CiAgIDxzb2FwZW52OkhlYWRlcj4KICAgICAgPHRuczpSZXF1ZXN0U09BUEhlYWRlciB4bWxuczp0bnM9Imh0dHA6Ly93d3cuaHVhd2VpLmNvbS9zY2hlbWEvb3NnL2NvbW1vbi92Ml8xIj4KICAgICAgICAgPHRuczpzcElkPjE1MTUxNTwvdG5zOnNwSWQ+CiAgICAgICAgIDx0bnM6c3BQYXNzd29yZD5PREV4TkVSQ01EbENOalZEUmtZeFFVRkNOekU1TWtFMU9FUXlNakpETXprMVJVRkNOemd3TWprMk9ERTRSamsxT1RFMk1FRkdORFUxUWtSQ01Ea3lNZz09PC90bnM6c3BQYXNzd29yZD4KICAgICAgICAgPHRuczp0aW1lU3RhbXA+MjAxNDA3MzAwOTM2MjA8L3Ruczp0aW1lU3RhbXA+CiAgICAgICAgIDx0bnM6c2VydmljZUlkPjE1MTUxNTAwMDwvdG5zOnNlcnZpY2VJZD4KICAgICAgPC90bnM6UmVxdWVzdFNPQVBIZWFkZXI+CiAgIDwvc29hcGVudjpIZWFkZXI+CiAgIDxzb2FwZW52OkJvZHk+CiAgICAgIDxyZXE6UmVxdWVzdE1zZz48IVtDREFUQVs8P3htbCB2ZXJzaW9uPScnMS4wJycgZW5jb2Rpbmc9JydVVEYtOCcnPz48cmVxdWVzdCB4bWxucz0nJ2h0dHA6Ly9hcGktdjEuZ2VuLm1tLnZvZGFmb25lLmNvbS9tbWludGVyZmFjZS9yZXF1ZXN0Jyc+CjxUcmFuc2FjdGlvbj4KCTxDb21tYW5kSUQ+U2FsYXJ5UGF5bWVudDwvQ29tbWFuZElEPgoJPExhbmd1YWdlQ29kZT4wPC9MYW5ndWFnZUNvZGU+Cgk8T3JpZ2luYXRvckNvbnZlcnNhdGlvbklEPlI5STEtMDAwMC00MjI1LWc2NDE1MzwvT3JpZ2luYXRvckNvbnZlcnNhdGlvbklEPgoJPENvbnZlcnNhdGlvbklEPjwvQ29udmVyc2F0aW9uSUQ+Cgk8UmVtYXJrPjA8L1JlbWFyaz4KCTxFbmNyeXB0ZWRQYXJhbWV0ZXJzPkVuY3J5cHRlZFBhcmFtZXRlcnMwPC9FbmNyeXB0ZWRQYXJhbWV0ZXJzPgo8UGFyYW1ldGVycz48UGFyYW1ldGVyPgoJPEtleT5BbW91bnQ8L0tleT4KCTxWYWx1ZT43MC4wMDwvVmFsdWU+CjwvUGFyYW1ldGVyPgoKICAgICAgICAgICAgCgo8L1BhcmFtZXRlcnM+CjxSZWZlcmVuY2VEYXRhPgoJPFJlZmVyZW5jZUl0ZW0+CgkJPEtleT5RdWV1ZVRpbWVvdXRVUkw8L0tleT4KCQk8VmFsdWU+aHR0cDovLzEwLjY2LjQ5LjIwMTo4OTg5LzwvVmFsdWU+Cgk8L1JlZmVyZW5jZUl0ZW0+PC9SZWZlcmVuY2VEYXRhPgoJPFRpbWVzdGFtcD4yMDE0LTA5LTI3VDEyOjUzOjE5LjAwMDA1MjFaPC9UaW1lc3RhbXA+CjwvVHJhbnNhY3Rpb24+CjxJZGVudGl0eT4KCTxDYWxsZXI+CgkJPENhbGxlclR5cGU+MjwvQ2FsbGVyVHlwZT4KCQk8VGhpcmRQYXJ0eUlEPjg5ODk0MTwvVGhpcmRQYXJ0eUlEPgoJCTxQYXNzd29yZD5QYXNzd29yZDA8L1Bhc3N3b3JkPgoJCTxDaGVja1N1bT5DaGVja1N1bTA8L0NoZWNrU3VtPgoJCTxSZXN1bHRVUkw+aHR0cDovLzEwLjY2LjQ5LjIwMTo4MDk3LzwvUmVzdWx0VVJMPgoJPC9DYWxsZXI+Cgk8SW5pdGlhdG9yPgoJCTxJZGVudGlmaWVyVHlwZT4xMTwvSWRlbnRpZmllclR5cGU+CgkJPElkZW50aWZpZXI+YjJjMmI8L0lkZW50aWZpZXI+CgkJPFNlY3VyaXR5Q3JlZGVudGlhbD5iSkpiQ0E0UVQvVzdwVlQ5ZyszZGN0alFJRlUyb2pTVVZlcXo1WVVCK3VVcDY2RDlVaGpqWnNoWEp5KzltRGVTcFJuRVFiczZIOHdHcmhoMjNBVnVQMi9jeURxRTZ4ZmhhU2hXM0tkdFZ0K0FxdWF0VWFCZkxiNlNQZ045ZWdrVWtuNGhzWFdrK25oZlk3UnNtZE1LeTRJUkJZVGlqTXVlUGU2eUd3MTdrZUVqWk9MNCtrNG5XYTFqVnZScFBJNnVBRkpTWTMzcEl4dUxoMlR4K2tBcmc1STRCNEpRS09pdzJtN0NQblZVMGpodnE4eHNHYXJPSW4yQ09DakV0M0cvQnIwV3Bucks3MStIenZoQUJoOVU4bG5OMjVFdlU3cmpBVHpMd2xGOE1nVnYra3UySERTNjJ4MFptVEtVWEgxc3JzU0JhS0VqaVRoY2NGcmZYVEVrRlE9PTwvU2VjdXJpdHlDcmVkZW50aWFsPgoJCTxTaG9ydENvZGU+ODk4OTQ3PC9TaG9ydENvZGU+Cgk8L0luaXRpYXRvcj4KCQk8UHJpbWFyeVBhcnR5PgoJCQk8SWRlbnRpZmllclR5cGU+NDwvSWRlbnRpZmllclR5cGU+CgkJCTxJZGVudGlmaWVyPjg5ODk0NjwvSWRlbnRpZmllcj4KCQkJPFNob3J0Q29kZT48L1Nob3J0Q29kZT4KCQk8L1ByaW1hcnlQYXJ0eT4KCTxSZWNlaXZlclBhcnR5PgoJCTxJZGVudGlmaWVyVHlwZT4xPC9JZGVudGlmaWVyVHlwZT4KCQk8SWRlbnRpZmllcj4yNTQ3MDcxNjM2MDU8L0lkZW50aWZpZXI+CgkJPFNob3J0Q29kZT48L1Nob3J0Q29kZT4KCTwvUmVjZWl2ZXJQYXJ0eT4KCTxBY2Nlc3NEZXZpY2U+CgkJPElkZW50aWZpZXJUeXBlPjE8L0lkZW50aWZpZXJUeXBlPgoJCTxJZGVudGlmaWVyPklkZW50aWZpZXIzPC9JZGVudGlmaWVyPgoJCTwvQWNjZXNzRGV2aWNlPjwvSWRlbnRpdHk+CgkJPEtleU93bmVyPjE8L0tleU93bmVyPgoJPC9yZXF1ZXN0Pl1dPjwvcmVxOlJlcXVlc3RNc2c+CiAgIDwvc29hcGVudjpCb2R5Pgo8L3NvYXBlbnY6RW52ZWxvcGU+&lt;/ns1:submitApiRequest&gt;
->
-> &lt;ns1:submitApiRequest&gt;UE9TVCAvQ29yZUFwaVdlYlNlcnZpY2UvR2VuZXJpY0FwaS5zdmMgSFRUUC8xLjENCkNvbnRlbnQtVHlwZTogdGV4dC94bWwNCkhvc3Q6IDg1LjIwNS4xNjUuMTk3OjE4MjAyDQpDb25uZWN0aW9uOiBjbG9zZQ0KQ29udGVudC1MZW5ndGg6IDIxNDYNCg0KPHNvYXBlbnY6RW52ZWxvcGUgeG1sbnM6c29hcGVudj0iaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvc29hcC9lbnZlbG9wZS8iIHhtbG5zOnJlcT0iaHR0cDovL2FwaS12MS5nZW4ubW0udm9kYWZvbmUuY29tL21taW50ZXJmYWNlL3JlcXVlc3QiPgogICAKICAgPHNvYXBlbnY6Qm9keT4KICAgICAgPHJlcTpSZXF1ZXN0TXNnPjwhW0NEQVRBWzw/eG1sIHZlcnNpb249JycxLjAnJyBlbmNvZGluZz0nJ1VURi04Jyc/PjxyZXF1ZXN0IHhtbG5zPScnaHR0cDovL2FwaS12MS5nZW4ubW0udm9kYWZvbmUuY29tL21taW50ZXJmYWNlL3JlcXVlc3QnJz4KPFRyYW5zYWN0aW9uPgoJPENvbW1hbmRJRD5TYWxhcnlQYXltZW50PC9Db21tYW5kSUQ+Cgk8TGFuZ3VhZ2VDb2RlPjA8L0xhbmd1YWdlQ29kZT4KCTxPcmlnaW5hdG9yQ29udmVyc2F0aW9uSUQ+UjlJMS0wMDAwLTQyMjUtZzY0MTUzPC9PcmlnaW5hdG9yQ29udmVyc2F0aW9uSUQ+Cgk8Q29udmVyc2F0aW9uSUQ+PC9Db252ZXJzYXRpb25JRD4KCTxSZW1hcms+MDwvUmVtYXJrPgoJPEVuY3J5cHRlZFBhcmFtZXRlcnM+RW5jcnlwdGVkUGFyYW1ldGVyczA8L0VuY3J5cHRlZFBhcmFtZXRlcnM+CjxQYXJhbWV0ZXJzPjxQYXJhbWV0ZXI+Cgk8S2V5PkFtb3VudDwvS2V5PgoJPFZhbHVlPjcwLjAwPC9WYWx1ZT4KPC9QYXJhbWV0ZXI+CgogICAgICAgICAgICAKCjwvUGFyYW1ldGVycz4KPFJlZmVyZW5jZURhdGE+Cgk8UmVmZXJlbmNlSXRlbT4KCQk8S2V5PlF1ZXVlVGltZW91dFVSTDwvS2V5PgoJCTxWYWx1ZT5odHRwOi8vMTAuNjYuNDkuMjAxOjg5ODkvPC9WYWx1ZT4KCTwvUmVmZXJlbmNlSXRlbT48L1JlZmVyZW5jZURhdGE+Cgk8VGltZXN0YW1wPjIwMTQtMDktMjdUMTI6NTM6MTkuMDAwMDUyMVo8L1RpbWVzdGFtcD4KPC9UcmFuc2FjdGlvbj4KPElkZW50aXR5PgoJPENhbGxlcj4KCQk8Q2FsbGVyVHlwZT4yPC9DYWxsZXJUeXBlPgoJCTxUaGlyZFBhcnR5SUQ+ODk4OTQxPC9UaGlyZFBhcnR5SUQ+CgkJPFBhc3N3b3JkPlBhc3N3b3JkMDwvUGFzc3dvcmQ+CgkJPENoZWNrU3VtPkNoZWNrU3VtMDwvQ2hlY2tTdW0+CgkJPFJlc3VsdFVSTD5odHRwczovLzE5Ni4yMDEuMjE0LjEzNjoxODMyMy9tbWludGVyZmFjZS9yZXN1bHQ8L1Jlc3VsdFVSTD4KCTwvQ2FsbGVyPgoJPEluaXRpYXRvcj4KCQk8SWRlbnRpZmllclR5cGU+MTE8L0lkZW50aWZpZXJUeXBlPgoJCTxJZGVudGlmaWVyPmIyYzJiPC9JZGVudGlmaWVyPgoJCTxTZWN1cml0eUNyZWRlbnRpYWw+YkpKYkNBNFFUL1c3cFZUOWcrM2RjdGpRSUZVMm9qU1VWZXF6NVlVQit1VXA2NkQ5VWhqalpzaFhKeSs5bURlU3BSbkVRYnM2SDh3R3JoaDIzQVZ1UDIvY3lEcUU2eGZoYVNoVzNLZHRWdCtBcXVhdFVhQmZMYjZTUGdOOWVna1VrbjRoc1hXaytuaGZZN1JzbWRNS3k0SVJCWVRpak11ZVBlNnlHdzE3a2VFalpPTDQrazRuV2ExalZ2UnBQSTZ1QUZKU1kzM3BJeHVMaDJUeCtrQXJnNUk0QjRKUUtPaXcybTdDUG5WVTBqaHZxOHhzR2FyT0luMkNPQ2pFdDNHL0JyMFdwbnJLNzErSHp2aEFCaDlVOGxuTjI1RXZVN3JqQVR6THdsRjhNZ1Z2K2t1MkhEUzYyeDBabVRLVVhIMXNyc1NCYUtFamlUaGNjRnJmWFRFa0ZRPT08L1NlY3VyaXR5Q3JlZGVudGlhbD4KCQk8U2hvcnRDb2RlPjg5ODk0NzwvU2hvcnRDb2RlPgoJPC9Jbml0aWF0b3I+CgkJPFByaW1hcnlQYXJ0eT4KCQkJPElkZW50aWZpZXJUeXBlPjQ8L0lkZW50aWZpZXJUeXBlPgoJCQk8SWRlbnRpZmllcj44OTg5NDY8L0lkZW50aWZpZXI+CgkJCTxTaG9ydENvZGU+PC9TaG9ydENvZGU+CgkJPC9QcmltYXJ5UGFydHk+Cgk8UmVjZWl2ZXJQYXJ0eT4KCQk8SWRlbnRpZmllclR5cGU+MTwvSWRlbnRpZmllclR5cGU+CgkJPElkZW50aWZpZXI+MjU0NzA3MTYzNjA1PC9JZGVudGlmaWVyPgoJCTxTaG9ydENvZGU+PC9TaG9ydENvZGU+Cgk8L1JlY2VpdmVyUGFydHk+Cgk8QWNjZXNzRGV2aWNlPgoJCTxJZGVudGlmaWVyVHlwZT4xPC9JZGVudGlmaWVyVHlwZT4KCQk8SWRlbnRpZmllcj5JZGVudGlmaWVyMzwvSWRlbnRpZmllcj4KCQk8L0FjY2Vzc0RldmljZT48L0lkZW50aXR5PgoJCTxLZXlPd25lcj4xPC9LZXlPd25lcj4KCTwvcmVxdWVzdD5dXT48L3JlcTpSZXF1ZXN0TXNnPgogICA8L3NvYXBlbnY6Qm9keT4KPC9zb2FwZW52OkVudmVsb3BlPg==&lt;/ns1:submitApiRequest&gt;
->
-> &lt;/ns1:submitApiRequestList&gt;
->
-> &lt;ns1:submitApiResponseList&gt;
->
-> &lt;ns1:submitApiResponse&gt;SFRUUC8xLjEgMjAwIE9LDQpDb250ZW50LVR5cGU6IHRleHQveG1sOyBjaGFyc2V0PXV0Zi04DQpTZXJ2ZXI6IE1pY3Jvc29mdC1JSVMvNy4wDQpYLVBvd2VyZWQtQnk6IEFTUC5ORVQNCkRhdGU6IFR1ZSwgMzAgU2VwIDIwMTQgMTI6NTE6MzUgR01UDQpDb25uZWN0aW9uOiBjbG9zZQ0KQ29udGVudC1MZW5ndGg6IDYzNQ0KDQo8czpFbnZlbG9wZSB4bWxuczpzPSJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy9zb2FwL2VudmVsb3BlLyI+PHM6Qm9keSB4bWxuczp4c2k9Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvWE1MU2NoZW1hLWluc3RhbmNlIiB4bWxuczp4c2Q9Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvWE1MU2NoZW1hIj48UmVzcG9uc2VNc2cgeG1sbnM9Imh0dHA6Ly9hcGktdjEuZ2VuLm1tLnZvZGFmb25lLmNvbS9tbWludGVyZmFjZS9yZXF1ZXN0Ij48IVtDREFUQVs8UmVzcG9uc2UgeG1sbnM6aT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEtaW5zdGFuY2UiIHhtbG5zPSJodHRwOi8vYXBpLXYxLmdlbi5tbS52b2RhZm9uZS5jb20vbW1pbnRlcmZhY2UvcmVzcG9uc2UiPjxSZXNwb25zZUNvZGU+MDwvUmVzcG9uc2VDb2RlPjxDb252ZXJzYXRpb25JRD5lMGU5NjhmNS04Y2VhLTQzMTMtYWFjZi0wNzljNWNhNDdkMDE8L0NvbnZlcnNhdGlvbklEPjxPcmlnaW5hdG9yQ29udmVyc2F0aW9uSUQ+UjlJMS0wMDAwLTQyMjUtZzY0MTUzPC9PcmlnaW5hdG9yQ29udmVyc2F0aW9uSUQ+PFNlcnZpY2VTdGF0dXM+MDwvU2VydmljZVN0YXR1cz48L1Jlc3BvbnNlPl1dPjwvUmVzcG9uc2VNc2c+PC9zOkJvZHk+PC9zOkVudmVsb3BlPg==&lt;/ns1:submitApiResponse&gt;
->
-> &lt;ns1:submitApiResponse&gt;SFRUUC8xLjEgMjAwIE9LDQpDb250ZW50LVR5cGU6IHRleHQveG1sDQpDb25uZWN0aW9uOiBjbG9zZQ0KQ29udGVudC1MZW5ndGg6IDYzNQ0KDQo8czpFbnZlbG9wZSB4bWxuczpzPSJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy9zb2FwL2VudmVsb3BlLyI+PHM6Qm9keSB4bWxuczp4c2k9Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvWE1MU2NoZW1hLWluc3RhbmNlIiB4bWxuczp4c2Q9Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvWE1MU2NoZW1hIj48UmVzcG9uc2VNc2cgeG1sbnM9Imh0dHA6Ly9hcGktdjEuZ2VuLm1tLnZvZGFmb25lLmNvbS9tbWludGVyZmFjZS9yZXF1ZXN0Ij48IVtDREFUQVs8UmVzcG9uc2UgeG1sbnM6aT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEtaW5zdGFuY2UiIHhtbG5zPSJodHRwOi8vYXBpLXYxLmdlbi5tbS52b2RhZm9uZS5jb20vbW1pbnRlcmZhY2UvcmVzcG9uc2UiPjxSZXNwb25zZUNvZGU+MDwvUmVzcG9uc2VDb2RlPjxDb252ZXJzYXRpb25JRD5lMGU5NjhmNS04Y2VhLTQzMTMtYWFjZi0wNzljNWNhNDdkMDE8L0NvbnZlcnNhdGlvbklEPjxPcmlnaW5hdG9yQ29udmVyc2F0aW9uSUQ+UjlJMS0wMDAwLTQyMjUtZzY0MTUzPC9PcmlnaW5hdG9yQ29udmVyc2F0aW9uSUQ+PFNlcnZpY2VTdGF0dXM+MDwvU2VydmljZVN0YXR1cz48L1Jlc3BvbnNlPl1dPjwvUmVzcG9uc2VNc2c+PC9zOkJvZHk+PC9zOkVudmVsb3BlPg==&lt;/ns1:submitApiResponse&gt;
->
-> &lt;/ns1:submitApiResponseList&gt;
->
-> &lt;ns1:submitApiResultList&gt;
->
-> &lt;ns1:submitApiResult&gt;UE9TVCAvIEhUVFAvMS4xDQpDb250ZW50LVR5cGU6IHRleHQveG1sDQpIb3N0OiAxMC42Ni40OS4yMDE6ODA5Nw0KQ29ubmVjdGlvbjogY2xvc2UNCkNvbnRlbnQtTGVuZ3RoOiAxMTc5DQoNCjxzOkVudmVsb3BlIHhtbG5zOnM9Imh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3NvYXAvZW52ZWxvcGUvIj48czpCb2R5IHhtbG5zOnhzaT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEtaW5zdGFuY2UiIHhtbG5zOnhzZD0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEiPjxSZXN1bHRNc2cgeG1sbnM9Imh0dHA6Ly9hcGktdjEuZ2VuLm1tLnZvZGFmb25lLmNvbS9tbWludGVyZmFjZS9yZXN1bHQiPjwhW0NEQVRBWzxSZXN1bHQgeG1sbnM6aT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEtaW5zdGFuY2UiIHhtbG5zPSJodHRwOi8vYXBpLXYxLmdlbi5tbS52b2RhZm9uZS5jb20vbW1pbnRlcmZhY2UvcmVzdWx0Ij48UmVzdWx0VHlwZT5Db21wbGV0ZWQ8L1Jlc3VsdFR5cGU+PFJlc3VsdENvZGU+MTk8L1Jlc3VsdENvZGU+PFJlc3VsdERlc2M+QXBpUmVxdWVzdE1lc3NhZ2VFeHBpcnlGYWlsdXJlPC9SZXN1bHREZXNjPjxPcmlnaW5hdG9yQ29udmVyc2F0aW9uSUQ+UjlJMS0wMDAwLTQyMjUtZzY0MTUzPC9PcmlnaW5hdG9yQ29udmVyc2F0aW9uSUQ+PENvbnZlcnNhdGlvbklEPmUwZTk2OGY1LThjZWEtNDMxMy1hYWNmLTA3OWM1Y2E0N2QwMTwvQ29udmVyc2F0aW9uSUQ+PFJlc3VsdFBhcmFtZXRlcnM+PFBhcmFtZXRlcj48S2V5IHhtbG5zPSJodHRwOi8vYXBpLXYxLmdlbi5tbS52b2RhZm9uZS5jb20vbW1pbnRlcmZhY2UvcmVxdWVzdCI+VHJhbnNhY3Rpb24gRGF0ZVRpbWU8L0tleT48VmFsdWUgeG1sbnM9Imh0dHA6Ly9hcGktdjEuZ2VuLm1tLnZvZGFmb25lLmNvbS9tbWludGVyZmFjZS9yZXF1ZXN0Ij4zMC4wOS4yMDE0IDEyOjUyOjMxPC9WYWx1ZT48L1BhcmFtZXRlcj48L1Jlc3VsdFBhcmFtZXRlcnM+PFJlZmVyZW5jZURhdGE+PFJlZmVyZW5jZUl0ZW0+PEtleSB4bWxucz0iaHR0cDovL2FwaS12MS5nZW4ubW0udm9kYWZvbmUuY29tL21taW50ZXJmYWNlL3JlcXVlc3QiPlF1ZXVlVGltZW91dFVSTDwvS2V5PjxWYWx1ZSB4bWxucz0iaHR0cDovL2FwaS12MS5nZW4ubW0udm9kYWZvbmUuY29tL21taW50ZXJmYWNlL3JlcXVlc3QiPmh0dHA6Ly8xMC42Ni40OS4yMDE6ODk4OS88L1ZhbHVlPjwvUmVmZXJlbmNlSXRlbT48L1JlZmVyZW5jZURhdGE+PC9SZXN1bHQ+XV0+PC9SZXN1bHRNc2c+PC9zOkJvZHk+PC9zOkVudmVsb3BlPg==&lt;/ns1:submitApiResult&gt;
->
-> &lt;/ns1:submitApiResultList&gt;
->
-> &lt;ns1:queueTimeOutList/&gt;
->
-> &lt;/ns1:queryTransactionResponse&gt;
->
-> &lt;/soapenv:Body&gt;
->
-> &lt;/soapenv:Envelope&gt;Example2: Error response
->
-> &lt;soapenv:Envelope
-> xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
-> xmlns:loc="http://www.csapi.org/schema/transaction/data/v1\_0/local"
-> xmlns:res="http://api-v1.gen.mm.vodafone.com/mminterface/response"
-> xmlns:res1="http://api-v1.gen.mm.vodafone.com/mminterface/result"&gt;
->
-> &lt;soapenv:Header/&gt;
->
-> &lt;soapenv:Body&gt;
->
-> &lt;loc:queryTransactionResponse&gt;
->
-> &lt;loc:result&gt;
->
-> &lt;ResponseCode&gt;100000007&lt;/ResponseCode&gt;
->
-> &lt;ResponseDesc&gt;Authentication failed&lt;/ResponseDesc&gt;
->
-> &lt;/loc:result&gt;
->
-> &lt;/loc:queryTransactionResponse&gt;
->
-> &lt;/soapenv:Body&gt;
->
-> &lt;/soapenv:Envelope&gt;
+```xml
+<soapenv:Envelope
+xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 
-1.  changePassword
-    --------------
+<soapenv:Body>
 
-    1.  ### Request example:
+<ns1:queryTransactionResponse
+xmlns:ns1="http://www.csapi.org/schema/transaction/data/v1\_0/local">
 
-> &lt;soapenv:Envelope
-> xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
-> xmlns:loc="http://www.csapi.org/schema/management/data/v1\_0/local"
-> xmlns:res="http://api-v1.gen.mm.vodafone.com/mminterface/result"&gt;
->
-> &lt;soapenv:Header/&gt;
->
-> &lt;soapenv:Body&gt;
->
-> &lt;loc:changePassword&gt;
->
-> &lt;loc:spId&gt;3500001&lt;/loc:spId&gt;
->
-> &lt;loc:spPassword&gt;c5216e519a071d601bedd150f3fcd026&lt;/loc:spPassword&gt;
->
-> &lt;loc:timeStamp&gt;20120101010101&lt;/loc:timeStamp&gt;
->
-> &lt;loc:newPassword&gt;wi2a7BAH0QPd2LRdmcgC9w==&lt;/loc:newPassword&gt;
->
-> &lt;/loc:changePassword&gt;
->
-> &lt;/soapenv:Body&gt;
->
-> &lt;/soapenv:Envelope&gt;
+<ns1:result>
+
+<ns2:ResponseCode
+xmlns:ns2="http://api-v1.gen.mm.vodafone.com/mminterface/response">00000000</ns2:ResponseCode>
+
+<ns3:ResponseDesc
+xmlns:ns3="http://api-v1.gen.mm.vodafone.com/mminterface/response">Success</ns3:ResponseDesc>
+
+</ns1:result>
+
+<ns1:submitApiRequestList>
+
+<ns1:submitApiRequest>UE9TVCAvbW1pbnRlcmZhY2UvcmVxdWVzdCBIVFRQLzEuMQ0KQWNjZXB0LUVuY29kaW5nOiBnemlwLGRlZmxhdGUNCkNvbnRlbnQtVHlwZTogdGV4dC94bWw7Y2hhcnNldD1VVEYtOA0KU09BUEFjdGlvbjogIiINClVzZXItQWdlbnQ6IEpha2FydGEgQ29tbW9ucy1IdHRwQ2xpZW50LzMuMQ0KSG9zdDogMTAuNS4zOC41MTo4MzEwDQpDb250ZW50LUxlbmd0aDogMjU1MQ0KDQo8c29hcGVudjpFbnZlbG9wZSB4bWxuczpzb2FwZW52PSJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy9zb2FwL2VudmVsb3BlLyIgeG1sbnM6cmVxPSJodHRwOi8vYXBpLXYxLmdlbi5tbS52b2RhZm9uZS5jb20vbW1pbnRlcmZhY2UvcmVxdWVzdCI+CiAgIDxzb2FwZW52OkhlYWRlcj4KICAgICAgPHRuczpSZXF1ZXN0U09BUEhlYWRlciB4bWxuczp0bnM9Imh0dHA6Ly93d3cuaHVhd2VpLmNvbS9zY2hlbWEvb3NnL2NvbW1vbi92Ml8xIj4KICAgICAgICAgPHRuczpzcElkPjE1MTUxNTwvdG5zOnNwSWQ+CiAgICAgICAgIDx0bnM6c3BQYXNzd29yZD5PREV4TkVSQ01EbENOalZEUmtZeFFVRkNOekU1TWtFMU9FUXlNakpETXprMVJVRkNOemd3TWprMk9ERTRSamsxT1RFMk1FRkdORFUxUWtSQ01Ea3lNZz09PC90bnM6c3BQYXNzd29yZD4KICAgICAgICAgPHRuczp0aW1lU3RhbXA+MjAxNDA3MzAwOTM2MjA8L3Ruczp0aW1lU3RhbXA+CiAgICAgICAgIDx0bnM6c2VydmljZUlkPjE1MTUxNTAwMDwvdG5zOnNlcnZpY2VJZD4KICAgICAgPC90bnM6UmVxdWVzdFNPQVBIZWFkZXI+CiAgIDwvc29hcGVudjpIZWFkZXI+CiAgIDxzb2FwZW52OkJvZHk+CiAgICAgIDxyZXE6UmVxdWVzdE1zZz48IVtDREFUQVs8P3htbCB2ZXJzaW9uPScnMS4wJycgZW5jb2Rpbmc9JydVVEYtOCcnPz48cmVxdWVzdCB4bWxucz0nJ2h0dHA6Ly9hcGktdjEuZ2VuLm1tLnZvZGFmb25lLmNvbS9tbWludGVyZmFjZS9yZXF1ZXN0Jyc+CjxUcmFuc2FjdGlvbj4KCTxDb21tYW5kSUQ+U2FsYXJ5UGF5bWVudDwvQ29tbWFuZElEPgoJPExhbmd1YWdlQ29kZT4wPC9MYW5ndWFnZUNvZGU+Cgk8T3JpZ2luYXRvckNvbnZlcnNhdGlvbklEPlI5STEtMDAwMC00MjI1LWc2NDE1MzwvT3JpZ2luYXRvckNvbnZlcnNhdGlvbklEPgoJPENvbnZlcnNhdGlvbklEPjwvQ29udmVyc2F0aW9uSUQ+Cgk8UmVtYXJrPjA8L1JlbWFyaz4KCTxFbmNyeXB0ZWRQYXJhbWV0ZXJzPkVuY3J5cHRlZFBhcmFtZXRlcnMwPC9FbmNyeXB0ZWRQYXJhbWV0ZXJzPgo8UGFyYW1ldGVycz48UGFyYW1ldGVyPgoJPEtleT5BbW91bnQ8L0tleT4KCTxWYWx1ZT43MC4wMDwvVmFsdWU+CjwvUGFyYW1ldGVyPgoKICAgICAgICAgICAgCgo8L1BhcmFtZXRlcnM+CjxSZWZlcmVuY2VEYXRhPgoJPFJlZmVyZW5jZUl0ZW0+CgkJPEtleT5RdWV1ZVRpbWVvdXRVUkw8L0tleT4KCQk8VmFsdWU+aHR0cDovLzEwLjY2LjQ5LjIwMTo4OTg5LzwvVmFsdWU+Cgk8L1JlZmVyZW5jZUl0ZW0+PC9SZWZlcmVuY2VEYXRhPgoJPFRpbWVzdGFtcD4yMDE0LTA5LTI3VDEyOjUzOjE5LjAwMDA1MjFaPC9UaW1lc3RhbXA+CjwvVHJhbnNhY3Rpb24+CjxJZGVudGl0eT4KCTxDYWxsZXI+CgkJPENhbGxlclR5cGU+MjwvQ2FsbGVyVHlwZT4KCQk8VGhpcmRQYXJ0eUlEPjg5ODk0MTwvVGhpcmRQYXJ0eUlEPgoJCTxQYXNzd29yZD5QYXNzd29yZDA8L1Bhc3N3b3JkPgoJCTxDaGVja1N1bT5DaGVja1N1bTA8L0NoZWNrU3VtPgoJCTxSZXN1bHRVUkw+aHR0cDovLzEwLjY2LjQ5LjIwMTo4MDk3LzwvUmVzdWx0VVJMPgoJPC9DYWxsZXI+Cgk8SW5pdGlhdG9yPgoJCTxJZGVudGlmaWVyVHlwZT4xMTwvSWRlbnRpZmllclR5cGU+CgkJPElkZW50aWZpZXI+YjJjMmI8L0lkZW50aWZpZXI+CgkJPFNlY3VyaXR5Q3JlZGVudGlhbD5iSkpiQ0E0UVQvVzdwVlQ5ZyszZGN0alFJRlUyb2pTVVZlcXo1WVVCK3VVcDY2RDlVaGpqWnNoWEp5KzltRGVTcFJuRVFiczZIOHdHcmhoMjNBVnVQMi9jeURxRTZ4ZmhhU2hXM0tkdFZ0K0FxdWF0VWFCZkxiNlNQZ045ZWdrVWtuNGhzWFdrK25oZlk3UnNtZE1LeTRJUkJZVGlqTXVlUGU2eUd3MTdrZUVqWk9MNCtrNG5XYTFqVnZScFBJNnVBRkpTWTMzcEl4dUxoMlR4K2tBcmc1STRCNEpRS09pdzJtN0NQblZVMGpodnE4eHNHYXJPSW4yQ09DakV0M0cvQnIwV3Bucks3MStIenZoQUJoOVU4bG5OMjVFdlU3cmpBVHpMd2xGOE1nVnYra3UySERTNjJ4MFptVEtVWEgxc3JzU0JhS0VqaVRoY2NGcmZYVEVrRlE9PTwvU2VjdXJpdHlDcmVkZW50aWFsPgoJCTxTaG9ydENvZGU+ODk4OTQ3PC9TaG9ydENvZGU+Cgk8L0luaXRpYXRvcj4KCQk8UHJpbWFyeVBhcnR5PgoJCQk8SWRlbnRpZmllclR5cGU+NDwvSWRlbnRpZmllclR5cGU+CgkJCTxJZGVudGlmaWVyPjg5ODk0NjwvSWRlbnRpZmllcj4KCQkJPFNob3J0Q29kZT48L1Nob3J0Q29kZT4KCQk8L1ByaW1hcnlQYXJ0eT4KCTxSZWNlaXZlclBhcnR5PgoJCTxJZGVudGlmaWVyVHlwZT4xPC9JZGVudGlmaWVyVHlwZT4KCQk8SWRlbnRpZmllcj4yNTQ3MDcxNjM2MDU8L0lkZW50aWZpZXI+CgkJPFNob3J0Q29kZT48L1Nob3J0Q29kZT4KCTwvUmVjZWl2ZXJQYXJ0eT4KCTxBY2Nlc3NEZXZpY2U+CgkJPElkZW50aWZpZXJUeXBlPjE8L0lkZW50aWZpZXJUeXBlPgoJCTxJZGVudGlmaWVyPklkZW50aWZpZXIzPC9JZGVudGlmaWVyPgoJCTwvQWNjZXNzRGV2aWNlPjwvSWRlbnRpdHk+CgkJPEtleU93bmVyPjE8L0tleU93bmVyPgoJPC9yZXF1ZXN0Pl1dPjwvcmVxOlJlcXVlc3RNc2c+CiAgIDwvc29hcGVudjpCb2R5Pgo8L3NvYXBlbnY6RW52ZWxvcGU+</ns1:submitApiRequest>
+
+<ns1:submitApiRequest>UE9TVCAvQ29yZUFwaVdlYlNlcnZpY2UvR2VuZXJpY0FwaS5zdmMgSFRUUC8xLjENCkNvbnRlbnQtVHlwZTogdGV4dC94bWwNCkhvc3Q6IDg1LjIwNS4xNjUuMTk3OjE4MjAyDQpDb25uZWN0aW9uOiBjbG9zZQ0KQ29udGVudC1MZW5ndGg6IDIxNDYNCg0KPHNvYXBlbnY6RW52ZWxvcGUgeG1sbnM6c29hcGVudj0iaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvc29hcC9lbnZlbG9wZS8iIHhtbG5zOnJlcT0iaHR0cDovL2FwaS12MS5nZW4ubW0udm9kYWZvbmUuY29tL21taW50ZXJmYWNlL3JlcXVlc3QiPgogICAKICAgPHNvYXBlbnY6Qm9keT4KICAgICAgPHJlcTpSZXF1ZXN0TXNnPjwhW0NEQVRBWzw/eG1sIHZlcnNpb249JycxLjAnJyBlbmNvZGluZz0nJ1VURi04Jyc/PjxyZXF1ZXN0IHhtbG5zPScnaHR0cDovL2FwaS12MS5nZW4ubW0udm9kYWZvbmUuY29tL21taW50ZXJmYWNlL3JlcXVlc3QnJz4KPFRyYW5zYWN0aW9uPgoJPENvbW1hbmRJRD5TYWxhcnlQYXltZW50PC9Db21tYW5kSUQ+Cgk8TGFuZ3VhZ2VDb2RlPjA8L0xhbmd1YWdlQ29kZT4KCTxPcmlnaW5hdG9yQ29udmVyc2F0aW9uSUQ+UjlJMS0wMDAwLTQyMjUtZzY0MTUzPC9PcmlnaW5hdG9yQ29udmVyc2F0aW9uSUQ+Cgk8Q29udmVyc2F0aW9uSUQ+PC9Db252ZXJzYXRpb25JRD4KCTxSZW1hcms+MDwvUmVtYXJrPgoJPEVuY3J5cHRlZFBhcmFtZXRlcnM+RW5jcnlwdGVkUGFyYW1ldGVyczA8L0VuY3J5cHRlZFBhcmFtZXRlcnM+CjxQYXJhbWV0ZXJzPjxQYXJhbWV0ZXI+Cgk8S2V5PkFtb3VudDwvS2V5PgoJPFZhbHVlPjcwLjAwPC9WYWx1ZT4KPC9QYXJhbWV0ZXI+CgogICAgICAgICAgICAKCjwvUGFyYW1ldGVycz4KPFJlZmVyZW5jZURhdGE+Cgk8UmVmZXJlbmNlSXRlbT4KCQk8S2V5PlF1ZXVlVGltZW91dFVSTDwvS2V5PgoJCTxWYWx1ZT5odHRwOi8vMTAuNjYuNDkuMjAxOjg5ODkvPC9WYWx1ZT4KCTwvUmVmZXJlbmNlSXRlbT48L1JlZmVyZW5jZURhdGE+Cgk8VGltZXN0YW1wPjIwMTQtMDktMjdUMTI6NTM6MTkuMDAwMDUyMVo8L1RpbWVzdGFtcD4KPC9UcmFuc2FjdGlvbj4KPElkZW50aXR5PgoJPENhbGxlcj4KCQk8Q2FsbGVyVHlwZT4yPC9DYWxsZXJUeXBlPgoJCTxUaGlyZFBhcnR5SUQ+ODk4OTQxPC9UaGlyZFBhcnR5SUQ+CgkJPFBhc3N3b3JkPlBhc3N3b3JkMDwvUGFzc3dvcmQ+CgkJPENoZWNrU3VtPkNoZWNrU3VtMDwvQ2hlY2tTdW0+CgkJPFJlc3VsdFVSTD5odHRwczovLzE5Ni4yMDEuMjE0LjEzNjoxODMyMy9tbWludGVyZmFjZS9yZXN1bHQ8L1Jlc3VsdFVSTD4KCTwvQ2FsbGVyPgoJPEluaXRpYXRvcj4KCQk8SWRlbnRpZmllclR5cGU+MTE8L0lkZW50aWZpZXJUeXBlPgoJCTxJZGVudGlmaWVyPmIyYzJiPC9JZGVudGlmaWVyPgoJCTxTZWN1cml0eUNyZWRlbnRpYWw+YkpKYkNBNFFUL1c3cFZUOWcrM2RjdGpRSUZVMm9qU1VWZXF6NVlVQit1VXA2NkQ5VWhqalpzaFhKeSs5bURlU3BSbkVRYnM2SDh3R3JoaDIzQVZ1UDIvY3lEcUU2eGZoYVNoVzNLZHRWdCtBcXVhdFVhQmZMYjZTUGdOOWVna1VrbjRoc1hXaytuaGZZN1JzbWRNS3k0SVJCWVRpak11ZVBlNnlHdzE3a2VFalpPTDQrazRuV2ExalZ2UnBQSTZ1QUZKU1kzM3BJeHVMaDJUeCtrQXJnNUk0QjRKUUtPaXcybTdDUG5WVTBqaHZxOHhzR2FyT0luMkNPQ2pFdDNHL0JyMFdwbnJLNzErSHp2aEFCaDlVOGxuTjI1RXZVN3JqQVR6THdsRjhNZ1Z2K2t1MkhEUzYyeDBabVRLVVhIMXNyc1NCYUtFamlUaGNjRnJmWFRFa0ZRPT08L1NlY3VyaXR5Q3JlZGVudGlhbD4KCQk8U2hvcnRDb2RlPjg5ODk0NzwvU2hvcnRDb2RlPgoJPC9Jbml0aWF0b3I+CgkJPFByaW1hcnlQYXJ0eT4KCQkJPElkZW50aWZpZXJUeXBlPjQ8L0lkZW50aWZpZXJUeXBlPgoJCQk8SWRlbnRpZmllcj44OTg5NDY8L0lkZW50aWZpZXI+CgkJCTxTaG9ydENvZGU+PC9TaG9ydENvZGU+CgkJPC9QcmltYXJ5UGFydHk+Cgk8UmVjZWl2ZXJQYXJ0eT4KCQk8SWRlbnRpZmllclR5cGU+MTwvSWRlbnRpZmllclR5cGU+CgkJPElkZW50aWZpZXI+MjU0NzA3MTYzNjA1PC9JZGVudGlmaWVyPgoJCTxTaG9ydENvZGU+PC9TaG9ydENvZGU+Cgk8L1JlY2VpdmVyUGFydHk+Cgk8QWNjZXNzRGV2aWNlPgoJCTxJZGVudGlmaWVyVHlwZT4xPC9JZGVudGlmaWVyVHlwZT4KCQk8SWRlbnRpZmllcj5JZGVudGlmaWVyMzwvSWRlbnRpZmllcj4KCQk8L0FjY2Vzc0RldmljZT48L0lkZW50aXR5PgoJCTxLZXlPd25lcj4xPC9LZXlPd25lcj4KCTwvcmVxdWVzdD5dXT48L3JlcTpSZXF1ZXN0TXNnPgogICA8L3NvYXBlbnY6Qm9keT4KPC9zb2FwZW52OkVudmVsb3BlPg==</ns1:submitApiRequest>
+
+</ns1:submitApiRequestList>
+
+<ns1:submitApiResponseList>
+
+<ns1:submitApiResponse>SFRUUC8xLjEgMjAwIE9LDQpDb250ZW50LVR5cGU6IHRleHQveG1sOyBjaGFyc2V0PXV0Zi04DQpTZXJ2ZXI6IE1pY3Jvc29mdC1JSVMvNy4wDQpYLVBvd2VyZWQtQnk6IEFTUC5ORVQNCkRhdGU6IFR1ZSwgMzAgU2VwIDIwMTQgMTI6NTE6MzUgR01UDQpDb25uZWN0aW9uOiBjbG9zZQ0KQ29udGVudC1MZW5ndGg6IDYzNQ0KDQo8czpFbnZlbG9wZSB4bWxuczpzPSJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy9zb2FwL2VudmVsb3BlLyI+PHM6Qm9keSB4bWxuczp4c2k9Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvWE1MU2NoZW1hLWluc3RhbmNlIiB4bWxuczp4c2Q9Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvWE1MU2NoZW1hIj48UmVzcG9uc2VNc2cgeG1sbnM9Imh0dHA6Ly9hcGktdjEuZ2VuLm1tLnZvZGFmb25lLmNvbS9tbWludGVyZmFjZS9yZXF1ZXN0Ij48IVtDREFUQVs8UmVzcG9uc2UgeG1sbnM6aT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEtaW5zdGFuY2UiIHhtbG5zPSJodHRwOi8vYXBpLXYxLmdlbi5tbS52b2RhZm9uZS5jb20vbW1pbnRlcmZhY2UvcmVzcG9uc2UiPjxSZXNwb25zZUNvZGU+MDwvUmVzcG9uc2VDb2RlPjxDb252ZXJzYXRpb25JRD5lMGU5NjhmNS04Y2VhLTQzMTMtYWFjZi0wNzljNWNhNDdkMDE8L0NvbnZlcnNhdGlvbklEPjxPcmlnaW5hdG9yQ29udmVyc2F0aW9uSUQ+UjlJMS0wMDAwLTQyMjUtZzY0MTUzPC9PcmlnaW5hdG9yQ29udmVyc2F0aW9uSUQ+PFNlcnZpY2VTdGF0dXM+MDwvU2VydmljZVN0YXR1cz48L1Jlc3BvbnNlPl1dPjwvUmVzcG9uc2VNc2c+PC9zOkJvZHk+PC9zOkVudmVsb3BlPg==</ns1:submitApiResponse>
+
+<ns1:submitApiResponse>SFRUUC8xLjEgMjAwIE9LDQpDb250ZW50LVR5cGU6IHRleHQveG1sDQpDb25uZWN0aW9uOiBjbG9zZQ0KQ29udGVudC1MZW5ndGg6IDYzNQ0KDQo8czpFbnZlbG9wZSB4bWxuczpzPSJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy9zb2FwL2VudmVsb3BlLyI+PHM6Qm9keSB4bWxuczp4c2k9Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvWE1MU2NoZW1hLWluc3RhbmNlIiB4bWxuczp4c2Q9Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvWE1MU2NoZW1hIj48UmVzcG9uc2VNc2cgeG1sbnM9Imh0dHA6Ly9hcGktdjEuZ2VuLm1tLnZvZGFmb25lLmNvbS9tbWludGVyZmFjZS9yZXF1ZXN0Ij48IVtDREFUQVs8UmVzcG9uc2UgeG1sbnM6aT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEtaW5zdGFuY2UiIHhtbG5zPSJodHRwOi8vYXBpLXYxLmdlbi5tbS52b2RhZm9uZS5jb20vbW1pbnRlcmZhY2UvcmVzcG9uc2UiPjxSZXNwb25zZUNvZGU+MDwvUmVzcG9uc2VDb2RlPjxDb252ZXJzYXRpb25JRD5lMGU5NjhmNS04Y2VhLTQzMTMtYWFjZi0wNzljNWNhNDdkMDE8L0NvbnZlcnNhdGlvbklEPjxPcmlnaW5hdG9yQ29udmVyc2F0aW9uSUQ+UjlJMS0wMDAwLTQyMjUtZzY0MTUzPC9PcmlnaW5hdG9yQ29udmVyc2F0aW9uSUQ+PFNlcnZpY2VTdGF0dXM+MDwvU2VydmljZVN0YXR1cz48L1Jlc3BvbnNlPl1dPjwvUmVzcG9uc2VNc2c+PC9zOkJvZHk+PC9zOkVudmVsb3BlPg==</ns1:submitApiResponse>
+
+</ns1:submitApiResponseList>
+
+<ns1:submitApiResultList>
+
+<ns1:submitApiResult>UE9TVCAvIEhUVFAvMS4xDQpDb250ZW50LVR5cGU6IHRleHQveG1sDQpIb3N0OiAxMC42Ni40OS4yMDE6ODA5Nw0KQ29ubmVjdGlvbjogY2xvc2UNCkNvbnRlbnQtTGVuZ3RoOiAxMTc5DQoNCjxzOkVudmVsb3BlIHhtbG5zOnM9Imh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3NvYXAvZW52ZWxvcGUvIj48czpCb2R5IHhtbG5zOnhzaT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEtaW5zdGFuY2UiIHhtbG5zOnhzZD0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEiPjxSZXN1bHRNc2cgeG1sbnM9Imh0dHA6Ly9hcGktdjEuZ2VuLm1tLnZvZGFmb25lLmNvbS9tbWludGVyZmFjZS9yZXN1bHQiPjwhW0NEQVRBWzxSZXN1bHQgeG1sbnM6aT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEtaW5zdGFuY2UiIHhtbG5zPSJodHRwOi8vYXBpLXYxLmdlbi5tbS52b2RhZm9uZS5jb20vbW1pbnRlcmZhY2UvcmVzdWx0Ij48UmVzdWx0VHlwZT5Db21wbGV0ZWQ8L1Jlc3VsdFR5cGU+PFJlc3VsdENvZGU+MTk8L1Jlc3VsdENvZGU+PFJlc3VsdERlc2M+QXBpUmVxdWVzdE1lc3NhZ2VFeHBpcnlGYWlsdXJlPC9SZXN1bHREZXNjPjxPcmlnaW5hdG9yQ29udmVyc2F0aW9uSUQ+UjlJMS0wMDAwLTQyMjUtZzY0MTUzPC9PcmlnaW5hdG9yQ29udmVyc2F0aW9uSUQ+PENvbnZlcnNhdGlvbklEPmUwZTk2OGY1LThjZWEtNDMxMy1hYWNmLTA3OWM1Y2E0N2QwMTwvQ29udmVyc2F0aW9uSUQ+PFJlc3VsdFBhcmFtZXRlcnM+PFBhcmFtZXRlcj48S2V5IHhtbG5zPSJodHRwOi8vYXBpLXYxLmdlbi5tbS52b2RhZm9uZS5jb20vbW1pbnRlcmZhY2UvcmVxdWVzdCI+VHJhbnNhY3Rpb24gRGF0ZVRpbWU8L0tleT48VmFsdWUgeG1sbnM9Imh0dHA6Ly9hcGktdjEuZ2VuLm1tLnZvZGFmb25lLmNvbS9tbWludGVyZmFjZS9yZXF1ZXN0Ij4zMC4wOS4yMDE0IDEyOjUyOjMxPC9WYWx1ZT48L1BhcmFtZXRlcj48L1Jlc3VsdFBhcmFtZXRlcnM+PFJlZmVyZW5jZURhdGE+PFJlZmVyZW5jZUl0ZW0+PEtleSB4bWxucz0iaHR0cDovL2FwaS12MS5nZW4ubW0udm9kYWZvbmUuY29tL21taW50ZXJmYWNlL3JlcXVlc3QiPlF1ZXVlVGltZW91dFVSTDwvS2V5PjxWYWx1ZSB4bWxucz0iaHR0cDovL2FwaS12MS5nZW4ubW0udm9kYWZvbmUuY29tL21taW50ZXJmYWNlL3JlcXVlc3QiPmh0dHA6Ly8xMC42Ni40OS4yMDE6ODk4OS88L1ZhbHVlPjwvUmVmZXJlbmNlSXRlbT48L1JlZmVyZW5jZURhdGE+PC9SZXN1bHQ+XV0+PC9SZXN1bHRNc2c+PC9zOkJvZHk+PC9zOkVudmVsb3BlPg==</ns1:submitApiResult>
+
+</ns1:submitApiResultList>
+
+<ns1:queueTimeOutList/>
+
+</ns1:queryTransactionResponse>
+
+</soapenv:Body>
+
+</soapenv:Envelope>
+```
+
+#### Example2: Error response
+
+```xml
+<soapenv:Envelope
+xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+xmlns:loc="http://www.csapi.org/schema/transaction/data/v1\_0/local"
+xmlns:res="http://api-v1.gen.mm.vodafone.com/mminterface/response"
+xmlns:res1="http://api-v1.gen.mm.vodafone.com/mminterface/result">
+
+<soapenv:Header/>
+
+<soapenv:Body>
+
+<loc:queryTransactionResponse>
+
+<loc:result>
+
+<ResponseCode>100000007</ResponseCode>
+
+<ResponseDesc>Authentication failed</ResponseDesc>
+
+</loc:result>
+
+</loc:queryTransactionResponse>
+
+</soapenv:Body>
+
+</soapenv:Envelope>
+```
+
+### changePassword
+#### Request example:
+
+```xml
+<soapenv:Envelope
+xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+xmlns:loc="http://www.csapi.org/schema/management/data/v1\_0/local"
+xmlns:res="http://api-v1.gen.mm.vodafone.com/mminterface/result">
+
+<soapenv:Header/>
+
+<soapenv:Body>
+
+<loc:changePassword>
+
+<loc:spId>3500001</loc:spId>
+
+<loc:spPassword>c5216e519a071d601bedd150f3fcd026</loc:spPassword>
+
+<loc:timeStamp>20120101010101</loc:timeStamp>
+
+<loc:newPassword>wi2a7BAH0QPd2LRdmcgC9w==</loc:newPassword>
+
+</loc:changePassword>
+
+</soapenv:Body>
+
+</soapenv:Envelope>
+```
 
 ### Response example:
+#### Example1: Success response
 
--   Example1: Success response
+```xml
+<soapenv:Envelope
+xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+xmlns:loc="http://www.csapi.org/schema/transaction/data/v1\_0/local"
+xmlns:res="http://api-v1.gen.mm.vodafone.com/mminterface/response"
+xmlns:res1="http://api-v1.gen.mm.vodafone.com/mminterface/result">
 
-> &lt;soapenv:Envelope
-> xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
-> xmlns:loc="http://www.csapi.org/schema/transaction/data/v1\_0/local"
-> xmlns:res="http://api-v1.gen.mm.vodafone.com/mminterface/response"
-> xmlns:res1="http://api-v1.gen.mm.vodafone.com/mminterface/result"&gt;
->
-> &lt;soapenv:Header/&gt;
->
-> &lt;soapenv:Body&gt;
->
-> &lt;loc:changePassword Response&gt;
->
-> &lt;loc:result&gt;
->
-> &lt;res:ResponseCode&gt;00000000&lt;/res:ResponseCode&gt;
->
-> &lt;res:ResponseDesc&gt;Success&lt;/res:ResponseDesc&gt;
->
-> &lt;/loc:result&gt;
->
-> &lt;loc:changePasswordResponse&gt;
->
-> &lt;/soapenv:Body&gt;
->
-> &lt;/soapenv:Envelope&gt;
+<soapenv:Header/>
 
--   Example2: Error response caused by authentication failed.
+<soapenv:Body>
 
-> &lt;soapenv:Envelope
-> xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
-> xmlns:req="http://api-v1.gen.mm.vodafone.com/mminterface/request"&gt;
->
-> &lt;soapenv:Header/&gt;
->
-> &lt;soapenv:Body&gt;
->
-> &lt;req:ResponseMsg&gt;&lt;!\[CDATA\[&lt;?xml version="1.0"
-> encoding="UTF-8"?&gt;
->
-> &lt;response
-> xmlns="http://api-v1.gen.mm.vodafone.com/mminterface/response"&gt;
->
-> &lt;ResponseCode&gt;100000007&lt;/ResponseCode&gt;
->
-> &lt;ResponseDesc&gt;Authentication failed&lt;/ResponseDesc&gt;
->
-> &lt;/response&gt;\]\]&gt;&lt;/req:ResponseMsg&gt;
->
-> &lt;/soapenv:Body&gt;
->
-> &lt;/soapenv:Envelope&gt;
+<loc:changePassword Response>
+
+<loc:result>
+
+<res:ResponseCode>00000000</res:ResponseCode>
+
+<res:ResponseDesc>Success</res:ResponseDesc>
+
+</loc:result>
+
+<loc:changePasswordResponse>
+
+</soapenv:Body>
+
+</soapenv:Envelope>
+```
+
+#### Example2: Error response caused by authentication failed.
+
+``` xml
+  <soapenv:Envelope
+  xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+  xmlns:req="http://api-v1.gen.mm.vodafone.com/mminterface/request">
+
+  <soapenv:Header/>
+
+  <soapenv:Body>
+
+  <req:ResponseMsg><!\[CDATA\[<?xml version="1.0"
+  encoding="UTF-8"?>
+
+  <response
+  xmlns="http://api-v1.gen.mm.vodafone.com/mminterface/response">
+
+  <ResponseCode>100000007</ResponseCode>
+
+  <ResponseDesc>Authentication failed</ResponseDesc>
+
+  </response>\]\]></req:ResponseMsg>
+
+  </soapenv:Body>
+
+  </soapenv:Envelope>
+```
