@@ -74,34 +74,32 @@
 
  List of IdentityType values.
 
-  > Enumeration   > Description
-  --------------- --------------------------------
-  > 1             > MSISDN
-  > 2             > TillNumber
-  > 3             > SPShortCode
-  > 4             > OrganizationShortCode
-  > 5             > IdentityID
-  > 6             > O2CLink
-  > 9             > SPOperatorCode
-  > 10            > POSNumber
-  > 11            > OrganizationOperatorUserName
-  > 12            > OrganizationOperatorCode
-  > 13            > VoucherCode
+   Enumeration   | Description
+  ---------------|---------------------------------
+   1             | MSISDN
+   2             | TillNumber
+   3             | SPShortCode
+   4             | OrganizationShortCode
+   5             | IdentityID
+   6             > O2CLink
+   9             > SPOperatorCode
+   10            | POSNumber
+   11            | OrganizationOperatorUserName
+   12            | OrganizationOperatorCode
+   13            | VoucherCode
 
-ParameterType structure
------------------------
+### ParameterType structure
 
-  Element name   Element type   Optional   > Description
-  -------------- -------------- ---------- -----------------------------------
-  Key            xsd:string     No         > It indicates a parameter name.
-  Value          xsd:string     No         > It indicates a parameter value.
+  Element name   |Element type  | Optional   | Description
+  --------------|--------------- |-------------|---------------------------------
+  Key            |xsd:string    | No         | It indicates a parameter name.
+  Value          xsd:string     No         | It indicates a parameter value.
 
-Parameters structure
---------------------
+### Parameters structure
 
-  Element name   > Element type                    Optional   > Description
-  -------------- --------------------------------- ---------- -------------------------------------------------------------------------------------------
-  Parameter      > ParameterType\[1..unbounded\]   No         > It is used to carry specific parameters for specific transaction or business operation.
+  Element name   | Element type            |        Optional   | Description
+------------------|------------------------|--------------------|-----------------
+  Parameter      | ParameterType[1..unbounded]  | No         | It is used to carry specific parameters for specific transaction or business operation.
 
 ### ParameterType structure
 
