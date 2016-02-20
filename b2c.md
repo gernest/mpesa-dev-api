@@ -1,4 +1,5 @@
-# B2C API Specification
+#
+ B2C API Specification
 
 
 # Approvals    
@@ -1177,27 +1178,27 @@ The 3^rd^ party invokes this operation to change his password.
 ### Output Message:
 ##### changePasswordResponse
 
-  Element name      | Element type    | Optional  | Description 
-  ------------------|-------------------------------------------
-  result            | Result          | No        | Result. 
-  extensionInfo     | Parameters      | Yes       | Extended parameters.
+  | Element name      | Element type    | Optional  | Description |
+  |-------------------|-----------------|-----------|-------------|
+  | result            | Result          | No        | Result.     | 
+  | extensionInfo     | Parameters      | Yes       | Extended parameters.|
 
 
 #### Response Code
 
   | ResponseCode    | ResponseDesc
   ------------------|-------------------------------------------
-  000000000         | Success
-  100000001         | The system is overload
-  100000002         | Throttling error
-  100000003         | Exceed the limitation of the LICENSE
-  100000004         | Internal Server Error
-  100000005         | Invalid input value:%1
-  %1                | indicates the parameter’s name.
-  100000006         | SP’s status is abnormal
-  100000007         | Authentication failed
-  100000014         | Missing mandatory parameter:%1
-  %1                | indicates the parameter’s name.
+  | 000000000       | Success | 
+  | 100000001       | The system is overload| 
+  | 100000002       | Throttling error | 
+  | 100000003       | Exceed the limitation of the LICENSE| 
+  | 100000004       | Internal Server Error | 
+  100000005         | Invalid input value:%1| 
+  %1                | indicates the parameter’s name.|
+  | 100000006       | SP’s status is abnormal|
+  | 100000007       | Authentication failed|
+  ! 100000014       | Missing mandatory parameter:%1|
+  | %1              | indicates the parameter’s name.|
   ----------------------------------------------------------------
 
 ### Example
