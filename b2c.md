@@ -81,8 +81,8 @@
    3             | SPShortCode
    4             | OrganizationShortCode
    5             | IdentityID
-   6             > O2CLink
-   9             > SPOperatorCode
+   6             | O2CLink
+   9             | SPOperatorCode
    10            | POSNumber
    11            | OrganizationOperatorUserName
    12            | OrganizationOperatorCode
