@@ -142,7 +142,7 @@
 
   Element name   |Element type  | Optional   |Description
   ---------------|--------------|------------|----------------------
-  CallerType   |  xsd:integer  |  No     |    Indicates the type of the caller:<ul><li>2-APICaller</il><ol>3-Other(Reserved)</li></ul>
+  CallerType   |  xsd:integer  |  No     |    Indicates the type of the caller:<ul><li>2-APICaller</il><li>3-Other(Reserved)</li></ul>
   ThirdPartyID   |xsd:string    | No    |     The unique identifier of a third party system defined in MM. It indicates the third party which initiates the request. Max length is 20
   Password     |  xsd:string   |  Yes      |  This security credential of the ThirdPartyID defined in MM. If the password feature for third party is used in MM, then this parameter must be presented in the request message.
   CheckSum  |     xsd:string   |  Yes    |    Currently it is unused. It is reserved for API security.
