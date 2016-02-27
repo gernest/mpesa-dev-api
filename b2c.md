@@ -149,21 +149,15 @@
   ResultURL |     xsd:string  |   Yes    |    It indicates the destination URL where Broker should send the result message to.
 
 
-Initiator structure
--------------------
+### Initiator structure
 
-  ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-  Element name         Element type     Optional   Description
-  -------------------- ---------------- ---------- --------------------------------------------------------------------------------------------------------------------------------------------------------
-  IdentifierType       IdentifierType   No         It indicates the identifier type of the initiator. The value of this parameter must be a valid identifier type supported by MM.
-
-  Identifier           xsd:string       No         It indicates the identifier of the initiator. Its value must match the inputted value of the parameter IdentifierType.
-
-  SecurityCredential   xsd:string       No         It indicates the security credential of the initiator. Its value must match the inputted value of the parameter IdentifierType.
-
-  ShortCode            xsd:string       No         When the initiator is an organization operator, this parameter must be present in the request to indicate which organization the operator belongs to.\
+  Element name  |       Element type |    Optional |  Description
+  --------------|-------------------|-------------|------------------------
+  IdentifierType       |IdentifierType   |No         |It indicates the identifier type of the initiator. The value of this parameter must be a valid identifier type supported by MM.
+  Identifier           |xsd:string       |No         |It indicates the identifier of the initiator. Its value must match the inputted value of the parameter IdentifierType.
+  SecurityCredential|   |xsd:string       ||No         ||It indicates the security credential of the initiator. Its value must match the inputted value of the parameter IdentifierType.
+  ShortCode            |xsd:string       |No         |When the initiator is an organization operator, this parameter must be present in the request to indicate which organization the operator belongs to.\
                                                    If the initiator is not an organization operator, this parameter should not be present.
-  ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ### Password Encryption
 
