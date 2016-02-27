@@ -209,16 +209,15 @@ t
   IdentifierType   | IdentifierType  | No     |    It indicates the identifier type of the access device.
   Identifier      |  xsd:string      | No      |    It indicates the identifier of the access device. Its value must match the inputted value of parameter IdentifierType
 
-Identity structure
-------------------
+### Identity structure
 
-  > Element name   > Element type   Optional   > Description
-  ---------------- ---------------- ---------- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-  Caller           Caller           No         > It indicates the third party which initiates the request
-  Initiator        Initiator        No         > It indicates the identity who makes the request
-  PrimaryParty     PrimaryParty     Yes        > If business operation/action, this element is not present; if transaction, this can be either the debit party or the credit party according to the transaction type.
-  ReceiverParty    ReceiverParty    Yes        > If business operation/action, this is the affected party; if transaction, it is the opposite party to the PrimaryParty
-  AccessDevice     AccessDevice     Yes        > It indicates the access device which the initiator uses to initiate the request.
+  Element name   | Element type   |Optional   | Description
+-----------------|---------------||------------|---------------
+  Caller         |  Caller      |     No  |        It indicates the third party which initiates the request
+  Initiator     |   Initiator    |    No    |      It indicates the identity who makes the request
+  PrimaryParty   |  PrimaryParty  |   Yes        | If business operation/action, this element is not present; if transaction, this can be either the debit party or the credit party according to the transaction type.
+  ReceiverParty |   ReceiverParty   | Yes     |    If business operation/action, this is the affected party; if transaction, it is the opposite party to the PrimaryParty
+  AccessDevice  |   AccessDevice  |   Yes     |    It indicates the access device which the initiator uses to initiate the request.
 
 Request structure
 -----------------
