@@ -201,13 +201,13 @@ t
   ShortCode     |   xsd:string   |    Yes    |    When the receiver party is an organization operator or a Till, this parameter must be present in the request to indicate which organization the receiver party belongs to.If the receiver party is not an organization operator or a Till, this parameter should not be present.
 
 
-AccessDevice structure
-----------------------
+### AccessDevice structure
 
-  Element name     > Element type     Optional   > Description
-  ---------------- ------------------ ---------- -------------------------------------------------------------------------------------------------------------------------
-  IdentifierType   > IdentifierType   No         > It indicates the identifier type of the access device.
-  Identifier       > xsd:string       No         > It indicates the identifier of the access device. Its value must match the inputted value of parameter IdentifierType
+
+  Element name   |   Element type  |   Optional   | Description
+-----------------|------------------|--------------|-------------------
+  IdentifierType   | IdentifierType  | No     |    It indicates the identifier type of the access device.
+  Identifier      |  xsd:string      | No      |    It indicates the identifier of the access device. Its value must match the inputted value of parameter IdentifierType
 
 Identity structure
 ------------------
