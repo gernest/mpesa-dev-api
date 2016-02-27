@@ -191,19 +191,15 @@ t
   *Identifier*   |     *xsd:string*  |     *No*     |  *It indicates a parameter value.*
   *ShortCode*    |     *xsd:string*     |  *Yes*    |  *It is reserved*
 
-ReceiverParty structure
------------------------
+### ReceiverParty structure
 
-  --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-  Element name     Element type     Optional   Description
-  ---------------- ---------------- ---------- -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-  IdentifierType   IdentifierType   No         It indicates the identifier type of the recipient party. The value of this parameter must be a valid identifier type supported by MM.
 
-  Identifier       xsd:string       No         It indicates the identifier of the recipient party. Its value must match the inputted value of the parameter IdentifierType.
+  Element name  |   Element type  |   Optional  | Description
+----------------|-----------------|--------------|-------------------
+  IdentifierType |  IdentifierType |  No     |    It indicates the identifier type of the recipient party. The value of this parameter must be a valid identifier type supported by MM.
+  Identifier   |    xsd:string   |    No    |     It indicates the identifier of the recipient party. Its value must match the inputted value of the parameter IdentifierType.
+  ShortCode     |   xsd:string   |    Yes    |    When the receiver party is an organization operator or a Till, this parameter must be present in the request to indicate which organization the receiver party belongs to.If the receiver party is not an organization operator or a Till, this parameter should not be present.
 
-  ShortCode        xsd:string       Yes        When the receiver party is an organization operator or a Till, this parameter must be present in the request to indicate which organization the receiver party belongs to.\
-                                               If the receiver party is not an organization operator or a Till, this parameter should not be present.
-  --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 AccessDevice structure
 ----------------------
