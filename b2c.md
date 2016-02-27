@@ -219,21 +219,14 @@ t
   ReceiverParty |   ReceiverParty   | Yes     |    If business operation/action, this is the affected party; if transaction, it is the opposite party to the PrimaryParty
   AccessDevice  |   AccessDevice  |   Yes     |    It indicates the access device which the initiator uses to initiate the request.
 
-Request structure
------------------
+### Request structure
 
-  -------------------------------------------------------------------------------------------------------------------------------------------------------------
-  Element name   > Element type   Optional   Description
-  -------------- ---------------- ---------- ------------------------------------------------------------------------------------------------------------------
-  Transaction    > Transaction    No         It indicates a transaction.
+  Element name   | Element type  | Optional   |Description
+-----------------|---------------|------------|-------------
+  Transaction    | Transaction   | No    |     It indicates a transaction.
+  Identity      |  Identity     |  No      |   This section is used to specify all identities involved in the request
+  KeyOwner       | xsd:integer   | No      |   It indicates which Key is used to encrypt the elements Initator.SecurityCredential and the EncryptedParameters. <ol>  Its value are enumerated as follows: <li>the API Caller's Key</li><li>the Initiator's Key</li></ol>
 
-  Identity       > Identity       No         This section is used to specify all identities involved in the request
-
-  KeyOwner       > xsd:integer    No         It indicates which Key is used to encrypt the elements Initator.SecurityCredential and the EncryptedParameters.\
-                                             Its value are enumerated as follows:\
-                                             1:the API Caller's Key\
-                                             2:the Initiator's Key
-  -------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Response structure
 ------------------
