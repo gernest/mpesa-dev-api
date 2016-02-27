@@ -260,148 +260,80 @@ t
   ResultParameters       |    ResultParameters |  Yes        | It is used to carry specific parameters for specific transaction or business operation.
   ReferenceData         |     ReferenceData   |   Yes        | It comes from the request message
 
-Result code
------------
+### Result code
+
+
+
+  Error code  | Error Description                           |     
+  ------------ |--------------------------------------------|---- -------------
+  0          |  Success                                     |     ApiResult
+  1         |   Insufficient Funds                            |   ApiResult
+  2         |   Less Than Minimum Transaction Value        |      ApiResult
+  3         |   More Than Maximum Transaction Value          |    ApiResult
+  4          |  Would Exceed Daily Transfer Limit         |       ApiResult
+  5          |  Would Exceed Minimum Balance               |      ApiResult
+  6        |    Unresolved Primary Party                    |     ApiResult
+  7       |     Unresolved Receiver Party                   |     ApiResult
+  8       |     Would Exceed Maxiumum Balance       |             ApiResult
+  11        |   Debit Account Invalid                 |           ApiResult
+  12        |   Credit Account Invaliud        |                  ApiResult
+  13       |    Unresolved Debit Account     |                    ApiResult
+  14       |    Unresolved Credit Account       |                 ApiResult
+  15       |    Duplicate Detected             |                  ApiResult
+  17       |    Internal Failure                 |                ApiResult
+  18       |    Initiator Credential Check Failure    |           ApiResult
+  19         |  Message Sequencing Failure    |                   ApiResult
+  20       |    Unresolved Initiator         |                    ApiResult
+  21     |      Initiator to Primary Party Permission Failure  |  ApiResult
+  22        |   Initiator to Receiver Party Permission Failure |  ApiResult
+  23      |     Request schema validation error       |           ApiResponse
+  24      |     MissingRequestParameters         |                ApiResponse
+  25     |      InvalidRequestParameters       |                  ApiResponse
+  26      |     SystemTooBusy          |                          ApiResponse
+  0        |    Success           |                               ApiResponse
+  100000000  |  Request was cached, waiting for resending   |     ApiResponse
+  100000001  |  The system is overload     |                      ApiResponse
+  100000002   | Throttling error              |                   ApiResponse
+  100000003   | Exceed the limitation of the LICENSE   |          ApiResponse
+  100000004   | Internal Server Error      |                      ApiResponse
+  100000005   | Invalid input value:%1         |                  ApiResponse
+               |%1 indicates the parameter’s name.|               
+  100000006  |  SP’s status is abnormal   |                       ApiResponse
+  100000007  |  Authentication failed        |                    ApiResponse
+  100000008  |  Service’s status is abnormal     |                ApiResponse
+  100000009  |  API’s status is abnormal     |                    ApiResponse
+  100000010  |  Insufficient permissions         |                ApiResponse
+  100000011   | Exceed the limitation of request rate    |        ApiResponse
+  100000012  |  Insufficient balance          |                   ApiResponse
+  100000013  |  No route          |                               ApiResponse
+  100000014  |  Missing mandatory parameter:%1         |          ApiResponse
+             |  %1 indicates the parameter’s name.    |           
+  28      |     InitiatorAllowedOperationCheckFailure     |       ApiResult
+  29        |   InvalidCommand          |                         ApiResult
+  30        |   ErrorSerializingRequest         |                 ApiResponse
+  31       |    InitiatorNotSpecified           |                 ApiResult
+  32        |   ErrorSerializingRequest          |                ApiResult
+  33     |      PrimaryPartyNotSpecified       |                  ApiResult
+  34      |PrimaryPartyIdentifierInvalid         |           ApiResult
+  35        |   ReceiverPartyNotSpecified        |                ApiResult
+  36        |   ReceiverPartyIdentifierInvalid    |               ApiResult
+  37      |     MissingApiCommand          |                      ApiResult
+  38       |    InvalidConversationId       |                     ApiResult
+  39       |    UnknownConversationId     |                       ApiResult
+  40      |     InvalidParameterDefinition         |ApiResult
+  41        |   DuplicateConversationDetected   |                 ApiResult
+  42    |       DuplicateStageMessageDetected      |              ApiResult
+  43       |    AwaitingConfirmation              |               ApiResult
+  44    |InitiatorToReceiverPartyPermissionFailure   |     ApiResult
+  45     |      InternalErrorDuringFinancialTransaction   |       ApiResult
+  46     |ConfirmationReceived           |                  ApiResult
+  47    |       RejectionReceived           |                     ApiResult
+  48     |OperationPermissionFailure       |                ApiResult
+  49      |     NoTransactionFound          |                     ApiResult
+  50        |   InitiatorOrgIdentityStatusFailure   |             ApiResult
+  51       |    DebitChargeAccountInvalid            |            ApiResult
+  52        |   WouldExceedMaximumSingleAirtimePurchase    |      ApiResult
 
-  ---------------------------------------------------------------------------
-  Error code   Error Description                                
-  ------------ ------------------------------------------------ -------------
-                                                                
-
-  0            Success                                          ApiResult
-
-  1            Insufficient Funds                               ApiResult
-
-  2            Less Than Minimum Transaction Value              ApiResult
-
-  3            More Than Maximum Transaction Value              ApiResult
-
-  4            Would Exceed Daily Transfer Limit                ApiResult
-
-  5            Would Exceed Minimum Balance                     ApiResult
-
-  6            Unresolved Primary Party                         ApiResult
-
-  7            Unresolved Receiver Party                        ApiResult
-
-  8            Would Exceed Maxiumum Balance                    ApiResult
-
-  11           Debit Account Invalid                            ApiResult
-
-  12           Credit Account Invaliud                          ApiResult
-
-  13           Unresolved Debit Account                         ApiResult
-
-  14           Unresolved Credit Account                        ApiResult
-
-  15           Duplicate Detected                               ApiResult
-
-  17           Internal Failure                                 ApiResult
-
-  18           Initiator Credential Check Failure               ApiResult
-
-  19           Message Sequencing Failure                       ApiResult
-
-  20           Unresolved Initiator                             ApiResult
-
-  21           Initiator to Primary Party Permission Failure    ApiResult
-
-  22           Initiator to Receiver Party Permission Failure   ApiResult
-
-  23           Request schema validation error                  ApiResponse
-
-  24           MissingRequestParameters                         ApiResponse
-
-  25           InvalidRequestParameters                         ApiResponse
-
-  26           SystemTooBusy                                    ApiResponse
-
-  0            Success                                          ApiResponse
-
-  100000000    Request was cached, waiting for resending        ApiResponse
-
-  100000001    The system is overload                           ApiResponse
-
-  100000002    Throttling error                                 ApiResponse
-
-  100000003    Exceed the limitation of the LICENSE             ApiResponse
-
-  100000004    Internal Server Error                            ApiResponse
-
-  100000005    Invalid input value:%1                           ApiResponse
-                                                                
-               %1 indicates the parameter’s name.               
-
-  100000006    SP’s status is abnormal                          ApiResponse
-
-  100000007    Authentication failed                            ApiResponse
-
-  100000008    Service’s status is abnormal                     ApiResponse
-
-  100000009    API’s status is abnormal                         ApiResponse
-
-  100000010    Insufficient permissions                         ApiResponse
-
-  100000011    Exceed the limitation of request rate            ApiResponse
-
-  100000012    Insufficient balance                             ApiResponse
-
-  100000013    No route                                         ApiResponse
-
-  100000014    Missing mandatory parameter:%1                   ApiResponse
-                                                                
-               %1 indicates the parameter’s name.               
-
-  28           InitiatorAllowedOperationCheckFailure            ApiResult
-
-  29           InvalidCommand                                   ApiResult
-
-  30           ErrorSerializingRequest                          ApiResponse
-
-  31           InitiatorNotSpecified                            ApiResult
-
-  32           ErrorSerializingRequest                          ApiResult
-
-  33           PrimaryPartyNotSpecified                         ApiResult
-
-  34           PrimaryPartyIdentifierInvalid                    ApiResult
-
-  35           ReceiverPartyNotSpecified                        ApiResult
-
-  36           ReceiverPartyIdentifierInvalid                   ApiResult
-
-  37           MissingApiCommand                                ApiResult
-
-  38           InvalidConversationId                            ApiResult
-
-  39           UnknownConversationId                            ApiResult
-
-  40           InvalidParameterDefinition                       ApiResult
-
-  41           DuplicateConversationDetected                    ApiResult
-
-  42           DuplicateStageMessageDetected                    ApiResult
-
-  43           AwaitingConfirmation                             ApiResult
-
-  44           InitiatorToReceiverPartyPermissionFailure        ApiResult
-
-  45           InternalErrorDuringFinancialTransaction          ApiResult
-
-  46           ConfirmationReceived                             ApiResult
-
-  47           RejectionReceived                                ApiResult
-
-  48           OperationPermissionFailure                       ApiResult
-
-  49           NoTransactionFound                               ApiResult
-
-  50           InitiatorOrgIdentityStatusFailure                ApiResult
-
-  51           DebitChargeAccountInvalid                        ApiResult
-
-  52           WouldExceedMaximumSingleAirtimePurchase          ApiResult
-  ---------------------------------------------------------------------------
 
 The following table lists result codes and result descriptions which are
 provided to the caller. These may be commincated either in the
