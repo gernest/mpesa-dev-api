@@ -182,15 +182,14 @@ First, create the block of data to be encrypted:
 -   Convert the resulting encrypted byte array into a string using
     > base64 encoding. Present this base64 encoded string in the API
     > request as the initiator SecurityCredential value.
-
+t
     1.  PrimaryParty structure
-        ----------------------
 
-  Element name       > Element type       Optional   Description
-  ------------------ -------------------- ---------- -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-  *IdentifierType*   > *IdentifierType*   *No*       *It indicates the identifier type of the primary party. The value of this parameter must be a valid identifier type supported by MM and must match the inputted value of the parameter IdentityType.*
-  *Identifier*       > *xsd:string*       *No*       *It indicates a parameter value.*
-  *ShortCode*        > *xsd:string*       *Yes*      *It is reserved*
+  Element name  |      Element type    |   Optional |  Description
+  ---------------|----------------------|------------|-----------------------
+  *IdentifierType* |   *IdentifierType*|   *No*    |   *It indicates the identifier type of the primary party. The value of this parameter must be a valid identifier type supported by MM and must match the inputted value of the parameter IdentityType.*
+  *Identifier*   |     *xsd:string*  |     *No*     |  *It indicates a parameter value.*
+  *ShortCode*    |     *xsd:string*     |  *Yes*    |  *It is reserved*
 
 ReceiverParty structure
 -----------------------
