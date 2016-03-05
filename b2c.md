@@ -159,7 +159,7 @@
   ShortCode            |xsd:string       |No         |When the initiator is an organization operator, this parameter must be present in the request to indicate which organization the operator belongs to.\
                                                    If the initiator is not an organization operator, this parameter should not be present.
 
-### Password Encryption
+####  Password Encryption
 
 The Caller will be required to confirm its authority to act on behalf of
 the Initiator (in other words, a specific B2C organisation) by
@@ -184,8 +184,8 @@ First, create the block of data to be encrypted:
     > base64 encoding. Present this base64 encoded string in the API
     > request as the initiator SecurityCredential value.
 
-    1.  PrimaryParty structure
-        ----------------------
+
+###     PrimaryParty structure
 
   Element name       > Element type       Optional   Description
   ------------------ -------------------- ---------- -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
