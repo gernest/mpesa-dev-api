@@ -152,12 +152,11 @@
 ### Initiator structure
 
   Element name  |       Element type |    Optional |  Description
-  --------------|-------------------|-------------|------------------------
+----------------|-------------------|-------------|------------------------
   IdentifierType       |IdentifierType   |No         |It indicates the identifier type of the initiator. The value of this parameter must be a valid identifier type supported by MM.
   Identifier           |xsd:string       |No         |It indicates the identifier of the initiator. Its value must match the inputted value of the parameter IdentifierType.
   SecurityCredential|   |xsd:string       ||No         ||It indicates the security credential of the initiator. Its value must match the inputted value of the parameter IdentifierType.
-  ShortCode            |xsd:string       |No         |When the initiator is an organization operator, this parameter must be present in the request to indicate which organization the operator belongs to.\
-                                                   If the initiator is not an organization operator, this parameter should not be present.
+  ShortCode            |xsd:string       |No         |When the initiator is an organization operator, this parameter must be present in the request to indicate which organization the operator belongs to.If the initiator is not an organization operator, this parameter should not be present.
 
 ####  Password Encryption
 
@@ -183,6 +182,7 @@ First, create the block of data to be encrypted:
 -   Convert the resulting encrypted byte array into a string using
     > base64 encoding. Present this base64 encoded string in the API
     > request as the initiator SecurityCredential value.
+<<<<<<< HEAD
 
 
 ###     PrimaryParty structure
@@ -409,13 +409,160 @@ Result code
   48           OperationPermissionFailure                       ApiResult
 
   49           NoTransactionFound                               ApiResult
+=======
+t
+    1.  PrimaryParty structure
+>>>>>>> d4bc3bc9343254151c23a87edced1979b2541400
 
-  50           InitiatorOrgIdentityStatusFailure                ApiResult
+  Element name  |      Element type    |   Optional |  Description
+  ---------------|----------------------|------------|-----------------------
+  *IdentifierType* |   *IdentifierType*|   *No*    |   *It indicates the identifier type of the primary party. The value of this parameter must be a valid identifier type supported by MM and must match the inputted value of the parameter IdentityType.*
+  *Identifier*   |     *xsd:string*  |     *No*     |  *It indicates a parameter value.*
+  *ShortCode*    |     *xsd:string*     |  *Yes*    |  *It is reserved*
 
-  51           DebitChargeAccountInvalid                        ApiResult
+### ReceiverParty structure
 
-  52           WouldExceedMaximumSingleAirtimePurchase          ApiResult
-  ---------------------------------------------------------------------------
+
+  Element name  |   Element type  |   Optional  | Description
+----------------|-----------------|--------------|-------------------
+  IdentifierType |  IdentifierType |  No     |    It indicates the identifier type of the recipient party. The value of this parameter must be a valid identifier type supported by MM.
+  Identifier   |    xsd:string   |    No    |     It indicates the identifier of the recipient party. Its value must match the inputted value of the parameter IdentifierType.
+  ShortCode     |   xsd:string   |    Yes    |    When the receiver party is an organization operator or a Till, this parameter must be present in the request to indicate which organization the receiver party belongs to.If the receiver party is not an organization operator or a Till, this parameter should not be present.
+
+
+### AccessDevice structure
+
+
+  Element name   |   Element type  |   Optional   | Description
+-----------------|------------------|--------------|-------------------
+  IdentifierType   | IdentifierType  | No     |    It indicates the identifier type of the access device.
+  Identifier      |  xsd:string      | No      |    It indicates the identifier of the access device. Its value must match the inputted value of parameter IdentifierType
+
+### Identity structure
+
+  Element name   | Element type   |Optional   | Description
+-----------------|---------------|------------|---------------
+  Caller         |  Caller      |     No  |        It indicates the third party which initiates the request
+  Initiator     |   Initiator    |    No    |      It indicates the identity who makes the request
+  PrimaryParty   |  PrimaryParty  |   Yes        | If business operation/action, this element is not present; if transaction, this can be either the debit party or the credit party according to the transaction type.
+  ReceiverParty |   ReceiverParty   | Yes     |    If business operation/action, this is the affected party; if transaction, it is the opposite party to the PrimaryParty
+  AccessDevice  |   AccessDevice  |   Yes     |    It indicates the access device which the initiator uses to initiate the request.
+
+### Request structure
+
+  Element name   | Element type  | Optional   |Description
+-----------------|---------------|------------|-------------
+  Transaction    | Transaction   | No    |     It indicates a transaction.
+  Identity      |  Identity     |  No      |   This section is used to specify all identities involved in the request
+  KeyOwner       | xsd:integer   | No      |   It indicates which Key is used to encrypt the elements Initator.SecurityCredential and the EncryptedParameters. <ol>  Its value are enumerated as follows: <li>the API Caller's Key</li><li>the Initiator's Key</li></ol>
+
+
+### Response structure
+
+
+   Element name    |         Element type |  Optional   | Description
+-------------------|----------------------|-------------|-----------------
+  ResponseCode     |         xsd:string   |  No         | It indicates whether MM accepts the request or not.
+  ResponseDesc     |          xsd:string  |   Yes        | Its value is a description for the parameter ResultCode.
+  ConversationID   |          xsd:string  |   Yes     |    The unique identifier generated by M-Pesa for the request message.
+  OriginatorConversationID |  xsd:string   |  Yes     |    The unique identifier generated by the third party for the request message.
+  ServiceStatus    |          xsd: integer |  Yes        | It indicates the MM service status.
+
+### ResultParameters structure
+
+
+  Element name    |  Element type            |       Optional   | Description
+------------------|--------------------------|-------------------|---------------
+  ResultParameter |  ParameterType\[0…unbounded\] |  Yes        | It is used to carry specific parameters for specific transaction or business operation.
+
+### Result structure
+
+
+  Element name          |     Element type   |    Optional   | Description
+------------------------|--------------------|---------------|---------------------
+  ResultType            |     xsd:integer    |    Yes        | 0: completed 1: waiting for further messages
+  ResultCode            |     xsd:string      |   No         | It indicates whether MM processes the request successfully or not. Max length is 10
+  ResultDesc             |    xsd:string     |    Yes        | Its value is a description for the parameter ResultCode.Max length is 1024
+  OriginatorConversationID  | xsd:string    |     Yes        | The unique identifier of the request message generated by third party. Its value comes from the request message.
+  ConversationID        |     xsd:string     |    Yes        |The unique identifier generated by MM for a request
+  TransactionID          |    xsd:string       |  Yes        | It’s only for transaction. When the request is a transaction request, MM will generate a unique identifier for the transaction.
+  ResultParameters       |    ResultParameters |  Yes        | It is used to carry specific parameters for specific transaction or business operation.
+  ReferenceData         |     ReferenceData   |   Yes        | It comes from the request message
+
+### Result code
+
+
+
+  Error code  | Error Description                           |     
+  ------------ |--------------------------------------------|---- -------------
+  0          |  Success                                     |     ApiResult
+  1         |   Insufficient Funds                            |   ApiResult
+  2         |   Less Than Minimum Transaction Value        |      ApiResult
+  3         |   More Than Maximum Transaction Value          |    ApiResult
+  4          |  Would Exceed Daily Transfer Limit         |       ApiResult
+  5          |  Would Exceed Minimum Balance               |      ApiResult
+  6        |    Unresolved Primary Party                    |     ApiResult
+  7       |     Unresolved Receiver Party                   |     ApiResult
+  8       |     Would Exceed Maxiumum Balance       |             ApiResult
+  11        |   Debit Account Invalid                 |           ApiResult
+  12        |   Credit Account Invaliud        |                  ApiResult
+  13       |    Unresolved Debit Account     |                    ApiResult
+  14       |    Unresolved Credit Account       |                 ApiResult
+  15       |    Duplicate Detected             |                  ApiResult
+  17       |    Internal Failure                 |                ApiResult
+  18       |    Initiator Credential Check Failure    |           ApiResult
+  19         |  Message Sequencing Failure    |                   ApiResult
+  20       |    Unresolved Initiator         |                    ApiResult
+  21     |      Initiator to Primary Party Permission Failure  |  ApiResult
+  22        |   Initiator to Receiver Party Permission Failure |  ApiResult
+  23      |     Request schema validation error       |           ApiResponse
+  24      |     MissingRequestParameters         |                ApiResponse
+  25     |      InvalidRequestParameters       |                  ApiResponse
+  26      |     SystemTooBusy          |                          ApiResponse
+  0        |    Success           |                               ApiResponse
+  100000000  |  Request was cached, waiting for resending   |     ApiResponse
+  100000001  |  The system is overload     |                      ApiResponse
+  100000002   | Throttling error              |                   ApiResponse
+  100000003   | Exceed the limitation of the LICENSE   |          ApiResponse
+  100000004   | Internal Server Error      |                      ApiResponse
+  100000005   | Invalid input value:%1         |                  ApiResponse
+               |%1 indicates the parameter’s name.|               
+  100000006  |  SP’s status is abnormal   |                       ApiResponse
+  100000007  |  Authentication failed        |                    ApiResponse
+  100000008  |  Service’s status is abnormal     |                ApiResponse
+  100000009  |  API’s status is abnormal     |                    ApiResponse
+  100000010  |  Insufficient permissions         |                ApiResponse
+  100000011   | Exceed the limitation of request rate    |        ApiResponse
+  100000012  |  Insufficient balance          |                   ApiResponse
+  100000013  |  No route          |                               ApiResponse
+  100000014  |  Missing mandatory parameter:%1         |          ApiResponse
+             |  %1 indicates the parameter’s name.    |           
+  28      |     InitiatorAllowedOperationCheckFailure     |       ApiResult
+  29        |   InvalidCommand          |                         ApiResult
+  30        |   ErrorSerializingRequest         |                 ApiResponse
+  31       |    InitiatorNotSpecified           |                 ApiResult
+  32        |   ErrorSerializingRequest          |                ApiResult
+  33     |      PrimaryPartyNotSpecified       |                  ApiResult
+  34      |PrimaryPartyIdentifierInvalid         |           ApiResult
+  35        |   ReceiverPartyNotSpecified        |                ApiResult
+  36        |   ReceiverPartyIdentifierInvalid    |               ApiResult
+  37      |     MissingApiCommand          |                      ApiResult
+  38       |    InvalidConversationId       |                     ApiResult
+  39       |    UnknownConversationId     |                       ApiResult
+  40      |     InvalidParameterDefinition         |ApiResult
+  41        |   DuplicateConversationDetected   |                 ApiResult
+  42    |       DuplicateStageMessageDetected      |              ApiResult
+  43       |    AwaitingConfirmation              |               ApiResult
+  44    |InitiatorToReceiverPartyPermissionFailure   |     ApiResult
+  45     |      InternalErrorDuringFinancialTransaction   |       ApiResult
+  46     |ConfirmationReceived           |                  ApiResult
+  47    |       RejectionReceived           |                     ApiResult
+  48     |OperationPermissionFailure       |                ApiResult
+  49      |     NoTransactionFound          |                     ApiResult
+  50        |   InitiatorOrgIdentityStatusFailure   |             ApiResult
+  51       |    DebitChargeAccountInvalid            |            ApiResult
+  52        |   WouldExceedMaximumSingleAirtimePurchase    |      ApiResult
+
 
 The following table lists result codes and result descriptions which are
 provided to the caller. These may be commincated either in the
