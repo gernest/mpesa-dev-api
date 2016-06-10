@@ -2,6 +2,9 @@ site_name: M-Pesa Unofficial API
 pages:
 - Home:    index.md
 - About:   about.md
-- b2c:     b2c.md 
+- B2C:     b2c.md 
 - Message Flow:     message_flow.md 
+- C2B:     c2b.md 
+- Payments:     payments.md 
+- Transaction:     transaction.md 
 theme: readthedocs
