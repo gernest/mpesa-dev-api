@@ -1,3 +1,4 @@
 site/ 
 message_flow.md
 docs/bc2.md 
+*.doc*
