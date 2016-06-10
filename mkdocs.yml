@@ -1,0 +1,7 @@
+site_name: M-Pesa Unofficial API  
+pages:
+- Home:    index.md
+- About:   about.md
+- b2c:     b2c.md 
+- Message Flow:     message_flow.md 
+theme: readthedocs
